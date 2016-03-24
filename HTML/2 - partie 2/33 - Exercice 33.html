@@ -1,0 +1,44 @@
+<!--
+À l'aide de la propriété CSS box-shadow, on peut appliquer une ombre sur un bloc :
+h2{
+	box-shadow: 4px 8px 2px grey;
+}
+-->
+
+<!-- box-shadow:  none | <shadow> [,<shadow>]*
+
+  où <shadow> est défini de la manière suivante :
+
+inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] -->
+
+<!--
+	1 - Créez un document avec un h1 et un paragraphe.
+	2 - Faites une ombre sur le h1.
+	3 - Faites une ombre sur le paragraphe et ajoutez la propriété inset pour appliquer une ombre interne.
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      h1{
+        box-shadow: 10px 10px 10px grey;
+      }
+
+      p{
+        box-shadow: inset 2px 2px 2px grey; 
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titre 1 </h1>
+
+
+    <p>
+      Paragraphe
+    </p>
+  </body>
+</html>

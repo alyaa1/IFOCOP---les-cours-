@@ -1,0 +1,41 @@
+<!--
+La balise img peut être contenue dans une balise figure. Celle-ci permet de donner un "sens" à l'image
+qui apporte une information complémentaire au texte.
+On peut ajouter une légende à cette image au moyen de la balise figcaption.
+Ces balises s'utilisent de la façon suivante :
+<figure>
+    <img src="mon_image.jpg" alt="Une belle image" />
+    <figcaption>Une superbe image</figcaption>
+</figure>
+Il est possible de mettre plusieurs balises img dans une une balise figure.
+-->
+
+<!--
+	1 - Créez un document contenant une balise figure.
+	2 - Cette balise comporte trois image et une légende.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    figure{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <figure>
+    <img src="image.jpg" alt="image jpg" />
+    <img src="image.gif" alt="image gid" />
+    <img src="image.png" alt="image png" />
+    <figcaption>Je suis une légende</figcaption>
+  </figure>
+</body>
+
+</html>

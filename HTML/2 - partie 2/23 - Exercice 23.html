@@ -1,0 +1,67 @@
+<!--
+De nombreuses règles CSS permettent de mettre en forme le texte. Parmi celles-ci, on trouve :
+_ font-size : taille de la police.
+_ font-style : police en normal, italique ou oblique.
+_ font-weight : gestion de la graisse de la police
+
+Les dimensions sont données :
+_ en pixels (px)
+_ en pourcentage (%)
+_ en cadratin (em)
+-->
+
+<!--
+  1 - Créez un document.
+  2 - Vous y inséré deux ensemble : h1 h2 p
+  3 - Modifiez la taille de police par défaut de chaque balise (en pixels).
+  4 - Mettez les h1 en italique, les h2 en normal et une partie des paragraphes en gras et italique.
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+    h1{
+      font-size: 24px;
+      font-style: italic;
+    }
+
+    h2{
+      font-size: 0.8em;
+    }
+
+    p{
+      font-size: 90%;
+    }
+
+    p span{
+      font-style: italic;
+      font-weight: bold;
+    }
+    </style>
+  </head>
+  <body>
+
+    <h1>Titre 1</h1>
+
+    <h2>Sous-titre</h2>
+
+    <p>
+      Et eodem <span>impetu Domitianum praecipitem </span>per scalas itidem funibus constrinxerunt, eosque coniunctos per ampla spatia civitatis acri raptavere discursu. iamque artuum et membrorum divulsa conpage superscandentes corpora mortuorum ad ultimam truncata deformitatem velut exsaturati mox abiecerunt in flumen.
+    </p>
+
+    <h1>Titre 1</h1>
+
+    <h2>Sous-titre</h2>
+
+    <p>
+      Et eodem <span>impetu Domitianum praecipitem per scalas itidem</span> funibus constrinxerunt, eosque coniunctos per ampla spatia civitatis acri raptavere discursu. iamque artuum et membrorum divulsa conpage superscandentes corpora mortuorum ad ultimam truncata deformitatem velut exsaturati mox abiecerunt in flumen.
+    </p>
+
+
+  </body>
+</html>

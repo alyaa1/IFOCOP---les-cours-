@@ -1,0 +1,85 @@
+<!--
+D'autre propriétées CSS sont utilisées pour formater le texte :
+_ text-align : alignement du texte.
+_ line-height : hauteur de la ligne de texte.
+_ text-transform : changement de la casse du texte.
+_ letter-spacing : espacement des lettres
+_ text-decoration : texte souligné, texte barré …
+-->
+
+<!--
+	1 - Créez un document.
+	2 - Vous y inséré deux ensemble : h1 h2 p.
+	3 - les h1 sont centrés, les h2 alignés à droites.
+	4 - Le second paragraphe a un espacement entre les lignes plus important que la normale.
+	5 - Le second h1 est en majuscule (sans modification du HTML).
+	6 - Le second h2 a un espacement plus grand entre les lettres que la normale.
+	7 - Un paragraphe comporte du texte barré.
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    h1{
+      text-align: center;
+    }
+
+   h2 {
+      text-align: right;
+    }
+
+    #titre1 + h2 + p {
+      line-height: 3em;
+    }
+
+    #titre2 {
+      text-transform: uppercase;
+    }
+
+    #titre2 + h2 {
+      letter-spacing: 3em;
+    }
+
+    p span{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="titre1">Titre 1</h1>
+
+  <h2>Sous-titre</h2>
+
+  <p>
+    Son, as your lawyer, I declare y'all are in a 12-piece bucket o' trouble. But I done struck you a deal: Five hours of community service cleanin' up that ol' mess you caused. Large bet on myself in round one. I feel like I was mauled by Jesus. Good man.
+    Nixon's pro-war and pro-family. I could if you hadn't turned on the light and shut off my stereo. Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages! Now that the, uh, garbage ball is in space, Doctor,
+    perhaps you can help me with my sexual inhibitions? Good news, everyone! I've taught the toaster to feel love! I had more, but you go ahead. Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments."
+    I suppose I could part with 'one' and still be feared… Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though
+    they may be… But I've never been to the moon! Please, Don-Bot… look into your hard drive, and open your mercy file! Robot 1-X, save my friends! And Zoidberg! And yet you haven't said what I told you to say! How can any of us trust you? Yeah, I do
+    that with my stupidness. Tell her you just want to talk. It has nothing to do with mating. Professor, make a woman out of me. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
+  </p>
+
+  <h1 id="titre2">Titre</h1>
+
+  <h2 id="soustitre1">Sous-titre</h2>
+
+  <p>
+    Son, as your lawyer, <span>I declare y'all are in a 12-piece bucket</span> o' trouble. But I done struck you a deal: Five hours of community service cleanin' up that ol' mess you caused. Large bet on myself in round one. I feel like I was mauled by Jesus. Good man.
+    Nixon's pro-war and pro-family. I could if you hadn't turned on the light and shut off my stereo. Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages! Now that the, uh, garbage ball is in space, Doctor,
+    perhaps you can help me with my sexual inhibitions? Good news, everyone! I've taught the toaster to feel love! I had more, but you go ahead. Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments."
+    I suppose I could part with 'one' and still be feared… Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though
+    they may be… But I've never been to the moon! Please, Don-Bot… look into your hard drive, and open your mercy file! Robot 1-X, save my friends! And Zoidberg! And yet you haven't said what I told you to say! How can any of us trust you? Yeah, I do
+    that with my stupidness. Tell her you just want to talk. It has nothing to do with mating. Professor, make a woman out of me. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
+  </p>
+
+</body>
+
+</html>

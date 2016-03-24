@@ -1,0 +1,77 @@
+<!--
+Avec CSS3, il devient possible de faire du multi-colonnes dans un bloc.
+Par exemple :
+div{
+	column-count:2;
+	column-gap:20px;
+}
+Column-count indique le nombre de colonnes et column-gap l'espace entre chaque colonne.
+Cette propriété étant récente, il faut mettre absolument des préfixes sur les propriétées comme suit :
+div{
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	-o-column-count:2;
+	column-count:2;
+	-moz-column-gap:20px;
+	-webkit-column-gap:20px;
+	-o-column-gap:20px;
+	column-gap:20px;
+}
+
+Pour ajouter une trait de séparation, il faut  utiliser les trois propriétées suivantes : column-rule-width, column-rule-color, column-rule-style.
+-->
+
+<!--
+	1 - Créez un document avec un h1 et un paragraphe contenant au-moins 3000 caractères.
+	2 - Mettez le paragraphe sur trois colonnes.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style>
+  p{
+    -moz-column-count:3;
+    -webkit-column-count:3;
+    -o-column-count:3;
+    column-count:3;
+    -moz-column-gap:20px;
+    -webkit-column-gap:20px;
+    -o-column-gap:20px;
+    column-gap:20px;
+
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Titre 1 </h1>
+
+
+  <p># The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. I'm the Doctor, I'm worse
+    than everyone's aunt. *catches himself* And that is not how I'm introducing myself. You've swallowed a planet! You hate me; you want to kill me! Well, go on! Kill me! KILL ME! Aw, you're all Mr. Grumpy Face today. I'm the Doctor, I'm worse than everyone's
+    aunt. *catches himself* And that is not how I'm introducing myself. *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! ## I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not
+    how I'm introducing myself. You know how I sometimes have really brilliant ideas? Heh-haa! Super squeaky bum time! I hate yogurt. It's just stuff with bits in. It's a fez. I wear a fez now. Fezes are cool. Heh-haa! Super squeaky bum time! You hit
+    me with a cricket bat. Did I mention we have comfy chairs? You hit me with a cricket bat. ### I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship. It's art! A statement on modern society,
+    'Oh Ain't Modern Society Awful?'! It's a fez. I wear a fez now. Fezes are cool. Father Christmas. Santa Claus. Or as I've always known him: Jeff. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? You hit
+    me with a cricket bat. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself.
+    You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? Saving the world with meals on wheels. *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal
+    blokes do! I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+    No… It's a thing; it's like a plan, but with more greatness. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing
+    myself. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? They're not aliens, they're Earth…liens! Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor,
+    the Oncoming Storm - and you basically meant beat them in a football match, didn't you? Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat
+    them in a football match, didn't you? I am the last of my species, and I know how that weighs on the heart so don't lie to me! It's a fez. I wear a fez now. Fezes are cool. No… It's a thing; it's like a plan, but with more greatness. Saving the world
+    with meals on wheels. No… It's a thing; it's like a plan, but with more greatness. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? You hate me; you want to kill me! Well,
+    go on! Kill me! KILL ME! I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
+    Sorry, checking all the water in this area; there's an escaped fish. *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! You hate me; you want to kill me! Well, go on! Kill me! KILL ME! Father Christmas.
+    Santa Claus. Or as I've always known him: Jeff. It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! Aw, you're all Mr. Grumpy Face today. You know when grown-ups tell you 'everything's going to be fine' and you think they're
+    probably lying to make you feel better? Father Christmas. Santa Claus. Or as I've always known him: Jeff. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Father Christmas. Santa Claus. Or as I've always
+    known him: Jeff. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
+  </p>
+</body>
+
+</html>

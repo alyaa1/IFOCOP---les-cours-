@@ -1,0 +1,48 @@
+<!--
+Dans une liste non ordonnée ou ordonnée, on peut modifier l'apparence des li au moyen de la déclaration CSS
+list-style-type.
+-->
+
+<!--
+	1 - Créez un document.
+	2 - Vous y insérez une liste à puce contenant cinq entrées.
+	3 - Dans la troisième entrée, vous insérez une autre liste à puce comprenant trois entrées.
+	4 - Changez le type de puce de cette dernière liste.
+	5 - Masquez la puce de la cinquième entrée de la liste.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      ol{
+        list-style: circle;
+      }
+
+      ol ul{
+        list-style: disc;
+      }
+      #vide{
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <ol>
+      <li>Elément 1</li>
+      <li>Elément 2</li>
+      <li>Elément 3</li>
+        <ul>
+          <li>sous-element 1</li>
+          <li id="vide">sous-element 2</li>
+        </ul>
+      <li>Elément 4</li>
+      <li>Elément 5</li>
+    </ol>
+
+  </body>
+</html>
