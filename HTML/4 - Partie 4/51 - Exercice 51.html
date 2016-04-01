@@ -5,7 +5,7 @@
   _ relative
   _ fixed
   _ statique
-  
+
   La valeur absolute permet de sortir l'élément du flux. On précise ensuite sa position. Ainsi, si l'on souhaite placer un bloc en haut et à gauche, on écrira :
     #bloc{
       position: absolute;
@@ -16,7 +16,157 @@
 -->
 
 <!--
-	Reproduisez la capture d'écran Exercice 51.jpg. Utilisez seulement la propriété position avec la valeur absolute pour le positionnement de la navigation.
+	Reproduisez la capture d'écran Exercice 51.jpg. Utilisez seulement la propriété position avec la valeur absolute
+  pour le positionnement de la navigation.
   Utilisez également cette propriété pour le titre du menu qui doit être contenu dans la balise nav.
   Que remarquez vous lorsque vous placez cet texte ?
 -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    body {
+      background-color: #367e9C;
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .conteneur {
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    .titre {
+      margin-top: 20px;
+      background-color: #1c5169;
+      height: 100px;
+    }
+
+    .titre h1 {
+      text-align: center;
+      font-style: italic;
+      font-size: 2em;
+      line-height: 100px;
+      color: #efa66c
+    }
+
+    nav {
+      position: absolute;
+      left:0px;
+      top: 140px;
+      width: 150px;
+      height: 150px;
+      background-color: #1c5169;
+      vertical-align: top;
+      float: left;
+      border-radius: 0px 10px 10px 0px;
+      padding-top: 20px;
+    }
+
+    .nav_text {
+      font-family: arial;
+      text-align: center;
+      text-transform: uppercase;
+      color: #efa66c
+    }
+
+    .nav_text::after {
+      content: "";
+      display: block;
+      clear: both;
+      vertical-align: top;
+      width: 80%;
+      margin: 5%;
+      border-bottom: 2px solid #efa66c;
+    }
+
+    .nav_text:hover::after{
+      width: 100%;
+
+    }
+
+    .texte {
+      margin-left: 200px;
+      background-color: #f2d9c1;
+
+    }
+
+    #menu{
+      position: absolute;
+      top: 0px;
+      background-color: #efa66c;
+      border-bottom-right-radius: 5px;
+      text-align: center;
+      color:#1c5169;
+      padding: 0px 2px 2px 2px;
+    }
+
+    #end {
+      color: transparent;
+      clear: both;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="titre">
+    <h1>Titre</h1>
+  </div>
+
+  <div class="conteneur">
+
+
+    <nav>
+      <div id = "menu">
+        Menu
+      </div>
+      <div class="nav_text">
+        Accueil
+      </div>
+      <div class="nav_text">
+        Actualité
+      </div>
+      <div class="nav_text">
+        informations
+      </div>
+      <div class="nav_text">
+        contact
+      </div>
+    </nav>
+
+    <div class="contenu">
+
+    </div>
+
+    <div class="texte">
+      Ex turba vero imae sortis et paupertinae in tabernis aliqui pernoctant vinariis, non nulli velariis umbraculorum theatralium latent, quae Campanam imitatus lasciviam Catulus in aedilitate sua suspendit omnium primus; aut pugnaciter aleis certant turpi
+      sono fragosis naribus introrsum reducto spiritu concrepantes; aut quod est studiorum omnium maximum ab ortu lucis ad vesperam sole fatiscunt vel pluviis, per minutias aurigarum equorumque praecipua vel delicta scrutantes. Vbi curarum abiectis ponderibus
+      aliis tamquam nodum et codicem difficillimum Caesarem convellere nisu valido cogitabat, eique deliberanti cum proximis clandestinis conloquiis et nocturnis qua vi, quibusve commentis id fieret, antequam effundendis rebus pertinacius incumberet confidentia,
+      acciri mollioribus scriptis per simulationem tractatus publici nimis urgentis eundem placuerat Gallum, ut auxilio destitutus sine ullo interiret obstaculo. Advenit post multos Scudilo Scutariorum tribunus velamento subagrestis ingenii persuasionis
+      opifex callidus. qui eum adulabili sermone seriis admixto solus omnium proficisci pellexit vultu adsimulato saepius replicando quod flagrantibus votis eum videre frater cuperet patruelis, siquid per inprudentiam gestum est remissurus ut mitis et
+      clemens, participemque eum suae maiestatis adscisceret, futurum laborum quoque socium, quos Arctoae provinciae diu fessae poscebant. Metuentes igitur idem latrones Lycaoniam magna parte campestrem cum se inpares nostris fore congressione stataria
+      documentis frequentibus scirent, tramitibus deviis petivere Pamphyliam diu quidem intactam sed timore populationum et caedium, milite per omnia diffuso propinqua, magnis undique praesidiis conmunitam. Alii summum decus in carruchis solito altioribus
+      et ambitioso vestium cultu ponentes sudant sub ponderibus lacernarum, quas in collis insertas cingulis ipsis adnectunt nimia subtegminum tenuitate perflabiles, expandentes eas crebris agitationibus maximeque sinistra, ut longiores fimbriae tunicaeque
+      perspicue luceant varietate liciorum effigiatae in species animalium multiformes.
+
+
+
+    </div>
+
+    <div id="end">
+      .
+    </div>
+
+  </div>
+</body>
+
+</html>

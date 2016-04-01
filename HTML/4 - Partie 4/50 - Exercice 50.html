@@ -1,7 +1,139 @@
 <!--
-	La propriété float a été la première méthode utilisée pour disposer un bloc sur le côté. L'exemple le plus courant est la présence d'un menu et du contenu de la page côte à côte.
+	La propriété float a été la première méthode utilisée pour disposer un bloc sur le côté.
+  L'exemple le plus courant est la présence d'un menu et du contenu de la page côte à côte.
 -->
 
 <!--
 	Reproduisez la capture d'écran Exercice 50.jpg.
 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    body {
+      background-color: #003c5b;
+      margin: 0:
+    }
+
+    .conteneur {
+      background-color: #c2cfd4;
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    .titre {
+      margin-top: 20px;
+      background-color: #2182b0;
+      */ height: 100px;
+    }
+
+    .titre h1 {
+      font-family: Arial;
+      text-align: center;
+      color: #c2cfd4;
+      font-style: italic;
+      font-size: 1.5em;
+      line-height: 100px;
+    }
+
+    #menu {
+      width: 150px;
+      height: 150px;
+      background-color: #2182b0;
+      vertical-align: top;
+      float: left;
+      border-radius: 0px 10px 10px 0px;
+      padding-top: 20px;
+    }
+
+    .menu_text {
+      font-family: arial;
+      text-align: center;
+      text-transform: uppercase;
+      color: #bccedd
+    }
+
+    .menu_text::after {
+      content: "";
+      display: block;
+      clear: both;
+      vertical-align: top;
+      width: 80%;
+      margin: 5%;
+      border-bottom: 2px solid #bccedd;
+    }
+
+    .menu_text:hover::after{
+      width: 100%;
+
+    }
+
+    .texte {
+      margin-left: 200px;
+    }
+
+    #end {
+      color: transparent;
+      clear: both;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="conteneur">
+
+    <div class="titre">
+      <h1>Titre</h1>
+    </div>
+
+    <div id="menu">
+      <div class="menu_text">
+        Accueil
+      </div>
+      <div class="menu_text">
+        Actualité
+      </div>
+      <div class="menu_text">
+        informations
+      </div>
+      <div class="menu_text">
+        contact
+      </div>
+    </div>
+
+    <div class="contenu">
+
+    </div>
+
+    <div class="texte">
+      Ex turba vero imae sortis et paupertinae in tabernis aliqui pernoctant vinariis, non nulli velariis umbraculorum theatralium latent, quae Campanam imitatus lasciviam Catulus in aedilitate sua suspendit omnium primus; aut pugnaciter aleis certant turpi
+      sono fragosis naribus introrsum reducto spiritu concrepantes; aut quod est studiorum omnium maximum ab ortu lucis ad vesperam sole fatiscunt vel pluviis, per minutias aurigarum equorumque praecipua vel delicta scrutantes. Vbi curarum abiectis ponderibus
+      aliis tamquam nodum et codicem difficillimum Caesarem convellere nisu valido cogitabat, eique deliberanti cum proximis clandestinis conloquiis et nocturnis qua vi, quibusve commentis id fieret, antequam effundendis rebus pertinacius incumberet confidentia,
+      acciri mollioribus scriptis per simulationem tractatus publici nimis urgentis eundem placuerat Gallum, ut auxilio destitutus sine ullo interiret obstaculo. Advenit post multos Scudilo Scutariorum tribunus velamento subagrestis ingenii persuasionis
+      opifex callidus. qui eum adulabili sermone seriis admixto solus omnium proficisci pellexit vultu adsimulato saepius replicando quod flagrantibus votis eum videre frater cuperet patruelis, siquid per inprudentiam gestum est remissurus ut mitis et
+      clemens, participemque eum suae maiestatis adscisceret, futurum laborum quoque socium, quos Arctoae provinciae diu fessae poscebant. Metuentes igitur idem latrones Lycaoniam magna parte campestrem cum se inpares nostris fore congressione stataria
+      documentis frequentibus scirent, tramitibus deviis petivere Pamphyliam diu quidem intactam sed timore populationum et caedium, milite per omnia diffuso propinqua, magnis undique praesidiis conmunitam. Alii summum decus in carruchis solito altioribus
+      et ambitioso vestium cultu ponentes sudant sub ponderibus lacernarum, quas in collis insertas cingulis ipsis adnectunt nimia subtegminum tenuitate perflabiles, expandentes eas crebris agitationibus maximeque sinistra, ut longiores fimbriae tunicaeque
+      perspicue luceant varietate liciorum effigiatae in species animalium multiformes.
+
+
+
+    </div>
+
+    <div id="end">
+      .
+    </div>
+
+  </div>
+</body>
+
+</html>

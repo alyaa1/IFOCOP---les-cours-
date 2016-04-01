@@ -33,7 +33,7 @@ Attention étape essentielle ne laisser pas reposer votre développeur, n’hés
 Mangez un carré de chocolat pour vous réconforter.
 
 ###ÉTAPE 3 :
-Prenez rendez-vous et passez votre futur développeur javascript au grill, jusqu’à ce qu’il soit bien chaud !
+**Prenez rendez-vous et passez votre futur développeur javascript au grill**, jusqu’à ce qu’il soit bien chaud !
 
 ###ÉTAPE 4 :
 Sortez du four et pendant 4 mois, dégustez votre délicieux développeur web crémeux, extrêmement fondant et gourmand...

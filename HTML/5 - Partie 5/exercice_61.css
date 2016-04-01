@@ -1,0 +1,24 @@
+input {
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  left: 100px;
+}
+input:hover {
+  box-shadow: 5px 3px 3px;
+}
+#nom:focus {
+  background: gray;
+  color: white;
+}
+#prenom {
+  transition: background-color 2s, border 3s, transform 1s ease;
+}
+#prenom:focus {
+  background-color: gray;
+  border: 2px dashed black;
+  color: white;
+  transform: translateX(150px);
+  width: 250px;
+}

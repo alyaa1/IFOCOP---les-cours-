@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      li{
+        list-style-type: none;
+        position: relative;
+        width: 200px;
+      }
+      li::before{
+        content:'.';
+        color: blue;
+        display: inline-block;
+        font-size: 3em;
+        margin-right: 10px;
+        position: absolute;
+        left: 0px;
+      }
+
+      li::after{
+        content:'';
+        display: block;
+        background-color: blue;
+        height: 1px;
+      }
+
+      li::after:hover{
+        height: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Texte</li>
+      <li>Texte</li>
+      <li>Texte</li>
+    </ul>
+  </body>
+</html>

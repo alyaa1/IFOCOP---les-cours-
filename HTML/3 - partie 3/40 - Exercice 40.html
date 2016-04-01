@@ -1,8 +1,108 @@
 <!--
-	Lorsque le formulaire comprend de nombreux champs, il est possible de les regrouper en plusieurs ensembles au moyen de la balise fieldset.
+	Lorsque le formulaire comprend de nombreux champs, il est possible de les regrouper
+  en plusieurs ensembles au moyen de la balise fieldset.
 -->
 
 <!--
 	1 - Reprenez le formulaire de l'exercice précédent.
 	2 - Regroupez le contenu en plusieurs ensembles.
 -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Titre</title>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<form action="" type="POST">
+		<fieldset>
+			<legend>
+				Vos coordonnées
+			</legend>
+
+
+
+			<label for="genre">Genre :</label>
+			<select id="genre" name="genre">
+				<option value="monsieur" selected>Monsieur</option>
+				<option value="madame">Madame</option>
+			</select>
+
+
+
+
+			<label>Prénom</label>
+			<input type="text" id="prenom" />
+
+
+			<label>Nom</label>
+			<input type="text" id="nom" />
+
+
+		<p>
+			<label>Voie</label>
+			<input type="text" id="voie" />
+		</p>
+		<p>
+			<label>CodePostal</label>
+			<input type="text" id="CP" />
+		</p>
+
+		<label>Ville</label>
+		<input type="text" id="ville" />
+
+		<p>
+
+			<label>Teléphone</label>
+			<input type="tel" id="tel" />
+		</p>
+		<p>
+			<label for="type_tel">
+				<input type="radio" value="fixe" name="type_tel" id="type_tel">fixe</label>
+			<input type="radio" value="portable" name="type_tel" id="type_tel">portable</label>
+		</p>
+		<label>Email</label>
+		<input type="email" id="mail" />
+		<label>Date de naissance</label>
+		<input type="date" id="date_naissance" />
+		<label>Site Web</label>
+		<input type="url" id="site_web" />
+
+	</fieldset>
+<p>
+
+</p>
+	<fieldset>
+
+
+		<p>
+			<label for="interet">Vos centres d'intérêt</label>
+			<input type="checkbox" name="interet" value="Lectures">Lectures</input>
+			<input type="checkbox" name="interet" value="Cinéma">Cinéma</input>
+			<input type="checkbox" name="interet" value="Sport">Sport</input>
+			<input type="checkbox" name="interet" value="Informatique">Informatique</input>
+		</p>
+
+		<p>
+			<label for="commentaire">Commentaire :</label>
+			<textarea name="commentaire" id="commentaire" cols="25" rows="5"></textarea>
+		</p>
+
+	</fieldset>
+
+		<input type="submit" value="Confirmer" />
+		<input type="reset" value="Recommencer" />
+
+
+	</form>
+</body>
+
+</html>

@@ -1,7 +1,94 @@
 <!--
-	La propriétée float permet de sortir un élément du flox. À l'origine, il est utilisé pour mettre du texte comme lettrine ou une image au sein du texte (l'équivalent d'un habillage d'image en mise en page).
+	La propriétée float permet de sortir un élément du flox.
+
+  À l'origine, il est utilisé pour mettre du texte comme lettrine
+  ou une image au sein du texte (l'équivalent d'un habillage d'image en mise en page).
 -->
 
 <!--
 	Reproduisez la capture d'écran Exercice 48.jpg
 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<style media="screen">
+
+  body{
+    background-color: #003C5B;
+    margin:0;
+  }
+
+  .container{
+    width: 80%;
+    margin:0px auto;
+    background-color: rgba(255,255, 255, 0.5);
+    padding:20px;
+    margin: 0px auto;
+  }
+  .img_left {
+    float: left;
+    width: 50px;
+    height: 50px;
+  }
+
+  .img_right {
+    float: right;
+    width: 50px;
+    height: 50px;
+
+  }
+
+  h1{
+    display: inline-block;
+    background-color: rgba(255,255, 255, 0.5);
+    border-radius: 5px;
+    width: 25%;
+    text-align:center;
+    font-style: italic;
+    color: #8D7168
+    padding-top: 20px; 
+  }
+</style>
+
+<body>
+  <div class="container">
+
+  <h1>Titre</h1>
+
+  <p>
+    <img class="img_left" src="img/phone1.png" />Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn
+    sine spiramento ullo ad usque praetorium traxere praefecti.
+  </p>
+  <p>
+    <img class="img_right" src="img/phone1.png" /> Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn sine
+    spiramento ullo ad usque praetorium traxere praefecti.
+  </p>
+  <p>
+    <img class="img_left" src="img/phone1.png" />
+    <img class="img_left" src="img/phone1.png" />Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn sine
+    spiramento ullo ad usque praetorium traxere praefecti.
+  </p>
+  <p>
+    Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn sine spiramento ullo ad usque praetorium traxere
+    praefecti.
+  </p>
+  <p>
+    <img class="img_left" src="img/phone1.png" /><img class="img_right" src="img/phone1.png" />Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn sine
+    spiramento ullo ad usque praetorium traxere praefecti.
+  </p>
+
+
+
+</div>
+
+
+</body>
+
+</html>

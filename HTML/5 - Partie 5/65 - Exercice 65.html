@@ -8,5 +8,69 @@
 -->
 
 <!--
-	Créez une page contenant un formulaire avec trois input. Avec :before, ajoutez un trait de séparation entre chaque entrée. Avec :after, ajoutez des bulles d'information visibles lorsque l'élément est sélectionné.
+	Créez une page contenant un formulaire avec trois input. Avec :before, ajoutez un trait de séparation entre chaque entrée.
+  Avec :after, ajoutez des bulles d'information visibles lorsque l'élément est sélectionné.
 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+        label::before {
+            content: "";
+            display: block;
+            margin: 5px;
+            border: 1px solid black;
+            width:20%;
+        }
+
+        input::after:focus {
+            content: 'Renseigner les éléments demandés';
+            display: block;
+        }
+
+        span[data-descr] {
+            position: relative;
+            /*cursor: help;*/
+        }
+
+        span[data-descr]:hover::after {
+            content: attr(data-descr);
+            position: absolute;
+            left: 0;
+            top: 24px;
+            min-width: 200px;
+            border: 1px #aaaaaa solid;
+            border-radius: 10px;
+            background-color: #ffffcc;
+            padding: 12px;
+            color: #000000;
+            font-size: 14px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <p>
+            <label for="nom"><span data-descr="Indiquez votre nom ici">Nom</span> </label>
+            <input type="text" name="nom" id="nom" value="" /><span </p>
+    <p>
+      <label for="prenom">Prénom : </label>
+      <input type="text" name="prenom" id="prenom" value="">
+
+    </p>
+    <p>
+      <label for="mail">email : </label>
+      <input type="email" name="mail" id="mail" value="">
+
+    </p>
+    </form>
+  </body>
+</html>

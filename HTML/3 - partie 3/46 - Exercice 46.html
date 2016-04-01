@@ -1,5 +1,6 @@
 <!--
-	La modification dynamique du style consiste à modifier le CSS d'un élément quand l'utilisateur effectue sur celui-ci une action.
+	La modification dynamique du style consiste à modifier le CSS d'un élément quand l'utilisateur effectue
+  sur celui-ci une action.
 	Ainsi, on peut agir au survol de l'élément de la façon suivante
 	h1:hover{
 		color: red;
@@ -12,5 +13,80 @@
 	1 - Créez un document contenant trois paragraphes de 500 caractères minimum chaque.
 	2 - Au survol du premier, la couleur du fond de ce paragraphe change.
 	3 - Au survol du second, une bordure apparait sur celui-ci.
-	4 - Au survol du troisième, ce dernier a une largeur de 50% de la fenêtre et une hauteur de 50px. Attention, le reste du texte doit être masqué !
+	4 - Au survol du troisième, ce dernier a une largeur de 50% de la fenêtre et une hauteur de 50px.
+  Attention, le reste du texte doit être masqué !
 -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #myP1:hover{
+        background-color: blue;
+      }
+
+      #myP2:hover{
+        border: 2px solid
+      }
+
+      #myP3:hover{
+        display: block;
+        height: 50%;
+        width:50%;
+        overflow:hidden;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <p id="myP1">
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+
+
+    </p>
+    <p id="myP2">
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+
+
+    </p>
+
+    <p id="myP3">
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+      Evitandum nihilo est me multa modum non modum narrare necem non me professione non modi quae huius Gallus excedamus scrutabatur nihilo ferociens lenius non refert professione professione singula ut evitandum non refert non ferociens nihilo quod scrutabatur professione narrare professione quod narrare Gallus cadaveribus evitandum nihilo huius ut modum non me professione scrutabatur Gallus non scrutabatur quod multa ut me ut quorum quorum me necem multa huius quod evitandum nihilo ferociens ferociens huius singula Gallus ferociens nihilo refert evitandum quod leo professione pastus pastus quae evitandum huius nihilo necem lenius singula quorum huius evitandum excedamus quae pastus modi refert multa.
+
+
+    </p>
+  </body>
+</html>

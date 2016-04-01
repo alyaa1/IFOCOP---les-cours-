@@ -1,0 +1,45 @@
+body {
+  font-family: arial;
+  background-color: #367e9c;
+  margin:0px;
+}
+h1 {
+  margin:0px;
+  line-height: 100px;
+  font-size: 3em;
+  font-style: italic;
+  color: #d5b694;
+  text-align: center;
+  background-color: #1c5169;
+}
+.conteneur {
+  width: 85%;
+  margin-left: 7.5%;
+  margin-top: 0px;
+}
+nav {
+  background-color: #1c5169;
+  text-align: center;
+}
+nav ul{
+  margin: 0px;
+}
+nav li {
+  display: inline-block;
+  padding-right: 80px;
+  letter-spacing: 1.8px;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #d5b694;
+  list-style-type: none;
+  line-height: 100px;
+}
+article {
+  background-color: #f2d9c1;
+  padding: 10px;
+}
+
+#end{
+  color: transparent;
+  clear: both;
+}
