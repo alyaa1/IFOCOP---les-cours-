@@ -1,0 +1,1 @@
+alert('Fichier externe');

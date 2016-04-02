@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Les fonctions - fin</title>
+  <script type="text/javascript">
+    var fonctionAvecRetour = function(){
+      var calcul = 741 + 845;
+      return calcul;
+    };
+    //Nous exécutons la fonction qui nous retourne un résultat que nous affichons ensuite
+    var retourDeLaFonction = fonctionAvecRetour();
+    alert('Le résultat est ' + retourDeLaFonction);
+
+    //Nous pouvons créer une fonction qui accepte deux arguments en entrée et retourne une valeur
+    var fonctionPlusComplexe = function(nombreUn,nombreDeux){
+      var resultat = (nombreUn + 74) * (nombreDeux - 78);
+      return resultat;
+    };
+    var autreRetour = fonctionPlusComplexe(41,125);
+    alert('Le résultat de la fonction est : ' + autreRetour);
+  </script>
+</head>
+<body>
+  <h1>Les fonctions - fin</h1>
+</body>
+</html>

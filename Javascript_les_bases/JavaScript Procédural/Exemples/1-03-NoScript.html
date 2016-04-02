@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Balise NoScript</title>
+  <style>
+  body{
+    margin: 0;
+  }
+    noscript p{
+      margin: 0;
+      position: fixed;
+      background-color: red;
+      width: 50%; left: 25%; top: 20%; z-index: 4;
+      height: 200px;
+      color: white; font-size: 36px; line-height: 200px; text-align: center;
+    }
+    noscript div{
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(100,100,100,0.6); z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Utilisation de la balise NoScript</h1>
+  <noscript>
+    <div></div>
+    <p>Veuillez activer le JavaScript</p>
+  </noscript>
+</body>
+</html>

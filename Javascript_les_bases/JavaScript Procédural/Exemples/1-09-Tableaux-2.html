@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableaux</title>
+  <script type="text/javascript">
+    var truc = [15,['soleil','lune','uranus'],'autre',[4.6,4.158,256]];
+    alert(truc[1][2]);//affiche uranus
+    //Ajouter un tableau dans un tableau
+    truc[4] = ['autre','divers','chose'];
+    alert(truc[4][0]); //affiche autre
+
+    //Ajouter un tableau dans un tableau qui est dans un tableau
+    truc[4][3] = ['une phrase courte',452];
+    alert(truc[4][3][1]); //affiche 452
+  </script>
+</head>
+<body>
+  <h1>Tableaux plus complexes</h1>
+</body>
+</html>
