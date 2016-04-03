@@ -14,11 +14,25 @@
 					_ Si l'utilisateur saisit un texte, ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre.
 					_ Sinon un message s'affiche dans une b.d.d avec le texte : « Tant pis ! ».
 			*/
+
+			var ouvrirLien = function(){
+				var goGoogle = confirm('Souhaitez-vous aller sur Google ? ');
+				if (goGoogle){
+					open('http://www.google.com','Google','directories=no,menubar=no');
+				}else {
+					var lienPerso = prompt('Ok, alors indiquez l\'URL à ouvrir');
+					if(lienPerso == null){
+						alert('Tant pis !');
+					}else{
+						open(lienPerso);
+					}
+				}
+			}
 		</script>
 	</head>
 	<body>
 		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
+		<p onclick="ouvrirLien();">Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>

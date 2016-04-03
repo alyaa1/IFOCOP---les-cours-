@@ -9,10 +9,10 @@
 			**********************************
 				La fonction open() permet d'ouvrir une nouvelle fenêtre de navigation en y chargeant les ressources référencées.
 
-				La fonction open à besoin de 3 ARGUMENTS : 
+				La fonction open à besoin de 3 ARGUMENTS :
 					_ l'url de la fenêtre à ouvrir
 					_ un identifiant unique pour la fenêtre
-					_ des options. 
+					_ des options.
 				Ces trois arguments sont des chaines de caractères.
 
 				La chaine de caractères des options comporte les options suivantes séparées par des virgules sans espace :
@@ -38,12 +38,17 @@
 				Quand il clique sur le premier paragraphe ouvrez une fenêtre vers Bing.
 				Quand il survole sur le troisième paragraphe ouvrez une fenêtre vers DuckDuckGo.
 			*/
+			var lien = ['http://www.google.com','http://www.bing.com','http://www.DuckDuckGo.com'];
+
+			var ouvreLien = function(arg,rang){
+				open(arg[rang]);
+			}
 		</script>
 	</head>
 	<body>
-		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
-		<p>Deuxième paragraphe</p>
+		<h1 onclick="ouvreLien(lien,0);">Mon nouveau document</h1>
+		<p onclick="ouvreLien(lien, 1);">Premier paragraphe</p>
+		<p onmouseover="ouvreLien(lien,2);">Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>
