@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 34 bis</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				Au chargement de la page, j'affiche une boite de dialogue (B.d.D.) avec un champ de saisie à l'utilisateur.
+				Tant que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D. avec un champ de saisie.
 
-<head>
-    <meta charset="utf-8" />
-    <title>JavaScript : Exercice 34 bis</title>
-    <script type="text/javascript">
-    /*********************************
-    *************EXERCICE*************
-    **********************************
-    Réalisez le programme (algorithme) suivant :
-    Au chargement de la page, j'affiche une boite de dialogue (B.d.D.) avec un champ de saisie à l'utilisateur.
-    Tant que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D. avec un champ de saisie.
+				Après cette première B.d.D, une fonction affiche une seconde boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur.
+				Tant que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D avec un champ de saisie.
 
-    Après cette première B.d.D, une fonction affiche une seconde boite de dialogue (B.d.D) avec un champ de saisie à l'utilisateur.
-    Tant que l'utilisateur clique sur Annuler ou clique OK sans rien saisir, j'affiche une B.d.D avec un champ de saisie.
-
-    Les deux saisies successives sont stockées dans la même variable. Affichez le contenu de cette variable dans une B.d.D.
-    Que se passe-t-il si je fait précéder, la fonction, le nom de la variable par le mot-clef var ? Pourquoi ?
-    */
-    var maFonction = function() {
-        var bdd = '', monTableau = [], compteur = 0;
-            while (compteur < 2) {
-                if(bdd === null || bdd =='') {
-                    bdd = prompt('Veuillez saisir quelque chose');
-                }else{
-                    monTableau[compteur]=bdd;
-                    bdd='';
-                    compteur++;
-                };
+				Les deux saisies successives sont stockées dans la même variable. Affichez le contenu de cette variable dans une B.d.D.
+				Que se passe-t-il si je fait précéder, la fonction, le nom de la variable par le mot-clef var ? Pourquoi ?
+				*/
+				var reponse;
+          var question2 = function(){
+            var stock = '';
+            while (stock == '' || stock == null) {
+              stock = prompt('Saisissez un premier texte');
             }
-            for (var i = 0; i < compteur; i++){
-                alert('Vous avez saisi : '  + monTableau[i]);
-            }
-    };
-
-
-    </script>
-</head>
-
-<body>
-    <h1>Mon nouveau document</h1>
-    <p onclick="maFonction();">Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
-    <noscript>
-        <p>Veuillez activer JavaScript</p>
-    </noscript>
-</body>
-
+            reponse = stock;
+          };
+          var questions = function(){
+            var reponse = '';
+            while (reponse == '' || reponse == null) {
+              reponse = prompt('Saisissez un premier texte');
+          }
+            question2();
+            alert(reponse);
+          };
+		</script>
+	</head>
+	<body onload="questions();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
 </html>

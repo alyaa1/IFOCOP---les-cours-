@@ -17,11 +17,29 @@
 				_ s'il répond vendredi, vous affichez une troisième réponse.
 				_ s'il répond samedi ou dimanche, vous affichez une quatrième réponse.
 			*/
-
+          var jour = function(){
+            var reponse = 8
+            while (reponse < 1 || reponse > 7 || isNaN(reponse)) {
+              reponse = parseInt(parseFloat(prompt('Donnez le jour de la semaine de votre naissance (1 à 7)')));
+            }
+            if (reponse < 5) {
+              if (reponse == 1) {
+                alert('Début de semaine');
+              } else {
+                alert('Milieu de semaine');
+              }
+            } else {
+              if (reponse == 5) {
+                alert('Vendredi');   
+              } else {
+                alert('Week-end');
+              }
+            }
+          };
 
 		</script>
 	</head>
-	<body>
+	<body onload="jour();">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

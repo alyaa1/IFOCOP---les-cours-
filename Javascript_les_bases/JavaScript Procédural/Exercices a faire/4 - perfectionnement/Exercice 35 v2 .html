@@ -31,20 +31,7 @@
         // */
         var mots = [8, 'je me lève', 13, 'je déjeune', 23, 'je vais dormir'];
 
-        var maFonction = function() {
-            var i = 0;
-            return function() {
-                return i++;
-            }
-        }
-        extrait = maFonction();
-        var phrase = '';
-        var longueurTableau = parseInt(mots.length/2);
-        console.log(longueurTableau); 
-        for (var i = 0; i < longueurTableau; i++) {
-            phrase += 'il est ' + mots[extrait()] + 'h ' + mots[extrait()] + '. ';
-        };
-        alert(phrase);
+      
 
     </script>
 </head>

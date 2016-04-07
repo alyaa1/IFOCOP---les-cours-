@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+
+
+  function creerFonctionAjouter(quantite) {
+    function ajouter(nombre) {
+      return nombre + quantite;
+    }
+    return ajouter;
+  }
+
+  var ajouterDeux = creerFonctionAjouter(2);
+  var ajouterCinq = creerFonctionAjouter(5);
+  console.log(ajouterCinq(1));
+
+
+
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -14,6 +14,39 @@
 			**********************************
 				Transformer toutes les boucles des exercices précédents en fonctions récursives.
 			*/
+
+			/***********************************
+			TEST RECURSIVITE POUR FAIRE UN TRI
+			***********************************/
+
+
+		var tableau = [50,40,30,20,100,213]
+		var monTri = function(index){
+			if (tableau[index]){
+				if (tableau[index] > tableau[index+1]){
+					var tampon = tableau[index];
+					tableau[index] = tableau[index+1];
+					tableau[index+1] = tampon;
+					monTri(0);
+				}else{
+					monTri(index+1);
+				}
+			}else{
+				console.log(tableau);
+			}
+			};
+
+		monTri(0);
+
+		// function truc(i) {
+		//    if (i < 0)
+		//       return;
+		//    document.writeln('début :' + i + '<br />');
+		//    truc(i - 1);
+		//    document.writeln('fin :' + i + '<br />');
+		// }
+		// truc(3);
+
 		</script>
 	</head>
 	<body>

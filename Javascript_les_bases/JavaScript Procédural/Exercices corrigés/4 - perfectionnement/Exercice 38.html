@@ -9,7 +9,14 @@
 			**********************************
 				Réécrivez l'exercice précédent en utilisant une boucle for (avec tableau['length']);
 			*/
-
+				function moyenne() {
+			    var somme = 0;
+			    for (var i = 0, j = arguments['length']; i < j; i++) {
+			        somme += arguments[i];
+			    }
+			    return somme / j;
+				}
+				alert('Moyenne : ' + moyenne(2, 3, 4, 5));
 		</script>
 	</head>
 	<body>

@@ -27,6 +27,19 @@
 
 				L'opérateur % permet de calculer le reste des divisions successive du premier opérande par le second (ex: 10%2 donne 0, 10%3 donne 1)
 			*/
+			var bissextile = function(){
+				var annee;
+				while(isNaN(annee)){
+					annee = parseInt(prompt('Saisissez une année !'));
+				};
+				if((annee%4 == 0 && annee%100 != 0) || (annee%400 == 0 )){
+					alert('Cette année est bissextile');
+				}else{
+					alert('Cette année n\'est pas bissextile');
+				};
+			};
+
+			bissextile();
 		</script>
 	</head>
 	<body>

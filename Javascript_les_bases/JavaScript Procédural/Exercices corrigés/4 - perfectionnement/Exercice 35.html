@@ -19,7 +19,6 @@
 
 				La boite de dialogue affiche : Le nombre saisi est 5
 				On appel ce mécanisme une fermeture (closure en anglais). Les fermetures utilisent des variables libres; c'est à dire que la fonction contenue dans la fonction se souvient de l'environnement dans lequel elle est défini.
-
 			/*********************************
 			*************EXERCICE*************
 			**********************************
@@ -30,10 +29,25 @@
 			*/
 			var mots = [8,'je me lève', 13, 'je déjeune', 23, 'je vais dormir'];
 
+			var phrase = function(heure){
+				return function(texte){
+					return 'Il est ' + heure + 'h, ' + texte + '.';
+				}
+			}
+
+			var messages = function(){
+				var compteur = 0;
+				while (mots[compteur]) {
+					var phraseSuite = phrase(mots[compteur]);
+					var phraseComplete = phraseSuite(mots[compteur + 1]);
+					alert(phraseComplete);
+					compteur = compteur + 2;
+				}
+			}
 		</script>
 	</head>
 	<body>
-		<h1>Mon nouveau document</h1>
+		<h1 onclick="messages();">Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>

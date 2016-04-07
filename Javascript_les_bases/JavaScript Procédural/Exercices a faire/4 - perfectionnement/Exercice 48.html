@@ -20,6 +20,23 @@
 
 				Indice : il faut utiliser 2 boucles imbriquées
 			*/
+		var monTri = function(){
+			console.log(arguments);
+			var index = 0;
+
+			while(arguments[index]){
+					while(arguments[index] > arguments[index+1]){
+						var temp;
+						temp = arguments[index]
+						arguments[index] = arguments[index+1];
+						arguments[index+1] = temp;
+						index = 0;
+					}index++;
+				}console.log(arguments);
+			}
+
+			monTri(123,23,4,3,5,6);
+
 		</script>
 	</head>
 	<body>

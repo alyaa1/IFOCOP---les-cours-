@@ -34,9 +34,30 @@
 			**********************************
 				Reprenez l'exercice précédent en remplaçant les instructions if/else par un switch.
 			*/
+                    var jour = function(){
+            var reponse = 8
+            while (reponse < 1 || reponse > 7 || isNaN(reponse)) {
+              reponse = parseInt(parseFloat(prompt('Donnez le jour de la semaine de votre naissance (1 à 7)')));
+            }
+            switch (reponse) {
+              case 1:
+                alert('Début de semaine');
+                break;
+              case 2:
+              case 3:
+              case 4:
+                alert('Milieu de semaine');
+                break;
+              case 5:
+                alert('Vendredi');
+              case 6:
+              case 7:
+                alert('Week-end');
+            }
+          };
 		</script>
 	</head>
-	<body>
+	<body onload="jour();">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

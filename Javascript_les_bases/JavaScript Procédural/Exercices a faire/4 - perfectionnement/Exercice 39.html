@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>JavaScript : Exercice 37</title>
+		<title>JavaScript : Exercice 39</title>
 		<script type="text/javascript">
 			/*********************************
 			*************EXERCICE*************
@@ -11,6 +11,39 @@
 				a) Affichez une boite de dialogue à l'utilisateur lui demande un nombre. Tant qu'il saisit un nombre, demandez-lui un autre nombre nombre. L'ensemble des réponses doit être enregistrée dans une seule variable.
 				b) Si l'utilisateur a saisi au-moins un nombre, faites la moyenne du/des nombre(s) saisi(s) en utilisant un boucle for.
 			*/
+            var ask = function(){
+                var bdd = 7, stock = [], i = 0;
+                while (!isNaN(bdd) && bdd != null && bdd != ''){
+                    bdd = prompt('Tour ' + i + '\n\n saisissez un nombre');
+                    if (!isNaN(bdd) && bdd != null && bdd != ''){
+                        stock[i]=parseInt(bdd);
+                        i++}; 
+                }alert('stock :' + stock);
+                return stock;
+            };
+            
+            
+            var calculMoyenne = function (data){
+                var somme = 0;
+                if (data['length'] > 0 ){
+                    for (var i = 0, c = data['length']; i < c; i++){
+                        somme += data[i];
+                    }return 'la moyenne des nombres saisis est : ' + (somme / c);
+                }else ('Désolé la base est vide');
+            }
+            
+                   
+            var maFonction = function(){
+                var demande = ask();
+                var moyenne = calculMoyenne(demande);
+                return moyenne; 
+                
+                
+            }    
+            
+            alert(maFonction()); 
+
+    
 
 		</script>
 	</head>

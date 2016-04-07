@@ -6,32 +6,48 @@
     <title>JavaScript : Exercice 21</title>
     <script type="text/javascript">
         /*********************************
-        			*************EXERCICE*************
-        			**********************************
-        				Réalisez le programme (algorithme) suivant:
+         *************EXERCICE************* ********************************** Réalisez le programme (algorithme) suivant: Quand l'utilisateur clique sur le premier paragraphe une B.d.D lui demande si je souhaite aller sur Google : _ s'il clique sur oui, ouvrez une fenêtre vers Google. _ sinon, affichez une B.d.D avec un champ de saisie avec le texte : « Veuillez saisir l'url d'un site alternatif». Si l'utilisateur saisi un texte, ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre. _ sinon un message s'affiche dans une b.d.d avec le texte : « Tant pis ! » et vous faites revenir l'utilisateur au premier cas. En bref, il s'agit de créer une boucle qui OBLIGE l'utilisateur à ouvrir une nouvelle fenêtre vers Google ou un site alternatif de son choix. */
 
-        				Quand l'utilisateur clique sur le premier paragraphe une B.d.D lui demande si je souhaite aller sur Google :
-        				_ s'il clique sur oui, ouvrez une fenêtre vers Google.
-        				_ sinon, affichez une B.d.D avec un champ de saisie avec le texte : « Veuillez saisir l'url d'un site alternatif». Si l'utilisateur saisi un texte, ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre.
-        				_ sinon un message s'affiche dans une b.d.d avec le texte : « Tant pis ! » et vous faites revenir l'utilisateur au premier cas.
+        /*
+                var ouvrirLien = function() {
+                    var goGoogle = confirm('Souhaitez-vous aller sur Google ? ');
+                    if (goGoogle) {
+                        open('http://www.google.com', 'Google', 'directories=no,menubar=no');
+                    } else {
+                        var lienPerso = prompt('Ok, alors indiquez l\'URL à ouvrir');
+                        if (lienPerso == null) {
+                            alert('Tant pis !');
+                        } else {
+                            open(lienPerso);
+                        }
+                    }
+                }
+        */
 
-        				En bref, il s'agit de créer une boucle qui OBLIGE l'utilisateur à ouvrir une nouvelle fenêtre vers Google ou un site alternatif de son choix.
-        			*/
-
-        var ouvrirLien = function() {
-            var goGoogle = confirm('Souhaitez-vous aller sur Google ? ');
-            if (goGoogle) {
-                open('http://www.google.com', 'Google', 'directories=no,menubar=no');
-            } else {
-                var lienPerso = prompt('Ok, alors indiquez l\'URL à ouvrir');
-                if (lienPerso == null) {
-                    alert('Tant pis !');
+        var ouvrirLien = function () {
+            bdd = true;
+            liens = [];
+            while (bdd) {
+                bdd = confirm('Souhaitez-vous allez sur Google ? ');
+                if (bdd == true) {
+                    liens[0] = 'google';
+                    bdd = false;
                 } else {
-                    open(lienPerso);
+                    bdd = prompt('Sur quel site voulez-vous allez ?');
+                    if (bdd) {
+                        liens[0] = bdd;
+                        bdd = false;
+                    } else {
+                        alert('Tantpis');
+                        bdd = true;
+                    }
                 }
             }
+            open('http://' + liens[0] + '.com');
+
         }
 
+        ouvrirLien();
     </script>
 </head>
 

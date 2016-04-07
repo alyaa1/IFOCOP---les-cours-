@@ -27,6 +27,31 @@
 
 				L'opérateur % permet de calculer le reste des divisions successive du premier opérande par le second (ex: 10%2 donne 0, 10%3 donne 1)
 			*/
+
+var isBissextile = function(annee){
+	var divisiblePar = function(diviseur){
+		reste = annee % diviseur;
+			if (reste != 0){
+				return false;
+			};
+		};
+		var divisiblepar4 = divisiblePar(4);
+		var divisiblepar100 = divisiblePar(100);
+		var divisiblepar400 = divisiblePar(400);
+
+
+		if (divisiblepar4 != false && divisiblepar100 == false || divisiblepar400 != false){
+			return annee + ' est bissextile';
+		}else{
+			return annee + ' n\'est pas bissextile';
+		}
+	};
+
+
+
+	console.log(isBissextile(2016));
+
+
 		</script>
 	</head>
 	<body>

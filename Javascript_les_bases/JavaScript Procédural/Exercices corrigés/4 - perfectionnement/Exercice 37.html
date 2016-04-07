@@ -24,11 +24,24 @@
 				Créez une fonction acceptant un nombre variable d'arguments en entrée. Cette fonction calcule la moyenne des valeurs passées en entrée au moyen d'une boucle while et retourne cette valeur.
 				Affichez dans une boite de dialogue la moyenne d'au-moins quatre nombre entiers.
 			*/
-
+			var moyenne = function(){
+				//Nous prenons en compte le manque d'argument
+				if (arguments[1]) {
+					var indice = 0;
+					var total = 0;
+					while (arguments[indice]) {
+						total += arguments[indice];
+						indice++;
+					}
+					alert(total / indice);
+				} else {
+					alert('Il manque des arguments.')
+				}
+			};
 		</script>
 	</head>
 	<body>
-		<h1>Mon nouveau document</h1>
+		<h1 onclick="moyenne(12,51,85,10);">Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>

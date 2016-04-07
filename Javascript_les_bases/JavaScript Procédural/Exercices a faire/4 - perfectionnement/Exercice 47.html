@@ -13,6 +13,28 @@
 
 				Exemple : pour 101, les digits sont 1, 0, 1, il y a donc 3 digits.
 			*/
+
+			var maFonction = function(nb){
+					console.log(nb);
+					var digits = [];
+					var index = 0;
+					var nbAManipuler = nb;
+					var phrase;
+					var c = digits['length'];
+
+
+//envoyer les infos  / les stocker dans un tableau
+					while (nbAManipuler  != 0 ){
+								var reste = nbAManipuler % 10;
+								console.log(reste);
+								digits[index] = reste;
+								var nbAManipuler = (nbAManipuler-reste) / 10;
+								index++
+							}
+							console.log(digits);
+				}
+
+					maFonction(1000);
 		</script>
 	</head>
 	<body>

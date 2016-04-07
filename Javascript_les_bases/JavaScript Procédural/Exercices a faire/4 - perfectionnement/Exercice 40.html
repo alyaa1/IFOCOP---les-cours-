@@ -33,11 +33,24 @@
 			** 1 **
 				Affichez un message dans une B.d.D au bout de 5 sec.
 			*/
+               var toto = window.setTimeout(function (){
+                   alert('Me voici me voilà!')
+               },5000);
+
+
 
 			/*
 			** 2 **
 				Que fait la fonction setInterval() ? Pour ce faire, testez la fonction en adaptant la fonction précédente.
 			*/
+//                var toto = setInterval(function (){
+//                    alert('Me voici me voilà!')
+//                },000);
+
+//                var intervalID;
+//                intervalID = window.setInterval(function (){
+//                    alert('J\'aime me répéter !')
+//                },30000);
 
 			/*
 			** 3 **
@@ -45,12 +58,25 @@
 				Quand l'utilisateur clique sur un autre paragraphe, arrêtez l'apparition de la B.d.D au bout de 5 sec.
 			*/
 
+            var intervalID;
+            maFonction = function(){
+                intervalID = setInterval(bdd, 3000);
+            }
+
+            bdd = function(){
+                alert('Vous avez cliqué sur le paragraphe 1');
+            }
+
+            stop = function(){
+                clearInterval(intervalID);
+            }
+
 		</script>
 	</head>
 	<body>
 		<h1 >Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
-		<p>Deuxième paragraphe</p>
+		<p onclick="maFonction();">Premier paragraphe </p>
+		<p onclick="stop();">Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>

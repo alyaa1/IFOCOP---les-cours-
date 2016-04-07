@@ -22,7 +22,57 @@
 
 				Utilisez une boucle for, un bloc if/else, les fonctions confirm() et alert().
 			*/
+			var nombres = [41,51,98,2];
 
+			v1 :
+			/*var additioner = function(total,valeur){
+				return total + valeur;
+			}
+			var multiplier = function(total,valeur){
+				return total * valeur;
+			}
+
+			var boucle = function(){
+				var choix = confirm('Addition (OK) ou multiplication (annuler)');
+				var total = 0;
+				if (!choix) {
+					total++;
+				}
+				for (var i=0;i<4;i++) {
+					if (choix) {
+						total = additioner(total,nombres[i]);
+					} else {
+						total = multiplier(total,nombres[i]);
+					}
+				}
+				alert(total);
+			};*/
+
+			v2:
+			var additioner = function(tableau){
+				var total = 0;
+				for (var i=0;i < tableau['length'];i++) {
+					total += tableau[i];
+				}
+				return total;
+			}
+			var multiplier = function(tableau){
+				var total = 1;
+				for (var i=0;i < tableau['length'];i++) {
+					total *= tableau[i];
+				}
+				return total;
+			}
+			var boucle = function(){
+				var choix = confirm('Addition (OK) ou multiplication (annuler)');
+				var resultat;
+				if (choix) {
+					resultat = additioner(nombres);
+				} else {
+					resultat = multiplier(nombres);
+				}
+				alert(resultat);
+			};
 			/*
 			** 2 **
 				On peut connaître le nombre d'entrée d'un tableau de la façon suivante :
@@ -33,7 +83,7 @@
 
 		</script>
 	</head>
-	<body>
+	<body onload="boucle();">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

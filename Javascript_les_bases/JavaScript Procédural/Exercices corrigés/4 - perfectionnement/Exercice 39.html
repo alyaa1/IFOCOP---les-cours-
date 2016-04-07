@@ -12,6 +12,27 @@
 				b) Si l'utilisateur a saisi au-moins un nombre, faites la moyenne du/des nombre(s) saisi(s) en utilisant un boucle for.
 			*/
 
+			var reponse = true;
+			var value = [];
+			var i = 0;
+			while(reponse = parseFloat(prompt('Une nombre'))){
+			  value[i] = reponse;
+			  i++;
+			}
+
+			function moyenne(value) {
+			    var somme = 0;
+			    lengthTab = value['length'];
+			    for (var i = 0; i < lengthTab; i++) {
+			        somme += value[i];
+			    }
+			    return somme / lengthTab;
+			}
+			if(value[0]){
+			  var t = moyenne(value);
+			  alert(t);
+			}
+
 		</script>
 	</head>
 	<body>

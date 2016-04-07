@@ -11,12 +11,27 @@
 
 				Un « digit » est un des chiffres qui composent le nombre.
 
-				Exemple : pour 101, les digits sont 1, 0, 1, il y a donc 3 digits.
+				Exemple : pour 101, les digits sont 1, 0, 1, il y a donc 3 digits.	
 			*/
+			var digit = function (){
+				var nombre = '';
+				while(isNaN(nombre) || nombre==''){
+					nombre = prompt('Veuillez saisir un nombre');
+				}
+				var digit=1;
+				for(i=10; nombre > i; i = i*10 ){
+					digit++;
+				}
+				var message = 'Le nombre ' + nombre + ' compte ' + digit + ' digit';
+				if(digit > 1){
+					message = message + 's';
+				}
+				alert(message + '.');	
+			};
 		</script>
 	</head>
 	<body>
-		<h1>Mon nouveau document</h1>
+		<h1 onclick="digit();">Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>

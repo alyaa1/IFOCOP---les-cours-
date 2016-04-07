@@ -18,10 +18,42 @@
 				_ s'il répond samedi ou dimanche, vous affichez une quatrième réponse.
 			*/
 
+		// var testInput(input){
+		// 	if (isNaN(input) || input == ' ' || input == null){
+		//
+		// 	}else{
+		// 		return input
+		// 	}
+		// }
 
+
+
+
+		var maFonction = function(){
+		var jourSemaine = parseInt(prompt('Lundi étant égal à 1 et dimanche étant égal à 7 \n\n Quel jour de la semaine êtes-vous né ? '));
+
+		switch (jourSemaine) {
+			case 1:
+			case 2:
+				alert('vous êtes né en début de semaine');
+				break;
+			case 3:
+			case 4:
+			case 5:
+				alert('vous êtes né en milieu de semaine');
+				break;
+
+			case 6:
+			case 7:
+				alert('vous êtes né un week-end')
+			default:
+				alert('il faut entrer un nombre entre 1 et 7');
+
+			}
+	}
 		</script>
 	</head>
-	<body>
+	<body onload="maFonction();">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

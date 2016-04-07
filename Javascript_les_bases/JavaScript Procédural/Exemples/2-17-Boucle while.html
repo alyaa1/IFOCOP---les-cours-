@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boucle while</title>
+  <script type="text/javascript">
+    //exemple un
+    var reponse = true;
+    while (reponse) {
+      alert('Un message');
+      reponse = confirm('Voulez-vous continuer ?');
+    }
+    alert('Fin');
+
+    //exemple deux
+    var age = 10;
+    while (age < 18) {
+      age = prompt('Votre age ?');
+    }
+    alert('Vous pouvez entrer');
+  </script>
+</head>
+<body>
+  <h1>Boucle while</h1>
+  <p>
+      while (test) {<br>
+        //Du code s'exécute tant que le test est vrai<br>
+        //Il faut qu'il y ait un élément modificateur dans la boucle pour en sortir<br>
+      }<br>
+  </p>
+</body>
+</html>

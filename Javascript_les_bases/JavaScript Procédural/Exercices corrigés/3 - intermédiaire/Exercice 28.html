@@ -21,12 +21,11 @@ var maFonction = function(){
     while(bdd != null){
         bdd = prompt('Souhaitez-vous saisir quelque chose ? ');
         if (bdd == null){
-            alert ('vous avez cliqué sur annuler')
-            }else if (bdd == ''){
+        }else if (bdd == ''){
                 alert('Vous devez saisir quelque chose ou cliquer sur Annuler');
             }else{
                 monTableau[compteur] = bdd;
-                compteur++
+                compteur++;
             }
         }
         for (var i = 0; i < compteur; i++){
