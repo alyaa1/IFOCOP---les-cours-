@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boucle for</title>
+  <script type="text/javascript">
+    var tableau = ['un','deux','trois'];
+    var compteur = 0;
+    while (compteur < 3) {
+      alert(tableau[compteur]);
+      compteur = compteur + 1;
+    }
+
+    for (var i = 0;i < 3;i = i + 1) {
+      alert(tableau[i]);
+    }
+
+    for (var i=0;i<3;i++) {
+      alert(tableau[i]);
+    }
+
+    //Pour les tableaux, on peut faire le test suivant :
+    for (var i=0;tableau[i];i++) {
+      alert(tableau[i]);
+    }
+  </script>
+</head>
+<body>
+  <h1>Boucle for</h1>
+</body>
+</html>

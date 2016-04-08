@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 28</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Dans l'exercice précédent, le nombre de saisies de l'utilisateur est écrit dans le code.
+
+				Reprenez le code de l'exercice précédent. Après chaque saisie, demandez à l'utilisateur s'il souhaite faire une nouvelle saisie.
+				Quand il répond par la négative, affichez successivement toutes ses saisies dans des B.d.D.
+
+				Utilisez l'attribut d'évènement onload, la fonction prompt(), une boucle for, des boucles while et la fonction alert().
+			*/
+			var ajoutsTableau = function(){
+				var tableauReponses = [];
+				var i = 0;
+				var choix = true;
+				while (choix) {
+					var reponse = null;
+					while (!isNaN(reponse)) {
+						reponse = prompt('Texte ' + (i + 1));
+					}
+					tableauReponses[i] = reponse;
+					i++;
+					choix = confirm('Voulez-vous continuer ?');
+				}
+				for (var i=0;tableauReponses[i];i++) {
+					alert(tableauReponses[i]);
+				}
+			};
+		</script>
+	</head>
+	<body onload="ajoutsTableau();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

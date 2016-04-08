@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeudi 7 avril</title>
+  <script>
+    //1 Demande à  l'utilisateur le nombre de question(s)
+    //2 On lui pose le nombre de question(s) qu'il a choisi : il doit donner des nombres et on stocke dans un tableau
+    //3 On parcoure le tableau pour indiquer à chaque valeur si elle est paire ou impaire
+    //4 Afficher le contenu du tableau
+    var demanderUnNombre = function(texte){
+      var nombre = 'd';
+      while (isNaN(nombre)) {
+        nombre = parseFloat(prompt(texte));
+      }
+      return nombre;
+    };
+
+    var pairOuImpair = function(tableauDesReponses){
+      for (var i=0;tableauDesReponses[i];i++) {
+        var texte;
+        if (tableauDesReponses[i] % 2) {
+          texte = ' est impair';
+        } else {
+          texte = ' est pair';
+        }
+        tableauDesReponses[i] = tableauDesReponses[i] + texte;
+      }
+      return tableauDesReponses;
+    }
+
+    var questions = function(){
+      var nombreDeQuestions = 52;
+      while (nombreDeQuestions < 1 || nombreDeQuestions > 50) {
+        nombreDeQuestions = demanderUnNombre('Combien voulez-vous de question(s) (entre 1 et 49)');
+      };
+      var reponses = [];
+      for (var i=0;i<nombreDeQuestions;i++) {
+        reponses[i] = demanderUnNombre('Donnez le nombre ' + (i + 1));
+      }
+      reponses = pairOuImpair(reponses);
+      for (var i=0;reponses[i];i++) {
+        alert(reponses[i]);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 onclick="questions();">Jeudi 7 avril</h1>
+</body>
+</html>
