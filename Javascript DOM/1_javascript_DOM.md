@@ -175,3 +175,39 @@ var voiture4 = new monUsine();
 var voiture5 = new monUsine();
 var voiture6 = new monUsine();
 var voiture7 = new monUsine();
+```
+
+
+
+## Autre technique de prototypage
+
+On crée d'abord un constructeur  
+```
+var ConstructeurDeMarcelDurand = function(){
+  this.prenom = 'Marcel';
+  this.nom = 'Durand';
+  this.age = 89;
+  this.yeux = 'gris';
+};
+
+```
+
+Puis un seconde
+
+```
+var ConstructeurDePapa = function(pr, a){
+  this.age = a;
+  this.prenom = pr;
+}
+```
+
+Enfin on utilise le 1er constructeur comme prototype pour le second
+
+`ConstructeurDePapa.prototype = new ConstructeurDeMarcelDurand();`
+
+De cette façon, les objets crées récupèrent les propriétés et méthode des 2 constructeurs
+
+```
+var papa1 = new ConstructeurDePapa('Marc', 43);
+var papa2 = new ConstructeurDePapa('Raoul', 36);
+```
