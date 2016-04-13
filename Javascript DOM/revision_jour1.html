@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Revision Javascript Objet</title>
+    <script type="text/javascript">
+    //déclarer un objet
+    var unObjet = {}; //notation JSON
+
+    var unAutreObjet = {
+      ici: 45,
+      la: true,
+      ailleurs: function(){},
+      loin: 'hello'
+    };
+
+    //pour accéder aux informations stockées dans l'objet
+
+    unAutreObjet.ailleurs; //contient function(){}
+    unAutreObjet.ailleurs(); //execute function(){}
+
+    //ou
+    unAutreObjet['ailleurs'];
+    unAutreObjet['ailleurs']();
+
+    var objet = {};
+    var compteur = 1;
+
+    while(compteur <= 10){
+      objet['propriete'] + compteur = compteur * 10;
+    }
+
+    //Les tableaux
+
+    var objetParticulier = {
+      0: 99,
+      1: 'hello'
+    };
+
+    var autreObjetParticuler = [99, 'hello'];
+
+    autreObjetParticuler.choucroute['Grand Est'];
+
+    //parcourir un objet
+    // for ... in
+
+    for (propriete in unAutreObjet){
+      autreObjetParticuler[propriete];
+    }
+
+
+    // le Prototypage
+
+    //pour créer un ancêtre pour un objet
+
+    var louisXV = {
+      decapite: false,
+      prenom: 'Louis',
+      nom: 'de Bourbon',
+      numero: 15
+    };
+
+    var louisXVI = Object.create(louisXV);
+
+    louisXVI.numero = 16;
+    louisXVI.decapite = true;
+
+
+    //Les fonctions constructeur
+    //utile quand on sait qu'on va recréer plusieur fois des objets
+
+    var maisonKaufmanBroad = function(){
+      this.superficie = 120;
+      this.nombreDePieces = 6;
+      this.etage = {
+        rezDeChaussee: ['entrée','toilettes', 'salon', 'cuisine'],
+        etage: ['chambre 1', 'chambre 2', 'salle d\'eau']
+      };
+      this.sonne = function(){
+        alert('Dring');
+      };
+    };
+    //instances de la fonction constructeur
+    var laMaisonDesMartins = new maisonKaufmanBroad();
+    var laMaisonDesDurands = new maisonKaufmanBroad();
+    var laMaisonDesDuponts = new maisonKaufmanBroad();
+
+
+    //Autre technique de Prototypage
+
+    var grandPere = {
+      prenom: 'Marcel',
+      nom: 'Durand',
+      age: 89,
+      yeux: 'gris'
+    }
+
+    var ContructeurDePapa = function (pr,a){
+      this.prenom = pr;
+      this.age = a;
+    }
+
+
+
+    </script>
+  </head>
+  <body>
+
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <script>
+  //constructeur simple
+  var chaineDeMontageDeVoitures = function(){
+    this.couleur = 'Blanche';
+    this.marque = 'Rono' ;
+    this.modele = 'R5';
+    this.chevaux = 45;
+    this.roule = function(){
+      alert('Vroooom !');
+    };
+  };
+
+  //constructeur avec des arguments
+  var chaineDeMontageDeVoitures2 = function(arguments){
+    this.couleur = arguments || 'Blanche';
+    this.marque = 'Rono' ;
+    this.modele = 'R5';
+    this.chevaux = 45;
+    this.roule = function(){
+      alert('Vroooom !');
+    };
+    this.quelleEstMaCouleur = function(){
+      alert(this.couleur);
+    }
+  };
+
+
+    var voiture1 = new chaineDeMontageDeVoitures2();
+    voiture1.quelleEstMaCouleur();
+
+    var voiture2 = new chaineDeMontageDeVoitures2();
+    var voiture3 = new chaineDeMontageDeVoitures2();
+
+
+  </script>
+  <body>
+
+<h2>Fonctions constructeur</h2>
+
+    <script>
+    //constructeur simple
+    var chaineDeMontageDeVoitures = function(){
+      this.couleur = 'Blanche';
+      this.marque = 'Rono' ;
+      this.modele = 'R5';
+      this.chevaux = 45;
+      this.roule = function(){
+        alert('Vroooom !');
+      };
+    };
+
+    //constructeur avec des arguments
+    var chaineDeMontageDeVoitures2 = function(arguments){
+      this.couleur = arguments || 'Blanche';
+      this.marque = 'Rono' ;
+      this.modele = 'R5';
+      this.chevaux = 45;
+      this.roule = function(){
+        alert('Vroooom !');
+      };
+      this.quelleEstMaCouleur = function(){
+        alert(this.couleur);
+      }
+    };
+
+
+      var voiture1 : new chaineDeMontageDeVoitures2();
+      voiture1.quelleEstMaCouleur();
+
+      var voiture2 : new chaineDeMontageDeVoitures2();
+      var voiture3 : new chaineDeMontageDeVoitures2();
+
+
+    </script>
+  </body>
+</html>
