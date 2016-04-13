@@ -211,3 +211,4 @@ De cette façon, les objets crées récupèrent les propriétés et méthode des
 var papa1 = new ConstructeurDePapa('Marc', 43);
 var papa2 = new ConstructeurDePapa('Raoul', 36);
 ```
+ppr

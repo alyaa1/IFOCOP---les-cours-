@@ -16,8 +16,24 @@
         - Le nombre de bonjour est un nombre (de base on le fixera à 0)
         - Dire bonjour est une fonction.
       */
-      
-      
+      var monRobot ={
+        NdeSerie : 123,
+        NdeModel : 5,
+        nom : 'Astro',
+        couleur : 'rouge',
+        matiere : 'adamantium'
+        DdeGarantie : '12 mois',
+        nbBonjour : 10;
+        concatenation: function() {
+          return this.NdeSerie + this.NdeModel;
+      };
+
+      direBonjour:function() {
+        alert('Bonjour humain!' + this.concatenation());
+        this.nbBonjour++;
+      }
+      }
+
       /*
         2. Exécutez la méthode qui permet au robot de dire bonjour. Elle doit entraîner l'affichage d'une boite de dialogue avec le texte 'Bonjour humain !' écrit dedans.
       */
@@ -25,15 +41,15 @@
       /*
         4. Modifiez la méthode dire bonjour pour que le robot incrémente le nombre de bonjour de 1 à chaque fois qu'on exécute la méthode dire bonjour. Vous pouvez utiliser le mot clé this pour accéder à la propriété nombre de bonjour lorsque vous programmez dans la méthode.
       */
-      
+
       /*
         5. Exécutez 3 fois de suite la méthode dire bonjour et vérifiez dans l'onglet DOM de Firebug (ou d'un autre debugger) que la propriété nombre de bonjour de votre robot à bien été modifiée en conséquence.
-      */ 
-      
+      */
+
       /*
         6. Modifiez la méthode dire bonjour pour que le robot affiche une boite de dialogue avec le texte 'Bonjour humain ! Je m\'appelle X' ou X est un mot constitué de la concaténation du modèle et du numéro de série du robot. Vous devez utiliser le mot clé this pour accéder à ses propriétés lorsque vous programmez dans la méthode.
       */
-      
+
       /*
         7. Exécutez la méthode dire bonjour.
       */
