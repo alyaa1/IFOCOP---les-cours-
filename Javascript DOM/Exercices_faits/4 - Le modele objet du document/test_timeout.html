@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+
+    </script>
+  </head>
+  <body>
+      <h1 id="test">Je suis le titre</h1>
+
+      <script>
+      'use strict';
+
+        // mer variables
+        var elementOpacity = parseFloat( document.getElementsByTagName('h1')[0].style.opacity);
+
+
+        timerDecrease();
+
+
+        function timerDecrease() {
+          if (isNaN(elementOpacity)){
+            setOpacity();
+          }if(elementOpacity >= 0){
+            window.setTimeout(function(){
+            decreaseOpacity();},100);
+          }if (elementOpacity <=0){
+            timerIncrease();
+          }
+        };
+
+        function timerIncrease(){
+          if(elementOpacity <= 1){
+            window.setTimeout(function(){
+            increaseOpacity();},100);
+          }else{
+            timerDecrease();
+          }
+        }
+
+          function setOpacity(){
+            elementOpacity = 1;
+            attribueOpacity();
+            timerDecrease();
+          };
+
+          function decreaseOpacity() {
+              elementOpacity -= 0.05;
+              attribueOpacity();
+              timerDecrease();
+          };
+
+          function increaseOpacity() {
+              elementOpacity += 0.05;
+              attribueOpacity();
+              timerIncrease();
+            };
+
+
+          function attribueOpacity(){
+            document.getElementsByTagName('h1')[0].style.opacity = elementOpacity;
+          };
+
+
+
+
+      </script>
+    </body>
+</html>

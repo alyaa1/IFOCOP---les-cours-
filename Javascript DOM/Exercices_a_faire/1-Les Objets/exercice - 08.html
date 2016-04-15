@@ -8,19 +8,29 @@
       /*
         1. Créez 1 objet JSON qui représente une maison. Cet objet contient une propriété adresse qui contient l'adresse de la maison et une propriété chambre qui ne contient rien (null)
       */
-      
+      var maison = {
+        adresse : 26 rue des rosier,
+        chambre : null,
+      }
+
       /*
         2. Créez 1 objet JSON qui représente une chambre. Cet objet contient une propriété lit qui contient la chaîne de caractère matelas et une méthode quelEstMonAdresse qui ne contient pas d'instructions pour l'instant.
       */
-      
+      var chambre = {
+        lit : 'matelas',
+        quelEstMonAdresse : function () {
+
+        }
+      }
+
       /*
         3. Mettez la référence à l'objet JSON qui représente la chambre dans la propriété chambre de l'objet JSON qui représente la maison.
-      */
-      
+      */maison.chambre = chambre;
+
       /*
         4. Affichez dans une boite de dialogue le contenu de la propriété lit de l'objet représentant la chambre en partant de l'objet représentant la maison.
       */
-      
+      alert(maison.chambre.lit);
       /*
         5. Je souhaite exécuter la méthode quelEstMonAdresse de l'objet représentant la chambre pour afficher l'adresse de la maison contenu dans la propriété adresse de l'objet représentant la maison. En d'autres termes, comment puis-je faire pour accéder à la propriété de la maison (objet parent) à partir d'un méthode de la chambre (objet enfant) ?
         - Vous savez que vos objets sont uniques en mémoire. Vous ne manipulez que des références.

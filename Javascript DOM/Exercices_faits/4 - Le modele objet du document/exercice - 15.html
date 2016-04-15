@@ -2,15 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 13</title>
+    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 15</title>
     <script>
       //Énoncé :
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
+
+        On peut se passer des attributs d'évènements en HTML pour gérer les évènements exclusivement à partir du modèle objet du document. On a la possibilité d'affecter des fonctions aux propriétés qui correspondent aux attributs d'événements dans les objets du DOM. Ces fonctions seront exécutées par le navigateur Internet en réaction aux événements.
+
+        Plusieurs éléments HTML de ce document Web portent des attributs d'évènements. Ces attributs d'évènement vont être lus et chargés en mémoire par le navigateur dans le DOM. Ainsi, lorsque les évènements surviendront, le navigateur Internet exécutera les instructions associées.
       */
 
       /*
-        1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier l'opacité du titre.
+        1. Vous devez gérer tous ces évènement à partir du DOM. L'évènement onload par exemple est une méthode (fonction dans une propriété) de l'objet window. En revanche, les autres évènements sont des méthodes des objets correspondant aux éléments HTML. Supprimez les attributs d'évènements du document Web et faites en sorte de définir les instructions qui doivent être exécutées en réaction à ces évènements directement en JavaScript en renseignant correctement le DOM.
       */
     </script>
   </head>
@@ -37,28 +41,11 @@
         <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
+      <form method="http://www.google.com" action="GET">
+        <input name="q" type="text" value="" />
+      </form>
     </div>
-    <script type="text/javascript">
-
-    monTitre = document.getElementsByTagName('h1')[0].style.opacity;
-    console.log(monTitre);
-
-    // var changeOpacite = function(arg){
-    //     if (arg){
-    //       arg = 0;
-    //       // arg += 0.01;
-    //       // console.log(arg);
-    //
-    //       // var timeOutId = document.setTimeout(function(){
-    //       //      changeOpacite(arg);
-    //       // },1000);
-    //     }else {
-    //
-    //     };
-    //   };
-    //
-    // changeOpacite(monTitre);
-
+    <script type="text/javascript" src="exercice15.js">
 
     </script>
   </body>
