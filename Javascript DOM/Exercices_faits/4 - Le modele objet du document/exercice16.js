@@ -1,84 +1,40 @@
 'use strict';
 
-function setDefaultMargin(){
-  var marginLeft = document.getElementById('contenu').style.marginLeft = -260;
-  return marginLeft;
-};
+var lapin = document.getElementById('contenu');
+var currentFrame = 0;
+var sprites = [];//on crée à tableau avec les positions top et left de chaque sprite
 
+/******************************************
+Génère le tableau de sprite avec les
+arguments spritePerRow et rows
+******************************************/
 
-function getMarginLeft(){
-  var elementMarginLeft = document.getElementById('contenu').style.marginLeft;
-  return elementMarginLeft
-};
-
-function moveImgRight() {
-  var marginLeft = getMarginLeft()
-  if (!isNaN(marginLeft)){
-    marginLeft = setDefaultMargin() + 'px';
-  }
-  setMarginLeft(marginLeft);
-};
-
-
-function moveImgLeft() {};
-
-
-
-function setMarginLeft(arg) {
-    document.getElementById('contenu').style.marginLeft = arg;
-}
-
-
-
-/****************************************
-
-1. Constructeur
-
-    -> parametre
-      -> hauteur
-      -> largeur
-      -> nb de rangs
-      -> nb de colones rang 1
-      -> nb de colones dernier rang
-      ->
-*******************************************/
-
-    var monImage = document.getElementById('contenu');
-    var monImagePosition = Number(document.getElementById('contenu').style.left);
-    console.log(monImagePosition);
-
-    var ConstructeurDeSprites = function() {
-      this.createFrames = function (hauteur, largeur, nbSprites){
-        var l = largeur;
-        console.log(largeur)
-        for (var i = 0; i <= nbSprites; i++) {
-          this['frame' + i] = l*i;
-          };
-        };
-      this.imagePosition = Number(document.getElementById('contenu').style.left);
-      };
-
-
-    var lapin = new ConstructeurDeSprites();
-    lapin.createFrames(100,-130,5);
-
-
-    for (var i = 0; lapin.['frame'+i]; i++)
-    lapin.imagePosition = lapin.frame1;
-    console.log(lapin.imagePosition);
-
-
-
-
-
-
-
-
-    var largeur = function() {
-      var i = 0;
-      return function() {
-        return i -= 130;
-      };
+var spriteSheet = function(col,rows){
+  var nbFrames = col * rows;
+  while(sprites.length <= nbFrames){
+    for (var sprite = 0; sprite < nbFrames; sprite++){
+      var positionLeft = -130 * (sprite%col);
+      var positionTop = -155 * Math.floor(sprite/col);
+      sprites.push([positionLeft,positionTop]);
     };
+    return sprites;
+  };
+};
 
-    var  g = largeur();
+function moveSprite(sprite,sprites,compteur){
+  var i = g();
+      sprite.style.left = sprites[i][0] + 'px';
+      sprite.style.top = sprites[i][1] + 'px';
+  };
+
+
+var compteur = function(){
+  var i = 0;
+  return function(){
+    return i++;
+  };
+};
+
+var g = compteur();
+
+//il faudrait faire une closure pour faire évoluer le compteur
