@@ -5,12 +5,12 @@
     <style>
     #container{
       position: absolute;
-      overflow: hidden;
-      background-color: blue;
-      height: 140px;
+      /*overflow: hidden;*/
+      height: 152px;
       width: 130px;
       top: 100px;
       left: 90px;
+      background-color: blue;
     }
 
     #contenu{
@@ -40,7 +40,7 @@
           switch(code){
             case 37:
               //*instructions*
-              alert('gauche');
+              animateSpriteLeft(lapin);
 
             break;
             case 38:
@@ -50,7 +50,7 @@
             break;
             case 39:
               //instructions
-              moveSpriteRight(lapin);
+              animateSpriteRight(lapin);
 
             break;
             case 40:
@@ -99,7 +99,7 @@
     <noscript>
       <p>Veuillez activer JavaScript</p>
     </noscript>
-    <script type="text/javascript" src="exercice16.js">
+    <script type="text/javascript" src="exercice16_v3.js">
 
     </script>
   </body>
