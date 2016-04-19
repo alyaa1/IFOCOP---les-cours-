@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <style media="screen">
+    .erreur{
+      color: red;
+    }
+
+    </style>
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 22</title>
     <script>
       //Énoncé :
@@ -17,7 +23,7 @@
       /*
         2. A la soumission du formulaire, SI le champ est vide, je crée une élément HTML de type p avec la class erreur et je l'ajoute dans le document en dessous du formulaire et j'empêche le formulaire d'être envoyé par le navigateur Internet.
       */
-      
+
 
       /*
         Astuce : Si dans un gestionnaire d'évènement (fonction/méthode associée à l'événement), j'exécute la méthode .preventDefault() de l'objet d'évènement, le navigateur Internet ne poursuit pas le comportement par défaut associé à l'événement. Cette méthode est documentée sur le MDN ici : https://developer.mozilla.org/fr/docs/Web/API/Event/preventDefault
@@ -25,7 +31,7 @@
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1> 
+    <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
@@ -48,5 +54,38 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+    <div id="maDiv">
+      <form action="" method="get" id="monFormulaire">
+        <input type="text" name="votreNom" value="">
+        <input type="submit" name="submit" value="envoyer">
+      </form>
+    </div>
+
+    <script>
+
+
+    var monFormulaire =  document.getElementById('monFormulaire');
+    var inputUser = document.getElementsByName('votreNom')
+
+
+    monFormulaire.addEventListener('submit', function(e){
+      if(inputUser[0].value){
+        alert(inputUser[0].value);
+      }else{
+        ajouteParagraphe();
+        e.preventDefault();
+      };
+    });
+
+    var ajouteParagraphe = function(){
+      var monP = document.createElement('p');
+      monP.className = 'erreur';
+      var monPTexte = document.createTextNode('Vous devez remplir le champ !');
+      monP.appendChild(monPTexte);
+      document.getElementById('maDiv').appendChild(monP);
+    };
+
+
+    </script>
   </body>
 </html>

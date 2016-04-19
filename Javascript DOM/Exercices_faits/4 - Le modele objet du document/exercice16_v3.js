@@ -1,18 +1,12 @@
 'use strict';
 
+//refaire en faisant changer la taille de la div
+/* refaire en faisant un settimeout qui va déplacer le personnage seul
+il faut décoreller le mouvement du l'appui sur une touche.
+C'est une seule touche qui déclenche l'Animation
+Ajouter un booleén pour vérifier que l'animation n'est pas déjà en cours
+le masque doit contenu dans un div (en margin auto pour centrer le masque dans la div)*/
 
-/***************************************************
-fonction compteur
-**************************************************/
-// var compteur = function(){
-//   var i = 0;
-//   return function(){
-//     if (i >= lapin.framesPositions.length){i = 0;}
-//     return i++;
-//   };
-// };
-// var g = compteur();
-/**************************************************/
 
 
 /******************************************

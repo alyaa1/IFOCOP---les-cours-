@@ -15,7 +15,6 @@
       /*
         1. Créez une balise <canvas>. Vous devez impérativement renseigner ses attributs width et height.
       */
-
       /*
         2. Créez l'algorithme suivant : Quand on clique sur un paragraphe de texte, on déclenche un script qui récupère une référence à l'objet <canvas> (en utilisant la méthode .getElementById() par exemple). Vérifier à l'aide de la méthode .log() de la console que vous arrivez à récupérer un objet de type HTMLCanvasElement
       */
@@ -23,11 +22,11 @@
       /*
         L'objet correspondant à la balise <canvas> dispose d'une méthode .getContext() qui vous permet de récupérer un autre objet adapté au dessin 2d dans ce contexte. Voir la MDN ici : https://developer.mozilla.org/fr/docs/Web/API/CanvasRenderingContext2D
       */
-  
+
       /*
         3. Créez l'algorithme suivant : Quand on clique sur un paragraphe de texte, on déclenche un script qui récupère une référence à l'objet <canvas> (en utilisant la méthode .getElementById() par exemple) et qui récupère le contexte de dessin 2d pour dessiner un carré dans le canvas.
       */
- 
+
       /*
         4. Créez l'algorithme suivant : Quand on clique sur un paragraphe de texte, on déclenche un script qui récupère une référence à l'objet <canvas> (en utilisant la méthode .getElementById() par exemple) puis qui récupère le contexte de dessin 2d; qui efface de précédents dessins du contexte de dessin 2d;  qui dessine un carré avec un décalage de 2 pixels par rapport à la dernière fois qu'on a cliqué.
       */
@@ -37,7 +36,7 @@
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1> 
+    <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
@@ -60,5 +59,67 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+
+<script type="text/javascript">
+  // mesParagraphes = document.getElementsByTagName('p');
+
+  var valeursCreationRect = function(){
+    var valeur = [0,0,20,20]
+    valeur[0] += Math.floor(Math.random()*10);
+    valeur[1] = Math.floor(Math.random()*10);
+    return valeur;
+  };
+  var animation = function() {
+    window.setTimeout(function(){
+    if(document.getElementById('cool')){
+      ajouteRect(valeursCreationRect());
+      animation();
+    }else{
+      createCanvas(300,300)
+      ajouteRect(valeursCreationRect());
+      animation();
+      };
+  },200);
+};
+
+animation();
+
+  // mesParagraphes[0].addEventListener('click',function(){
+  //   if(document.getElementById('cool')){
+  //     ajouteRect(valeursCreationRect());
+  //   }else{
+  //     createCanvas(300,300)
+  //     ajouteRect(valeursCreationRect());
+  //     };
+  // });
+
+  var createCanvas = function(width, height){
+    var canvas =  document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    canvas.id = 'cool';
+    canvas.style.backgroundColor = 'gray';
+    var titre = document.getElementsByTagName('h1')[0];
+    console.log(titre);
+    titre.appendChild(canvas);
+  }
+
+  var ajouteRect = function(valeurs){
+    var x = valeurs[0];
+    var y = valeurs[1];
+    var width = valeurs[2];
+    var height = valeurs[3];
+    var canvas = document.getElementById('cool');
+    console.log(canvas);
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "rgb(200,0,0)";
+    ctx.fillRect (x,y,width,height);
+};
+
+
+</script>
+
+
   </body>
 </html>
