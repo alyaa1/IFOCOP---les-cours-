@@ -7,10 +7,10 @@
       //Énoncé :
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
-        
+
         La méthode .createTextNode() du sous objet document de l'objet window prend en argument une chaîne de caractère : ex: window.document.createTextNode('Ceci est un texte'). Cette méthode créé et retourne un objet correspondant à un objet de type text (selon le DOM) . Cette méthode est documentée sur le MDN ici : https://developer.mozilla.org/fr/docs/Web/API/Document/createTextNode
       */
-      
+
       /*
         1. AU CLIC sur le premier point, utilisez la méthode .createElement() pour créer un objet correspondant à une balise <a>. Utilisez la méthode .createTextNode() pour créer un objet de texte. Utiliser .appendChild() pour attacher l'objet de texte à l'objet correspondant à une balise <a> que vous avez créé. Utilisez la méthode .appendChild pour ajouter cette "branche" à l'arborescence d'objets correspondant au document HTML au niveau du <span> 3.2
       */
@@ -40,5 +40,27 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+
+    <script>
+
+    var monTitre = document.querySelector('h1');
+    console.log('monTitre');
+    monTitre.addEventListener('click', function(){
+      insertionLien();
+    });
+
+    var monSpan = document.getElementsByTagName('span');
+
+    var insertionLien = function(){
+      var monA = document.createElement('a');
+      var monATexte = document.createTextNode('C\'est mon lien');
+      monA.appendChild(monATexte);
+      monSpan[8].appendChild(monA);
+    };
+
+
+
+
+    </script>
   </body>
 </html>

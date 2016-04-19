@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 21</title>
+    <style media="screen">
+      #lechat{
+        height: 400px;
+        width: 400px;
+        position: absolute;
+        background-image: url("grumpy.jpg");
+      }
+    </style>
     <script>
       //Énoncé :
-      
+
       /*Le chat et la souris*/
-      
+
       /*
         L'objectif de cet exercice est de créer une div qui suit le pointeur de la souris.
       */
@@ -45,5 +53,23 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+
+    <div id="lechat">
+
+    </div>
+
+    <script>
+      var monChat = document.getElementById('lechat');
+
+
+      document.addEventListener('mousemove', function(e) {
+        var newPositionX = e.clientX;
+        var newPositionY = e.clientY;
+        monChat.style.top =  newPositionY + 'px';
+        monChat.style.left =  newPositionX + 'px';
+      });
+
+
+    </script>
   </body>
 </html>

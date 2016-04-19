@@ -80,12 +80,28 @@ function animateSpriteLeft(sprite){
   };
 };
 
+function spriteWait(sprite){
+  sprite.SpriteSheet.style.left = '-' + sprite.framesPositions[0][0] + 'px';
+  sprite.SpriteSheet.style.top = '-' + sprite.framesPositions[0][1] + 'px';
+
+};
+function spriteWaitLeft(sprite){
+  sprite.SpriteSheet.style.left = '-' + sprite.framesPositions[27][0] + 'px';
+  console.log(sprite.SpriteSheet.style.left);
+  sprite.SpriteSheet.style.top = '-' + sprite.framesPositions[0][1] + 'px';
+
+};
+
+function special(sprite){
+  alert('Yeah I\'m good');
+}
 /******************************************************
 Deplacement de la div
 *******************************************************/
-var moveDivRight = function(){
-  maDiv = document.getElementById('container');
-  return maDiv;
-
-
-}
+var moveDiv = function(pas){
+  var maDiv = document.getElementById('container');
+  var startingPosition = parseInt(getComputedStyle(maDiv).left);
+  console.log(startingPosition);
+  var newPosition = startingPosition + pas;
+  maDiv.style.left =  newPosition + 'px'
+};

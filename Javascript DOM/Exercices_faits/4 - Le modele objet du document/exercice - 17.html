@@ -7,12 +7,12 @@
       //Énoncé :
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
-        
+
         La méthode .createElement() du sous objet document de l'objet window prend en argument le nom d'un élément HTML : ex: window.document.createElement('div'). Cette méthode créé et retourne un objet correspondant à un élément HTML de ce type. Cette méthode est documentée sur le MDN ici : https://developer.mozilla.org/fr/docs/Web/API/Document/createElement
-        
+
         La méthode .appendChild() des objets correspondant à des éléments HTML du document prend en argument un objet correspondant à un élément HTML. Elle ajoute cet objet à l'arborescence d'objets du DOM correspondant au document affiché sous l'objet à partir duquel elle a été exécutée. Cette méthode est documentée sur le MDN ici : https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild
       */
-      
+
       /*
         1. AU CLIC sur le titre principal, utilisez la méthode .createElement() pour créer un objet correspondant à une balise image. Renseignez les propriétés title, alt et src de cet objet. Utilisez appendChild pour ajouter cette balise image dans le <span> 2.2
       */
@@ -42,5 +42,29 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+    <script type="text/javascript">
+      'use strict';
+
+      var monTitre = document.getElementsByTagName('h1')[0];
+      monTitre.addEventListener('click', function() {
+       ajouterImage();
+     });
+      var ajouterImage = function(){
+        var nouvelleImage = document.createElement('img');
+        nouvelleImage.alt = 'image du héros de Braid';
+        nouvelleImage.src = 'dude_animation_sheet.png';
+        nouvelleImage.title = 'Braid';
+
+        var monSpan = document.getElementsByTagName('span');
+        monSpan[5].appendChild(nouvelleImage);
+
+      }
+
+
+
+
+
+    </script>
+
   </body>
 </html>

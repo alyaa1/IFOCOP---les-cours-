@@ -5,11 +5,11 @@
     <style>
     #container{
       position: absolute;
-      /*overflow: hidden;*/
+      overflow: hidden;
       height: 152px;
       width: 130px;
       top: 100px;
-      left: 90px;
+      left: 100px;
       background-color: blue;
     }
 
@@ -41,28 +41,72 @@
             case 37:
               //*instructions*
               animateSpriteLeft(lapin);
+              moveDiv(-5);
 
             break;
             case 38:
               //instructions
               alert('haut');
+              animateSpriteRight(lapin);
 
             break;
             case 39:
               //instructions
+              // alert('droite');
               animateSpriteRight(lapin);
+              console.log(lapin.SpriteSheet.style.left);
+
+              moveDiv(5);
 
             break;
             case 40:
               //instructions
               alert('bas');
+              animateSpriteRight(lapin);
+
+            break;
+            case 13:
+              //instructions
+              special(lapin);
 
             break;
           };
 
         };
 
+        window.onkeyup = function(event){
+          var code = event.keyCode;
+
+          switch(code){
+            case 37:
+            //*instructions*
+            // animateSpriteLeft(lapin);
+            // moveDiv(-5);
+            spriteWaitLeft(lapin);
+
+            break;
+            case 38:
+            //instructions
+            alert('haut');
+
+            break;
+            case 39:
+            //instructions
+            // alert('droite');
+            spriteWait(lapin);
+
+
+            // moveDiv(5);
+
+            break;
+            case 40:
+            //instructions
+            alert('bas');
+
+            break;
+          };
       };
+    };
 
       /*
         Ce document comporte une balise img dans une div. La div sert de masque pour le sprite chargé à l'aide de la balise img. Un sprite est une image qui présent les décompositions d'un mouvement.
