@@ -33,7 +33,9 @@
       /*
         5. Créez un dessin animé à l'aide window.setTimeout(), puis avec window.setInterval() et enfin avec window.requestAnimationFrame()
       */
+
     </script>
+    <script type="text/javascript" src="exercice23.js"></script>
   </head>
   <body>
     <h1>Titre principal</h1>
@@ -59,67 +61,5 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
-
-<script type="text/javascript">
-  // mesParagraphes = document.getElementsByTagName('p');
-
-  var valeursCreationRect = function(){
-    var valeur = [0,0,20,20]
-    valeur[0] += Math.floor(Math.random()*10);
-    valeur[1] = Math.floor(Math.random()*10);
-    return valeur;
-  };
-  var animation = function() {
-    window.setTimeout(function(){
-    if(document.getElementById('cool')){
-      ajouteRect(valeursCreationRect());
-      animation();
-    }else{
-      createCanvas(300,300)
-      ajouteRect(valeursCreationRect());
-      animation();
-      };
-  },200);
-};
-
-animation();
-
-  // mesParagraphes[0].addEventListener('click',function(){
-  //   if(document.getElementById('cool')){
-  //     ajouteRect(valeursCreationRect());
-  //   }else{
-  //     createCanvas(300,300)
-  //     ajouteRect(valeursCreationRect());
-  //     };
-  // });
-
-  var createCanvas = function(width, height){
-    var canvas =  document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    canvas.id = 'cool';
-    canvas.style.backgroundColor = 'gray';
-    var titre = document.getElementsByTagName('h1')[0];
-    console.log(titre);
-    titre.appendChild(canvas);
-  }
-
-  var ajouteRect = function(valeurs){
-    var x = valeurs[0];
-    var y = valeurs[1];
-    var width = valeurs[2];
-    var height = valeurs[3];
-    var canvas = document.getElementById('cool');
-    console.log(canvas);
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "rgb(200,0,0)";
-    ctx.fillRect (x,y,width,height);
-};
-
-
-</script>
-
-
   </body>
 </html>

@@ -8,17 +8,18 @@
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
       */
-      
+
       /*
       1. Donnez une propriété de style (display:none) à la <div> qui contient toutes les autres dans le document Web. A l'affichage du document, seul le titre <h1> est donc affiché.
       */
-      
+
       /*
       2. Écrivez le programme suivant : AU CLIC sur la balise <h1>, la <div> principale doit s'afficher. Si on CLIC à nouveau sur le titre, la <div> principale doit se masquer. L'algorithme est le suivant : SI la <div> est masquée, je l'affiche, SINON je la masque.
       */
+
     </script>
   </head>
-  <body>
+  <body onclick="hideDiv;()">
     <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>
@@ -42,5 +43,29 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
     </div>
+    <script>
+
+    var maDiv = document.getElementsByTagName('div');
+    console.log(maDiv);
+
+    function hideDiv() {
+      var etat = maDiv[0].style.display = 'none';
+      return etat;
+    };
+
+    function showDiv() {
+      var etat = maDiv[0].style.display = 'initial';
+      return etat;
+    };
+
+    var monH1 = document.getElementsByTagName('h1');
+      monH1[0].onclick = function() {
+      if( maDiv[0].style.display == 'none') {
+        showDiv();
+      }else{
+        hideDiv();
+      }
+    }
+    </script>
   </body>
 </html>

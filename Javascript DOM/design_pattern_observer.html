@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="formule" value="" id="formule">
+
+  <script type="text/javascript">
+    window.document.addEventListener('DOMContentLoaded', function(){
+      var HTMLInputElement = window.document.getElementById('formule');
+      var observateurDeFormule = HTMLInputElement.value;
+
+      var saisie = HTMLInputElement.value;
+      if (saisie =='abracadra'){
+        var HTMLDivElement = window.document.createElement('div');
+        var HTMLTextNode = window.document.createTextNode('quoi de neuf docteur');
+        HTMLDivElement.appendChild(HTMLTextNode);
+        HTMLDivElement.id  = 'lapin';
+        HTMLDivElement.style.color = 'pink';
+        HTMLDivElement.style.fontSize = '14px';
+        HTMLDivElement.style.display = 'block';
+      };
+      window.requestAnimationFrame(observateurDeFormule);
+    };
+
+    window.requestAnimationFrame(observateurDeFormule);
+  )
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TEST 1 jQuery</title>
+
+    <style media="screen">
+      .rouge{
+        color: red;
+      }
+    </style>
+
+    <script type="text/javascript" src="../sources/jquery-1.12.3.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        //Accéder à un élément
+        $('#cible').find('.element');
+        //Modifier l'apparence d'un élément
+        $('p.element').addClass('.rouge');
+        //Changer le contenu d'un document
+        $('ul').append('<p> Un nouveau texte à la fin.</p>');
+        //Réagir à l'action d'un utilisateur
+        $('#cible element').click(function(){
+          $('ul p').text('changement de texte au clic');
+        })
+        //Animer un élément
+        $(this).slideUp(1200);
+
+      })
+    </script>
+  </head>
+  <body>
+    <h1>Présentation de jQuery</h1>
+    <p>
+      Pour utiliser jQuery, on peut écrire :
+    </p>
+    <ul id="cible">
+      <li>Window jQuery</li>
+      <li>jQuery</li>
+      <li class="element">ligne 3</li>
+    </ul>
+
+    <h2>Simplifier la sélection multiple</h2>
+    <code>
+      $ea
+    </code>
+  </body>
+</html>
