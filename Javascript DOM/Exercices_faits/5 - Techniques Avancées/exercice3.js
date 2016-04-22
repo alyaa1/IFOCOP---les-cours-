@@ -1,18 +1,39 @@
 window.addEventListener('DOMContentLoaded', function(){
-  var urlCourante = window.location.hash;
-  var liste = document.getElementsByTagName('li');
 
-  function addListener(target){
-    for(var i = 0; liste[i]; i++){
-      liste[i].addEventListener('click', function(){
-         var ancreCible = this.firstChild.hash.substr(1);
-         console.log(ancreCible)
-         var paragraphe = document.getElementById(ancreCible);
-         paragraphe.style.color = 'red';
-      });
+  function resetStyles(){
+    var mesP = document.getElementsByTagName('p');
+    for (var i = 0; mesP[i]; i++){
+      mesP[i].style.color = 'black';
     };
   };
 
-  addListener(liste);
+  function changeStyle(ancreCible){
+    resetStyles();
+    var paragraphe = document.getElementById(ancreCible); //cherche la variable ancreCible dans les ID du documents
+    paragraphe.nextElementSibling.style.color = 'red';
+  };
+
+
+  function observateurAncre(){
+    var urlCourante = window.location.hash.substr(1);
+    if (urlCourante){
+        resetStyles();
+        changeStyle(urlCourante);
+      }
+    window.requestAnimationFrame(observateurAncre)
+  };
+
+  window.requestAnimationFrame(observateurAncre)
+
 
 });
+
+
+/*****************************************************************************
+A FAIRE
+
+Créer un objet avec les propriétés nécessaires
+
+Créer une fonction qui analyse le DOM pour savoir combien d'objets il faut créer.
+
+******************************************************************************/
