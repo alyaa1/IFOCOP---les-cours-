@@ -63,13 +63,18 @@
 			var jourEnTteLettre = jourDeLaSemaine(jour);
 
 			$(document).ready(function(){
-				$('section > div > p:first-child').attr('class','maClasse');
+				// $('section > div > p:first-child').attr('class','maClasse');
 				var texteTitre = $('h1').html();
+				console.log(texteTitre);
 				var lien = $('<a href="http://www.google.com">'+texteTitre +'</a>');
 				$('#message').html(lien);
-				$('#message').html(jourEnTteLettre);
-				var bouton = $('input[value=\'envoyer\']')
-				console.log(bouton);
+				// $('#message').html(jourEnTteLettre);
+				// var bouton = $("input[name='envoyer']").attr('value')
+				// bouton = bouton + ' ' + jourEnTteLettre;
+				// console.log(bouton);
+
+				// $("input[name='envoyer']").attr('value',bouton);
+
 
 			});
 			/*

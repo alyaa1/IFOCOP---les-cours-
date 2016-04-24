@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p><a href='http://docs.jquery.com'>Documentation officielle</a></p>
+    <p><a href='http://api.jquery.com'>API jQuery</a></p>
+    <script type="text/javascript" src="../sources/jquery-1.12.3.js">
+
+    </script>
+
+    <script type="text/javascript">
+      $('p').text(function(index, actuel){
+        alert('Paragraphe ' + (index+1) + actuel)
+      });
+    </script>
+  </body>
+</html>

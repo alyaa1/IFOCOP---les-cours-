@@ -8,10 +8,28 @@
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
       */
-      
+
       /*
         1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier l'opacité du titre.
       */
+      window.onload = function() {
+        var myTitle = document.getElementsByTagName('h1');
+
+        setInterval(function() {
+          var opacity = myTitle[0].style.opacity;
+          // console.log(parseInt(opacity, 10));
+            if(!opacity || opacity <= 0){
+            //console.log("passe");
+              myTitle[0].style.opacity = 1;
+            }
+            else{
+              //console.log(opacity)
+              //console.log('pzsss');
+              myTitle[0].style.opacity -=  0.17;
+              //console.log('new value', myTitle[0].style.opacity);
+              }
+        },500);
+      }
     </script>
   </head>
   <body>

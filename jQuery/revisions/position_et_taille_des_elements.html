@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Valeurs stockées dans les éléments</title>
+    <style type="text/css">
+      #parent {
+        width: 300px;
+        height:300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: yellow;
+      }
+
+      #enfant {
+        width: 100px;
+        height:100px;
+        position: absolute;
+        top: 150px;
+        left: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      Texte dans le parent
+      <div id="enfant">
+        Texte dans l'enfant
+      </div>
+    </div>
+    <span id="resultat"></span>
+
+    <script src="../sources/jquery-1.12.3.js"></script>
+    <script>
+      $(function() {
+        var posparent = $('#parent').offset();
+        var posenfant = $('#enfant').offset();
+        $('#resultat').text('Parent X = ' + posparent.left +  '\n \n Parent Y = ' + posparent.top + 'Enfant X = ' + posenfant.left +  'Enfant Y = ' + posenfant.top);
+      });
+    </script>
+  </body>
+</html>

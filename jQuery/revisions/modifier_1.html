@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src='../sources/jquery-1.12.3.js'>
+
+    </script>
+  </head>
+  <body>
+
+    <div id="listes">
+     <a href="http://api.jquery.com">API jQuery</a><br>
+     <a href="http://docs.jquery.com">Documentation jQuery</a><br>
+   </div>
+
+   <script src="../sources/jquery-1.12.3.js"></script>
+   <script>
+    //  $(function() {
+    //    var test = $('a').attr('href');
+    //    document.write(test);
+    //  });
+     //
+     //exemple d'utilisation de attr
+
+    $(document).ready(function(){
+     $('#logo').attr('src','logo.gif');
+
+     //ou
+
+     $('#logo').attr({src: 'logo.gif', alt: 'logo de la société',width: '200px'});
+   });
+
+    </script>
+
+  </body>
+</html>

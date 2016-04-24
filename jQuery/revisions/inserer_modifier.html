@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Insertion, copie et suppression de données</title>
+  </head>
+  <body>
+    <h2 id="un">Lorem ipsum</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <hr>
+
+    <h2 id="deux">Lorem ipsum suite</h2>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <hr>
+
+    <h2 id="trois">Liste à puces</h2>
+    <ul>
+      <li>Premier élément</li>
+      <li>Deuxième élément</li>
+      <li>Troisième élément</li>
+      <li>Quatrième élément</li>
+    </ul>
+
+
+    <h2>Titre paragraphe 1</h2>
+    <p id="paragraphe1">
+      je suis le paragraphe 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </p>
+    <hr>
+    <h2>Titre paragraphe 2</h2>
+    <p id="paragraphe2">
+      je suis le paragraphe 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </p>
+    <hr>
+    <h2>Titre paragraphe 3</h2>
+    <p id="paragraphe3">
+      je suis le paragraphe 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    </p>
+    <hr>
+    <h2>Titre paragraphe 4</h2>
+    <p id="paragraphe4">
+      je suis le paragraphe 4. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      Je contiens le mot <strong>quelconque</strong>.
+    </p>
+    <hr>
+
+    <script src="../sources/jquery-1.12.3.js"></script>
+    <script>
+    //INSERER DU CONTENU
+      $(function() {
+        $('h2').append('à la fin de la sélection').css('color','red');
+        $('h2').prepend('au début de sélection ');
+        $('h2').before('avant la sélection ');
+        $('h2').after('après la sélection');
+        });
+
+        //Remplacer une sélection
+        $('hr').replaceWith('</br>');//remplace par un saut de ligne
+
+        //technique pour remplace des balises ouvrantes / fermantes
+        $('h2').each(function(){
+          var elemH2 = $(this);
+          elemH2.replaceWith('<h3>'+ elemH2.text()+'</h53>')
+        })
+    </script>
+    <script>
+    //INSERER DES ELEMENTS
+      $(function() {
+
+        $('elementAInserer').appendTo('cible')//insère à la fin de la cible
+        $('elementAInserer').prependTo('cible')//insère au début de la cible
+        $('elementAInserer').insertBefore('cible')//insère AVANT la cible
+        $('elementAInserer').insertAfter('cible')//insère APRES la cible
+
+
+        $('<li><a>lien inséré en jQuery </a></li>').insertAfter('li:nth-child(2)');
+
+        $('<hr  />').prependTo('h3');
+
+        //exemple qui ne marchera ici
+        $('<li>nouvel élément </li>').prependTo('li:nth-child(2)')//mettra un li à l'interieur du li alors qu'il faudrait le mettre devant avec un insertBefore
+      })
+    </script>
+
+    <script>
+    //DEPLACER UN ELEMENT
+      // $(function(){
+      //   $('#paragraphe2').after($('#paragraphe1'));//notez la sélection du paragraphe1 avec $('#paragraphe1')
+      // })
+
+    //COPIER UN ELEMENT
+      $(function(){
+        $('#paragraphe3').clone().insertBefore($('#paragraphe1'));
+      })//attention à .clone()... c'est une méthode.
+
+
+
+    //voici comment faire un sommaire rapidement grâca au clone
+
+    $('<h1>SOMMAIRE</h1>').insertBefore($('h3:first'));//on insère le code HTML du sommaire avant le premier h2;
+    $('h3').clone().insertAfter($('h1'))
+    </script>
+
+    <script>
+    //SUPPRIMER DES ELEMENTs
+    $(function(){
+      $('p').remove(':contains("quelconque")');
+    })
+    </script>
+
+
+  </body>
+</html>

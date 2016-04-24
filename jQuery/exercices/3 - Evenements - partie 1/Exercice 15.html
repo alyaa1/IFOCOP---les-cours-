@@ -3,8 +3,20 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 15</title>
+		<style media="screen">
+			.small{
+				width: 100%;
+				margin: auto;
+				font-size: 0.5em;
+				color:blue;
+			}
+
+			.verysmall{
+				color: violet;
+			}
+		</style>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
       /*********************************
       ***********PRESENTATION***********
@@ -26,6 +38,33 @@
 
         Utilisez les méthodes resize(), css(), addClass() et removeClass().
       */
+				$(document).ready(function(){
+
+					$(window).resize(function(){
+						var tailleBody = $('body').width();
+						if (tailleBody < 640){
+							$('div').addClass('verysmall')
+						}
+
+						if (tailleBody < 920){
+							$('div').addClass('small')
+						}
+
+						if (tailleBody > 920){
+							$('div').removeClass()
+						}
+					});
+
+
+						$( "P" ).clone().appendTo( document.body );
+						$( "p" ).clone().appendTo( document.body );
+						$( window ).scroll(function() {
+  					$( "span" ).css( "display", "inline" ).fadeOut( "slow" );
+						});
+
+
+
+				});
 
       /*
       ** 2 **

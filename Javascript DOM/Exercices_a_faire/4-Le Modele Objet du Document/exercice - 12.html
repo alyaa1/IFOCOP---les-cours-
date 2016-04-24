@@ -8,14 +8,31 @@
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
       */
-      
+
       /*
         1. Écrivez le programme suivant : Au CHARGEMENT du document, toutes les 200ms, ajoutez 2px à la propriété de style de marge à gauche du titre principal. Cela signifie que toutes les 200ms, la marge à gauche du titre principal va augmenter de 2px. Vous utiliserez la méthode .setInterval().
       */
+      window.onload = function() {
+        var timerId;
+var monTitre = document.getElementById('test')
+        timerId = setInterval(function(){
+          ;
+          var style = monTitre.currentStyle || window.getComputedStyle(monTitre);
+
+            var marginLeft = style.marginLeft;
+            //console.log(marginLeft)
+            var valeurDeMargeGauche = parseInt(marginLeft,10);
+            //console.log(valeurDeMargeGauche)
+            monTitre.style.marginLeft = valeurDeMargeGauche + 2 + 'px';
+            console.log(marginLeft);
+          },20);
+        }
+
+
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1>
+    <h1 id='test'>Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>

@@ -8,14 +8,27 @@
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
       */
-      
+      window.onload = function() {
+        var myTitle = document.getElementById('title');
+          setInterval(function() {
+
+            var style = title.currentStyle || window.getComputedStyle(title);
+            var positionTop = style.marginTop;
+            var valuePositionTop = parseInt(positionTop,10);
+
+            title.style.marginTop = valuePositionTop + 2 + 'px';
+            
+            console.log(title);
+          },500);
+      }
+
       /*
         1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier la position top du titre. Pensez également à passer le positionnement du titre en absolute.
       */
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1>
+    <h1 id='title'>Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>

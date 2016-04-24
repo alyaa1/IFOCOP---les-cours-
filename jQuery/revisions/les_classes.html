@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Manipulation de l'attribut class</title>
+    <style type="text/css">
+      .rouge { color: red; }
+      .vert { color: green; }
+      .petit { font-size: 100%; }
+      .grand {font-size: 250%; }
+    </style>
+  </head>
+  <body>
+    <span id="jean" class="rouge grand">Jean</span>
+
+    <span id="pierre">Pierre</span>
+
+    <span id="paul" class="vert grand">Paul</span>
+
+    <span id="julia">Julia</span>
+
+    <span id="eric" class="vert">Eric</span>
+
+    <span id="kevin" >Kévin</span>
+
+
+    <script src="jquery.js"></script>
+    <script>
+      $(function() {
+        // Ajouter le code jQuery ici
+        $('#jean').toggleClass('vert petit');
+      });
+    </script>
+  </body>
+</html>

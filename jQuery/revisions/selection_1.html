@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src='../sources/jquery-1.12.3.js'>
+
+    </script>
+  </head>
+  <body>
+
+    <div id="listes">
+      <ul id="ul1">
+        <li> Elément de liste 1
+          <ul id="ul2">
+            <li> Enfant 1</li>
+            <li> Enfant 2</li>
+          </ul>
+        </li>
+        <li> Elément de liste 2</li>
+        <li> Elément de liste 3</li>
+        <li> Elément de liste 4</li>
+      </ul>
+    </div>
+
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <p>Paragraphe 3</p>
+    <p>Paragraphe 4</p>
+    <p>Paragraphe 5</p>
+
+    <h1>Titre de niveau 1</h1>
+    <h2>Titre de niveau 2</h2>
+    <h3>Titre de niveau 3</h3>
+    <p>Un paragraphe de texte</p>
+     <div>Texte dans une balise div</div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //
+
+        //$('li > ul').css('color','red');//un ul dans un li
+        //$('li + li').css('color','red');//précédé d'un li
+        $('li + li:first').css('color','red');//1er li
+
+        $('p:even').css('color','green');//les paires en commencant par 0
+        $('p:odd').css('color','blue');//les impaires en commencant par 0
+        $('p:eq(3)').css('color','pink');//les impaires en commencant par 0
+        $('p:gt(2)').css('font-family', 'arial');//greater than
+        $('p:lt(3)').css('font-size','2em')//lesser than
+
+        $(':header').css('color','red');
+        $('div:hidden').show();
+        $(':header:not(h1)').hide();
+      });
+    </script>
+    <script type="text/javascript">
+      //transformer une variable javascript en objet jquery-1
+      var maVariable = 'Je suis une variable JS';
+      var maVariableJQ = $(maVariable);
+
+      //sélection d'objet grâce à jQuery retouré en javascript
+      //comment sélectionner tous les titres d'une page grâce à jQuery
+
+      var titres = $(':header').get() //renvoie un tableau (comme getElementsByTagName);
+      console.log(titres);
+    </script>
+    <script type="text/javascript">
+      //la boucle each
+      $(document).ready(function(){
+        $('div').each(function(index){
+          this.backgroundColor = 'blue'; 
+        })
+      })
+    </script>
+  </body>
+
+</html>

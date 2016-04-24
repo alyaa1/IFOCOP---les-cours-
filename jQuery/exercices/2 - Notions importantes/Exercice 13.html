@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 13</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
 			/*********************************
 			***********PRESENTATION***********
@@ -20,13 +20,23 @@
 				À la fin du chargement du document, modifiez le texte et le lien de la première entrée du menu.
 				Utilisez text() et attr().
 			*/
+			$(document).ready(function(){
+
+				console.log($('nav ul li + li ul li:first-child').text('1ere entrée'))
+
+
+
 
 			/*
 			** 2 **
 				À la fin du chargement du document, désactivez les chammps input sauf le champ téléphone.
 				Utilisez attr() et removeAttr().
 			*/
+			$('input').attr('disabled',true);
+			$("input[type='tel']").removeAttr('disabled',true)
+			console.log($("input[type='tel']").html())
 
+		});
 		</script>
 	</head>
 	<body>
