@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 16</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
       /*********************************
       ***********PRESENTATION***********
@@ -16,7 +16,7 @@
       *************EXERCICES*************
       ***********************************
         Préalablement, insérez deux images et leurs miniatures correspondantes. Seules les miniatures doivent être visibles.
-        
+
         À la fin du chargement du document, prévoyez le script suivant :
         a) Un click sur la première miniature fait apparaitre la première image puis un second click la masque.
         b) Le même comportement a lieu sur la seconde miniature sauf qu'il est nécessaire d'utiliser le double click.
@@ -24,6 +24,35 @@
 
         Utilisez les méthodes click(), dblclick() et css().
       */
+			$(document).ready(function(){
+				var image1 = $('#image1')
+				var image1mini = $('#miniimage1')
+				var image2 = $('#image2')
+				var image2mini = $('#miniimage2')
+
+				image1.hide();
+				image2.hide();
+
+				image1mini.click(function(){
+					image2.hide();
+					image1.show();
+				});
+				image1.click(function(){
+					$(this).hide();
+				});
+
+				image2mini.dblclick(function(){
+					image1.hide();
+					image2.show();
+				});
+				image2.dblclick(function(){
+					$(this).hide();
+				});
+
+
+
+			})
+
 		</script>
 	</head>
 	<body>
@@ -61,6 +90,10 @@
 				</nav>
 			</header>
 			<section>
+				<img src="paysage.jpg" id="image1" />
+				<img src="minipaysage.jpg" id="miniimage1" />
+				<img src="paysage2.jpg" id="image2" />
+				<img src="minpaysag2.jpg" id="miniimage2" />
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 				</p>

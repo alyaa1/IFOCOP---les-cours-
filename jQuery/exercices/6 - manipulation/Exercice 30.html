@@ -2,74 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<style>
-
-		#ok{
-			position: fixed;
-			top: 0;
-			right: 0;
-		}
-
-		#message{
-			padding: 1%;
-			background-color: white;
-			border: 2px;
-			position: fixed;
-			top: 30%auto;
-			left: 35%;
-			width: 20%;
-			z-index: 5;
-			display: none;
-		}
-
-		</style>
-		<title>jQuery : Exercice 17</title>
+		<title>jQuery : Exercice 30</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
 		<script type="text/javascript">
-      /*********************************
-      ***********PRESENTATION***********
-      **********************************
-        Les méthodes hover(), mouseenter() et mouseleave() permettent de capturer les évènements liés aux actions sur la souris quand elle survole un élément, entre dans la zone de l'élément ou quitte cette même zone.
-      */
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+			  Il est souvent utile de parcourir les éléments sélectionnés. C'est ce que permet de faire la méthode each().
+			  Par exemple :
+			  $('p').each(function(){
+			    var texte = $(this).html();
+			    $(this).html() = texte + ' un ajout';
+			  });
+			  Ici, tous les paragraphes sont parcourus et le texte ' un ajout' est ajouté à la fin de chaque paragraphe.
+			*/
 
-      /**********************************
-      *************EXERCICES*************
-      ***********************************
-        À la fin du chargement du document, prévoyez le script suivant :
-        a) Quand vous survolez un paragraphe, affichez une image en haut à droite.
-        b) Quand vous entrez au-dessus d'un paragraphe, affichez la longueur du texte du paragraphe dans la barre de titre.
-        c) Quand vous quittez le paragraphe, remettez le titre d'origine de la page et affichez après une seconde un message au milieu de la page (par-dessus le texte). Ce message se masque contient un bouton de fermeture.
+			/**********************************
+			*************EXERCICES*************
+			***********************************
+			  À la fin du chargement du document, prévoyez le script suivant :
+			  Quand l'utilisateur change de balise input, l'ensemble des valeurs qu'il a saisit sont affichées dans la div message.
 
-        Utilisez les méthodes text(), hover(), mouseenter(), mouseleave(), click() et setTimeout.
-      */
-
-			$(document).ready(function(){
-
-				$('#ok').css('display','none');
-
-				$('p').hover(function(){
-					$('#ok').css('display','block');
-				});
-
-				$('p').mouseenter(function(){
-					var ancienTitre = document.title;
-					console.log($(this).val().length);
-					document.title = $(this).text().length;
-					$(this).mouseleave(function(){
-						document.title = ancienTitre;
-						setTimeout(function(){
-							$('#message').css({display:'block', zindex:5})
-						})
-					})
-				})
-
-			});
+			  Utilisez les méthodes click(), dblclick() et css().
+			*/
 
 		</script>
 	</head>
 	<body>
-		<img src="ok.png" id="ok" />
 		<div id="page">
 			<header>
 				<h1>Titre du site</h1>
@@ -104,6 +64,7 @@
 				</nav>
 			</header>
 			<section>
+				<div id="message"></div>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 				</p>

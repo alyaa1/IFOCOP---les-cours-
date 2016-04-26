@@ -4,7 +4,8 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 21</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js
+		"></script>
 		<script type="text/javascript">
       /*********************************
       ***********PRESENTATION***********
@@ -25,16 +26,42 @@
         À la fin du chargement du document, prévoyez le script suivant :
       ** 1 **
         Quand l'utilisateur sélectionne un élément du formulaire, affichez dans un des paragraphes au-dessus : Veuillez saisir le … (avec le type de donnée à saisir, par exemple le prénom).
-        
+
         Utilisez les méthodes focus(), text() et attr().
       */
-       
+
+			 $(document).ready(function(){
+					// var attribut = $('input[name="telephone"]').attr('name')
+					// console.log(attribut);
+
+				 $('input').focus(function(){
+					 var valeurParDefaut = $(this).val();
+					 console.log(valeurParDefaut);
+					 var attribut = $(this).attr('name');
+					 $('p:first').text('Veuillez saisir : ' + attribut);
+
+					 $(this).blur(function(){
+						 var saisie = $(this).val();
+						 if(saisie != ''){
+							 $('p:eq(1)').text('Pour ' + attribut + ' vous avez saisi ' + saisie)
+						 }else{
+							 $('p:eq(1)').text('Vous n\'avez rien saisi');
+						 }
+					 })
+
+					 $(this).change(function(){
+						 $('p:eq(1)').append('Vous avez changé la valeur')
+					 })
+
+				 })
+
+			 });
 
       /*
       ** 2 **
         Ajoutez au code précédent la fonction suivante :
         Quand l'utilisateur a saisi une valeur ou sélectionné un élément, affichez le résultat dans un autre paragraphe la saisie de l'utilisateur. Gérer le cas où l'utilisateur  ne saisit rien.
-        
+
         Utilisez les méthodes blur(), val() et text().
       */
 
@@ -42,7 +69,7 @@
       ** 3 **
         Ajoutez au code précédent la fonction suivante :
         Quand l'utilisateur a saisi une valeur et la modifie ou sélectionné un autre élément, affichez un message : vous avez changé la saisie.
-        
+
         Utilisez les méthodes change() et text().
       */
 
@@ -50,10 +77,10 @@
       /*
       ** 4 **
         Améliorez les deux comportements précédents en affichant les messages au-dessus de la page durant deux secondes.
-        
+
         Utilisez les méthodes css() et setTimeout().
       */
-      
+
 		</script>
 	</head>
 	<body>

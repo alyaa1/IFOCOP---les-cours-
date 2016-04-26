@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 18</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
       /*********************************
       ***********PRESENTATION***********
@@ -18,9 +18,37 @@
          À la fin du chargement du document, prévoyez le script suivant :
         a) Quand vous cliquez, affichez dans le page le nombre de clicks effectués.
         b) Quand vous relachez le bouton de la souris, affichez en milliseconde le temps durant lequel le bouton de la souris a été enfoncé.
-        
+
         Utilisez les méthodes mousedown(), mouseup(), text() et le constructeur Date.
       */
+
+			$(document).ready(function(){
+
+				var message = $('#message');
+				// var nbClick = 1;
+				// $(document).click(function(){
+				// 	nbClick += 1
+				// 	message.text(nbClick);
+				// });
+
+				var startClick = 0;
+				var endClick = 0;
+
+				$(document).mousedown(function(){
+					startClick = new Date()
+				});
+
+				$(document).mouseup(function(){
+					endClick = new Date()
+					var duree = endClick-startClick;
+					console.log(duree);
+					var messageAAfficher = 'le dernier clic a duré : ' + duree;
+					console.log(messageAAfficher);
+					message.text(messageAAfficher);
+				});
+
+
+			})
 		</script>
 	</head>
 	<body>
@@ -58,6 +86,9 @@
 				</nav>
 			</header>
 			<section>
+				<div id = "message">
+
+				</div>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 				</p>

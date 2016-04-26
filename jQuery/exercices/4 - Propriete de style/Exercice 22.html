@@ -2,9 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
+		<style media="screen">
+			#maDiv{
+				padding: 10px;
+				height: 20px;
+				width: 20px;
+				border-radius: 10px;
+				background-color: grey;
+			}
+		</style>
 		<title>jQuery : Exercice 22</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
 			/*********************************
 			***********PRESENTATION***********
@@ -28,6 +37,52 @@
 
 			Utilisez les méthodes height(), width() et setInterval().
 			*/
+			$(document).ready(function(){
+
+				var direction = 1;
+				var largeurInitiale = $('#maDiv').outerWidth();
+				var hauteurInitiale = $('#maDiv').outerHeight();
+
+				var grossir = function(){
+
+					//HAUTEUR DIV
+					var hauteurDiv = $('#maDiv').height()
+					var newHauteurDiv = hauteurDiv + 5 * direction;
+					$('#maDiv').height(newHauteurDiv);
+					console.log('hauteur' + hauteurDiv);
+
+					//LARGEUR DIV
+					var largeurDiv = $('#maDiv').width();
+					var newLargeurDiv = largeurDiv + 5 * direction;
+					$('#maDiv').width(newLargeurDiv);
+					console.log('largeur' + largeurDiv);
+
+
+					//PADDING
+					var paddingDiv = $('#maDiv').innerWidth();
+					var newPaddinDiv = paddingDiv + 5 * direction;
+					$('#maDiv').innerWidth(newPaddinDiv)
+					console.log('padding ' + paddingDiv);
+
+					//TEST taille
+					var largeurFenetre = $(window).innerWidth();
+					var hauteurFenetre = $(window).innerHeight();
+					var largeurActuelleDiv = $('#maDiv').outerWidth()
+					var hauteurActuelleDiv = $('#maDiv').outerHeight()
+
+					if (largeurActuelleDiv > largeurFenetre || hauteurActuelleDiv > hauteurFenetre){
+						direction = -1;
+					};
+
+					if (largeurActuelleDiv < largeurInitiale || hauteurActuelleDiv < hauteurInitiale){
+						direction = 1;
+					}
+
+				}
+
+				setInterval(grossir,100);
+
+			});
 
 			/*
 			** 2 **
@@ -56,7 +111,8 @@
 		</script>
 	</head>
 	<body>
-
+			<div id = "maDiv">
+			</div>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>

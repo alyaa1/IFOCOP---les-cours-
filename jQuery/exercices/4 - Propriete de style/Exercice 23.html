@@ -4,7 +4,30 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 23</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<style media="screen">
+		body, table {
+		    font-family:"Helvetica Neue",Helvetica,verdana,corbel;
+		    font-size:12px;
+		}
+
+		.content {
+		    width: 300px;
+				color: white;
+				align: left;
+		}
+		#scrollToTop a{
+		    background-image: url("http://www.cstb.fr/dae/fileadmin/default/templates/images/Back_to_Top.png");
+		    background-repeat: no-repeat;
+		    bottom: 10px;
+		    height: 51px;
+		    position: fixed;
+		    right: 101px;
+		    text-indent: -50000px;
+		    width: 57px;
+		}
+
+		</style>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
       /*********************************
       ***********PRESENTATION***********
@@ -24,9 +47,43 @@
 
       Utilisez les méthodes scrollTop() et css().
       */
+
+		$(document).ready(function() {
+			$(window).scroll(function() {
+        if ($(window).scrollTop() == 0) {
+					$('#scrollToTop').fadeOut("slow");
+				} else {
+					if ($('#scrollToTop').length == 0) {
+						$('body').append('<div id="scrollToTop">' + '<a href="#">Retour en haut</a>' + '</div>');
+					}
+					$('#scrollToTop').fadeIn("fast");
+				}
+			});
+			$('body').on('click', '#scrollToTop a', function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: 0
+				}, 'slow');
+			});
+		});
+
+
     </script>
 	</head>
 	<body>
+
+	<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices dictum ante, nec interdum felis mollis vitae. Mauris porta urna nec lorem semper cursus. Etiam nec dignissim turpis. Integer a lobortis orci. Suspendisse rhoncus massa dapibus ligula tempor molestie. Etiam consectetur quam et felis interdum sit amet posuere quam fermentum. Suspendisse nibh nulla, auctor et auctor at, placerat sit amet erat.
+
+	Sed tempor mi id erat viverra vestibulum. Donec euismod justo metus. Integer eleifend lacus sit amet dui ullamcorper quis elementum tellus placerat. Quisque ac justo ligula. Ut molestie gravida risus ac vestibulum. Vivamus semper eros vitae dui fringilla eget bibendum odio interdum. Suspendisse non blandit augue. Fusce vitae velit metus, ac vestibulum dui. Fusce eget velit arcu. Aenean quis varius enim.
+
+	In viverra neque libero. Ut non pretium tortor. Duis nunc ipsum, aliquet varius dignissim nec, ullamcorper id arcu. Morbi nec cursus sem. Ut ac justo nulla, eu elementum diam. Suspendisse est elit, tincidunt eu mattis accumsan, placerat quis ipsum. Nunc tincidunt, arcu eu vulputate dapibus, lectus leo ullamcorper quam, id fermentum leo mi iaculis augue. Proin vitae odio pharetra nulla imperdiet aliquam. Aenean sed neque erat, non faucibus leo. Sed metus augue, imperdiet ut lobortis ac, pulvinar vel dolor. Curabitur dui quam, aliquam ac mattis quis, bibendum a mi. Sed viverra libero non risus dictum ac venenatis metus rutrum. Nulla consectetur mauris vitae nisl viverra adipiscing. Proin pellentesque erat a libero cursus sed laoreet velit aliquam. Mauris convallis semper quam, sit amet tempor nisl fermentum sit amet.
+
+	Donec fringilla pellentesque orci, ac pellentesque nunc dictum id. Fusce quis lectus mauris. Nunc mollis vulputate purus, vitae malesuada massa varius ac. Vivamus varius, massa sed dignissim laoreet, lorem magna luctus odio, eget sodales odio velit at felis. Nulla fringilla lacinia diam ac sagittis. Ut pharetra turpis id lectus porttitor at ultrices lorem accumsan. Etiam vitae congue nisl. Aenean non lectus nec lorem luctus pharetra. Proin malesuada, sem eget volutpat mollis, odio arcu fermentum ipsum, in vulputate sapien risus ut felis. Donec vulputate auctor mauris, in consequat eros accumsan sed. Fusce quis pharetra tortor. Aliquam ut dolor massa. Pellentesque id metus eu metus hendrerit elementum eu vel neque. Nullam tincidunt, libero sit amet interdum lobortis, risus ipsum ultricies urna, placerat iaculis eros lacus vitae mauris. Pellentesque nec lacus vel felis interdum egestas at a lacus.
+
+	Donec fringilla pellentesque orci, ac pellentesque nunc dictum id. Fusce quis lectus mauris. Nunc mollis vulputate purus, vitae malesuada massa varius ac. Vivamus varius, massa sed dignissim laoreet, lorem magna luctus odio, eget sodales odio velit at felis. Nulla fringilla lacinia diam ac sagittis. Ut pharetra turpis id lectus porttitor at ultrices lorem accumsan. Etiam vitae congue nisl. Aenean non lectus nec lorem luctus pharetra. Proin malesuada, sem eget volutpat mollis, odio arcu fermentum ipsum, in vulputate sapien risus ut felis. Donec vulputate auctor mauris, in consequat eros accumsan sed. Fusce quis pharetra tortor. Aliquam ut dolor massa. Pellentesque id metus eu metus hendrerit elementum eu vel neque. Nullam tincidunt, libero sit amet interdum lobortis, risus ipsum ultricies urna, placerat iaculis eros lacus vitae mauris. Pellentesque nec lacus vel felis interdum egestas at a lacus.
+
+	Etiam non arcu nec enim volutpat imperdiet. Mauris nec sem lacus. Etiam laoreet laoreet lacus non lacinia. Sed quis odio velit, id lobortis dolor. Nunc quam leo, tempor ac dapibus eget, commodo vel nulla. Sed aliquet, enim sit amet luctus egestas, nisi leo sollicitudin neque, non imperdiet urna ante in arcu. In ultrices sagittis orci egestas ultricies. Cras nisl mi, sodales vitae fringilla quis, vulputate convallis elit. Integer augue orci, vestibulum ut fermentum et, hendrerit ac diam. Nunc lectus sapien, molestie id posuere eget, sodales sit amet arcu. Mauris fringilla mi tincidunt urna porttitor porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+
 
 		<noscript>
 			<p>Veuillez activer JavaScript</p>

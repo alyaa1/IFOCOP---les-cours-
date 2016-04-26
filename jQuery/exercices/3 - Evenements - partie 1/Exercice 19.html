@@ -4,7 +4,18 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 19</title>
 		<link rel="stylesheet" href="../src/styles1.css" type="text/css"/>
-		<script type="text/javascript" src="../jquery-1.11.3.js"></script>
+		<style>
+
+		#maDiv{
+			width: 150px;
+			height: 150px;
+			background-color: blue;
+			border-radius: 75px;
+
+		}
+
+		</style>
+		<script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
 		<script type="text/javascript">
   /*********************************
   ***********PRESENTATION***********
@@ -18,10 +29,27 @@
     À la fin du chargement du document, prévoyez le script suivant :
     a) Quand vous survolez la balise, celle-ci se déplace d'un pixel à chaque mouvement de la souris.
     b) Quand vous cliquez sur la même balise, celle-ci revient à sa place initiale.
-    
+
     Utilisez les méthodes mousemove(), click() et css().
 
   */
+
+	$(document).ready(function(){
+
+		var startingPosition = $('#maDiv').offset()
+
+		$('#maDiv').mousemove(function(){
+			var posMaDiv = $('#maDiv').offset();
+			posMaDiv.left += 1;
+			$(this).offset(posMaDiv);
+			console.log(posMaDiv);
+		})
+
+		$('#maDiv').click(function(){
+			$(this).offset(startingPosition);
+		})
+
+	});
 
 		</script>
 	</head>
@@ -59,6 +87,9 @@
 					</ul>
 				</nav>
 			</header>
+			<div id = "maDiv">
+
+			</div>
 			<section>
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.

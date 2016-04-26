@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <script type="text/javascript" src="../../sources/jquery-1.12.3.js">  </script>
+
+  <script>
+    $(document).ready(function(){
+      $('body').html('<img src="paysage.jpg" id="image1" />');
+      var image = $('#image1');
+      image.css('width','20%');
+
+
+      image.click(function() {
+        if($(this).css('width','20%')){
+          $(this).css('width','100%');
+          alert($(this).css('width'));
+        }else{
+          $(this).css('width','20%');
+        }
+      });
+
+
+    });
+  </script>
+
+
+  </body>
+</html>

@@ -20,6 +20,45 @@
 
       Utilisez les méthodes keyup(), keydown(), offset() et/ou position().
       */
+
+			$(document).ready(function(){
+				$(document).keydown(function(e){
+					$('#monBallon').text(e.keyCode);
+					var posBallon = $('#monBallon').offset()
+					var newPosBallon = posBallon;
+
+					switch (e.keyCode) {
+						case 39:
+						newPosBallon.left += 10;
+						$('#monBallon').offset(newPosBallon)
+						e.preventDefault();
+							break;
+
+						case 37:
+						newPosBallon.left -= 10;
+						$('#monBallon').offset(newPosBallon)
+						e.preventDefault();
+							break;
+
+						case 38:
+						newPosBallon.top -= 10;
+						$('#monBallon').offset(newPosBallon)
+						e.preventDefault();
+							break;
+						case 40:
+						newPosBallon.top += 10;
+						$('#monBallon').offset(newPosBallon)
+						e.preventDefault();
+							break;
+
+
+
+						default:
+
+					}
+				});
+
+			})
     </script>
 	</head>
 	<body>
