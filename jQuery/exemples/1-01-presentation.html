@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery - Présentation</title>
+  <style>
+      .rouge{
+        color: red;
+      }
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+      jQuery(document).ready(function(){
+        //Accéder à un élément
+        $('#cible').find('.element');
+        //Modifier l'apparence d'un élément
+        $('p.element').addClass('rouge');
+        //Changer le contenu d'un document
+        $('ul').append('<p>Un nouveau texte à la fin avec la méthode append</p>');
+        //Réagir à l'action d'un utilisateur
+        $('#cible .element').click(function(){
+          $('ul p').text('Changement de texte à l\'action de la souris');
+          //Animer un élément
+          $(this).slideUp(1200);
+        });
+        //Simplifier la sélection multiple
+          $('li').each(function(indice,element){
+            $(element).attr('id','uneId' + (indice + 1));
+          });
+        });
+  </script>
+</head>
+<body>
+  <h1>Présentation de jQuery</h1>
+  <p class="element">Pour utiliser jQuery, on peut écrire :</p>
+  <ul id="cible">
+    <li>window.jQuery</li>
+    <li>jQuery</li>
+    <li class="element">$</li>
+  </ul>
+</body>
+</html>

@@ -51,12 +51,11 @@
             break;
             case 39:
               //instructions
-            var monContainer = document.getElementById('container');
-            var style = title.currentStyle || window.getComputedStyle(title);
-            var marginLeft = style.left;
-            console.log(marginLeft);
-            marginLeft = parsfloat(marginLeft);
-            container.style.left = marginLeft + 2 + 'px';
+            var monContainer = window.document.getElementById('container');
+            var Left = style.left;
+            console.log(Left);
+            Left = parsfloat(Left);
+            container.style.left = Left + 2 + 'px';
             console.log(container);
               // alert('droite');
 
