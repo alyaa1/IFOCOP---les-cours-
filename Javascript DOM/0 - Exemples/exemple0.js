@@ -1,6 +1,6 @@
 /*Types de données*/
 //Number
-var maVariable = 12; 
+var maVariable = 12;
 //String
 var autreVariable = 'Hello !';
 //Array
@@ -22,6 +22,7 @@ maBoite.toto = true;
 maBoite.toto; //contient true
 
 maBoite.emplacement; //contient 2
+console.log(maboite.emplacement);
 
 //Notation JSON (Notation Objet JavaScript)
 var billy = {
@@ -151,7 +152,7 @@ var MonUsineRono = function(dfqsgfqehqed){
 };
 
 //Mot clé new : le fait de créer un objet est appélé instanciation (l'objet créé est une instance de sa fonction constructeur)
-var voiture1 = new MonUsineRono('verte'); 
+var voiture1 = new MonUsineRono('verte');
 var voiture2 = new MonUsineRono('bleue');
 var voiture3 = new MonUsineRono('jaune');
 var voiture4 = new MonUsineRono('rouge');
@@ -160,26 +161,3 @@ var voiture6 = new MonUsineRono('grise');
 var voiture7 = new MonUsineRono('violette');
 
 voiture3.couleur = 'vert';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

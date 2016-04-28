@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+  <style media="screen">
+    #canvas{
+      margin: auto;
+      border: 1px solid black;
+      display: block;
+
+    }
+  </style>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        /*Les formes plus complexes - des ronds */
+        ctx.beginPath();
+        ctx.arc(75,75,50,0,Math.PI*2,true); //cercle d'un rayon de 50px
+        ctx.moveTo(110,75);
+        ctx.arc(75,75,35,0,Math.PI,true) //demi-cercle de 30px de rayon
+
+
+        ctx.stroke();
+
+
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+   <p>
+     on définit un <em>'canvas'</em> de 150px de largeur et de hauteur
+     on va utiliser la méthode <b>arc()</b> <br />
+     <code>
+       arc(x, y, rayon, angleInitial, angleFinal, antihoraire)
+     </code>
+      <br />
+      x et y indiquent où se trouve le centre du cercle.
+      on indique le rayon
+
+
+      antihoraire : si c'est à true le cercle est déssiné dans le sens inverse des aiguilles d'une montre.
+
+     <pre code>
+       ctx.beginPath(); //on commence à dessiner
+       ctx.arc(75,75,50,0,Math.PI*2,true); //
+       ctx.stroke();// on dessine un trait
+     </code>
+   </p>
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transformation</title>
+  </head>
+  <style media="screen">
+    body{
+      background-color: #4F191A;
+    }
+  </style>
+  <body>
+      <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function(){
+      console.log('DOM chargé');
+
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      console.log(ctx);
+
+      ctx.fillRect(0,0,150,150); //dessine un carré noir
+      ctx.save();
+
+      ctx.fillStyle = '#09F'; //change la couleur
+      ctx.fillRect(15,15,120,120); //dessine un carré avec la nouvelle couleur
+
+      ctx.save();
+      ctx.fillStyle = '#FFF';
+      ctx.globalAlpha = 0.5;
+      ctx.fillRect(30,30,90,90);
+
+      ctx.restore (); //restore les réglage à l'étape précédente
+      ctx.fillRect(45,45,60,60);
+
+      ctx.restore(); //et encore l'étape précédente
+      ctx.fillRect(60,60,30,30); 
+
+
+
+    });
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rotation</title>
+  </head>
+  <style media="screen">
+    body{
+      background-color: #4F191A;
+    }
+  </style>
+  <body>
+      <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function(){
+      console.log('DOM chargé');
+      //Version simplifié de ce qui se trouve dans le tuto sur MDN
+      var ctx = document.getElementById('canvas').getContext('2d');
+      //Rotation par default se fait par rapport à l'origine du canvas (0,0)
+      ctx.save();
+      ctx.fillStyle = '#4d4e53'
+      ctx.fillRect(30,30,100,100);
+
+      ctx.fillStyle = '#a54330';
+      ctx.rotate((Math.PI/180)*25);
+      ctx.fillRect(30,30,100,100);
+      ctx.restore();
+
+
+      //si on veut faire une translation à partir du centre du carré
+
+      //on créer un carré gris :
+      ctx.fillStyle = '#4D4E53';
+      ctx.fillRect(150,30,100,100);
+
+      //pour créer le deuximère carré en rotation par rapport au centre du carré gris, on va d'abord translater l'origine du canvas pour qu'elle soit au niveau du centre du carré gris
+      ctx.fillStyle = '#a54330';
+      ctx.translate(200,80) // x = x + (0,5 * width)
+      ctx.rotate((Math.PI/180)*25);//on fait la rotation de 25°
+      ctx.translate(-200,-80) // on remet le canvas à sa place initiale 
+      ctx.fillRect(150,30,100,100);//enfin on affiche le carré.
+
+
+
+      });
+  </script>
+</html>

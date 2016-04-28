@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 20</title>
+
     <script>
       //Énoncé :
 
@@ -11,11 +12,11 @@
       /*
         L'objectif de cet exercice est de créer une div qui bouge en fonction du scroll de la souris. Vous devez impérativement réaliser l'exercice sur FireFox pour commencer.
       */
- 
+
       /*
         1. Créez une <div> qui aura pour identifiant ascenseur. Doter cette <div> de styles CSS de telle sorte qu'elle soit visible par l'utilisateur (carré rouge par exemple). Cette <div> doit être positionnée en absolute.
       */
- 
+
       /*
         Lorsqu'on confie une fonction au gestionnaire d'évènement du navigateur Internet, celui-ci l'exécute toujours en lui transmettant en paramètre un objet contenant les caractéristiques de l'évènement survenu. C'est pourquoi on peut écrire :
       */
@@ -31,13 +32,18 @@
       /*
         2. Au Chargement du document, attachez une fonction à l'évènement DOMMouseScroll en utilisant la méthode .addEventListener(). Cette fonction doit déclencher l'affichage d'une boite de dialogue avec le texte : 'This is a magic scroll'.
       */
+    //   window.addEventListener('load', function(){
+    //   DOMMouseScroll.event = ('This is a magic scroll');
+    // });
+
+
 
       /*
         3. Modifiez cette fonctans uion pour afficher dne boite de dialogue la propriété .detail contenue dans l'objet d'évènement fourni à chaque fois qu'on scroll. Cette propriété contient le décalage de la molette.
       */
 
       /*
-        4. Modifiez cette fonction pour la <div> se décale en fonction de la valeur de la propriété .detail 
+        4. Modifiez cette fonction pour la <div> se décale en fonction de la valeur de la propriété .detail
       */
 
       //Compatibilité Inter Navigateur
@@ -67,6 +73,8 @@
         <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
         <p><span>1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
       </div>
+      <div id="ascenseur">
+      </div>
       <div>
         <h2><span>2</span>. Titre de la deuxième section</h2>
         <p><span>2.1</span>. Premier paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
@@ -78,5 +86,19 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
       </div>
     </div>
+    <script type="text/javascript">
+    var loadDom = function() {
+      console.log('passe');
+      var maDiv = document.createElement('div');
+        maDiv.style.height = '200px';
+        maDiv.style.width = '200px';
+        maDiv.style.backgroundColor = 'red';
+        maDiv.style.position = "absolute";
+        maDiv.id = 'ascenseur';
+        maDiv.texte = 'center';
+    }
+    var monTitre = document.getElementsByTagName('h1')[0];
+
+    </script>
   </body>
 </html>

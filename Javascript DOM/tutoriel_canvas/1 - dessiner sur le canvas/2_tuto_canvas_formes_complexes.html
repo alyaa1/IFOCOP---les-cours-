@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+  <style media="screen">
+    #canvas{
+      margin: auto;
+      border: 1px solid black;
+      display: block;
+
+    }
+  </style>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        /*Les formes plus complexes */
+        //TRIANGLE Plein
+        ctx.beginPath();
+        ctx.moveTo(75,50);//je déplace mon stylo au point 75 x 50
+        ctx.lineTo(100,75);//je trace une droite de 75x50 à 100x75
+        ctx.lineTo(100,25);//je trace une droite de 100x75 à 100x25
+        ctx.fill();//je remplis l'espace que je viens de créer... c'est un triangle
+
+
+        //TRIANGLE contour seulement
+        ctx.beginPath();
+        ctx.moveTo(125,125);
+        ctx.lineTo(125,45);
+        ctx.lineTo(45,125);
+        ctx.closePath(); // on ferme la forme
+        ctx.stroke() // on dessine la bordure
+
+
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+   <p>
+     on définit un <em>'canvas'</em> de 150px de largeur et de hauteur
+
+     <pre code>
+       ctx.beginPath();
+       ctx.moveTo(75,50);//je déplace mon stylo au point 75 x 50
+       ctx.lineTo(100,75);//je trace une droite de 75x50 à 100x75
+       ctx.lineTo(100,25);//je trace une droite de 100x75 à 100x25
+       ctx.fill();//je remplis l'espace que je viens de créer... c'est un triangle
+
+
+     </code>
+   </p>
+ </body>
+</html>

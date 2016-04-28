@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+  <style media="screen">
+    #canvas{
+      margin: auto;
+      border: 1px solid black;
+      display: block;
+
+    }
+  </style>
+  <script type="application/javascript">
+
+
+
+  function draw() {
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var img = new Image();
+
+    img.onload = function(){
+      ctx.drawImage(img, 0, 0); //on inclut l'image dans le canvas
+      //on peut dessiner sur ce canvas
+      ctx.beginPath(); // on commence le dessin
+      ctx.moveTo(30,96)// on déplace le style sur un point
+      ctx.lineTo(70,66)
+      ctx.lineTo(103,76)
+      ctx.lineTo(170,15)
+
+
+      ctx.stroke();// on affiche les traits qu'on vient de dessiner.
+
+    };
+
+    img.src = 'https://mdn.mozillademos.org/files/5395/backdrop.png';
+  };
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="300" height="200"></canvas>
+ </body>
+</html>

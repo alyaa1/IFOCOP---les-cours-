@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+  <style media="screen">
+    #canvas{
+      padding: 50px;
+      margin: auto;
+      border: 1px solid black;
+      display: block;
+
+    }
+  </style>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        // ctx.fillStyle = "rgb(200,0,0)";
+        // ctx.fillRect (10, 10, 55, 50);
+        //
+        // ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        // ctx.fillRect (30, 30, 55, 50);
+
+      /*Fonctionnement de base
+        Dessiner un rectangle et le remplir
+      */
+
+        ctx.fillRect(25,25,100,100)//on dessine un carré noir de 100x100
+        ctx.clearRect(45,45,60,60)//on vide un carré de 60x60
+        ctx.strokeRect(20,20,110,110)//on dessine les bords d'un carré de 70x70
+        ctx.strokeRect(50,50,50,50)//on dessine les bords d'un carré de 70x70
+
+      /*Les formes plus complexes */
+
+
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+   <p>
+     on définit un <em>'canvas'</em> de 150px de largeur et de hauteur
+
+     <pre code>
+       ctx.fillRect(25,25,100,100)//on dessine un carré noir de 100x100
+       ctx.clearRect(45,45,60,60)//on vide un carré de 60x60
+       ctx.strokeRect(20,20,110,110)//on dessine les bords d'un carré de 70x70
+       ctx.strokeRect(50,50,50,50)//on dessine les bords d'un carré de 70x70
+     </code>
+   </p>
+ </body>
+</html>

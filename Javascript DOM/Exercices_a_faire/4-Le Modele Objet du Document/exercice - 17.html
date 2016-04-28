@@ -16,6 +16,8 @@
       /*
         1. AU CLIC sur le titre principal, utilisez la méthode .createElement() pour créer un objet correspondant à une balise image. Renseignez les propriétés title, alt et src de cet objet. Utilisez appendChild pour ajouter cette balise image dans le <span> 2.2
       */
+
+
     </script>
   </head>
   <body>
@@ -47,9 +49,19 @@
       'use strict';
 
       var monTitre = document.getElementsByTagName('h1')[0];
+      console.log(monTitre);
       monTitre.addEventListener('click', function() {
-       alert("Vous m'avez cliqué !");
+       getImage();
    });
+      var getImage = function() {
+        var newDiv = document.createElement('img');
+        newDiv.tilte = "ken";
+        newDiv.alt = "perso";
+        newDiv.src = "ken.png";
+
+      var mySpan = document.getElementsByTagName('span');
+      mySpan[5].appendChild(newDiv);
+    }
     </script>
   </body>
 </html>

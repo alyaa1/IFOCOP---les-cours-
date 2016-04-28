@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Translation</title>
+  </head>
+  <style media="screen">
+    body{
+      background-color: #4F191A;
+    }
+  </style>
+  <body>
+      <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function(){
+      console.log('DOM chargé');
+      //Version simplifié de ce qui se trouve dans le tuto sur MDN
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      for (var i=0; i<3; i++){
+          ctx.save(); //enregistre le contexte
+          ctx.fillStyle = 'rgb(51,51,255)'; //définit la couleur du carré
+          ctx.translate(10+i*50, 10+i*50); // fait glisser le carré
+          ctx.fillRect(0,0,25,25); // dessine et remplit le carré
+          ctx.restore(); // restaure les information du contexte, on repart donc au prochain tour avec un carré dans sa position initiale.
+        }
+      });
+  </script>
+</html>

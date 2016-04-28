@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+
+  <style media="screen">
+    #canvas{
+      margin: auto;
+      border: 1px solid black;
+      display: block;
+
+    }
+  </style>
+  <script type="application/javascript">
+
+
+
+  function draw() {
+    var ctx = document.getElementById('canvas').getContext('2d');
+
+    ctx.drawImage(document.getElementById('rhino'),33,71,104,124,21,20,87,104);
+
+    ctx.drawImage(document.getElementById('cadre'),0,0);
+
+  };
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="152" height=""></canvas>
+
+  <div style="display:none">
+    <img id="rhino" src="https://mdn.mozillademos.org/files/5397/rhino.jpg" alt="rhino" />
+    <img id="cadre" src="https://mdn.mozillademos.org/files/242/Canvas_picture_frame.png" alt="cadre" />
+  </div>
+
+
+   <pre>
+     drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+   </pre>
+  <br>
+  L'idée est de découper une partie d'une image, puis de la déplacer dans le canvas.
+  sx et sy indiquent à partir de quel point il faut découper l'image.
+  dx et dy indiquent où il faut placer ce point dans le canvas
+  Enfin, il faudra indiquer quelle taille d'image on prend au débart et à l'arrivée.
+ </body>
+</html>

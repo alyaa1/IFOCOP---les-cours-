@@ -38,7 +38,12 @@
           switch(code){
             case 37:
               //*instructions
-
+              window.document.getElementById('container');
+              var monLeft = container.style.left;
+              console.log(monLeft);
+              var valueMonLeft = parseFloat(monLeft);
+              container.style.left += -2 + 'px';
+              console.log('monContainer');
             }
 
               // alert('gauche');
@@ -46,17 +51,15 @@
             break;
             case 38:
               //instructions
-              alert('haut');
+              // alert('haut');
 
             break;
             case 39:
               //instructions
-            var monContainer = window.document.getElementById('container');
-            var Left = style.left;
-            console.log(Left);
-            Left = parsfloat(Left);
-            container.style.left = Left + 2 + 'px';
-            console.log(container);
+            window.document.getElementById('container');
+            var monLeft = container.style.left;
+            var valueMonLeft = parseFloat(monLeft);
+            container.style.left += 2 + 'px';
               // alert('droite');
 
             break;
