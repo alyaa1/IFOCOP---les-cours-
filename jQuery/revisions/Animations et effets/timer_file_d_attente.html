@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" name="enchainer">Enchainer les animations</button>
+    <button type="button" name="nePasEnchainer">Enchainer les animations</button>
+    <button type="button" name="executerEnMemeTemps">Executer toutes les animations en même temps</button>
+    <button type="button" name="etatIntial">Etat initial</button>
+    <p style="magin-left= 200px">
+      <img src="img/landscape1.jpg" alt="" style="border: 2px black solid;" />
+    </p>
+
+  </body>
+
+  <script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+
+      $('[name="enchainer"]').click(function(){
+        $('img').animate({'border-width':'100'},1500)
+                .animate({'width': '-=100'},1500);
+      });//les 2 animations s'enchainent, l'une après l'autre
+
+      $('[name="nePasEnchainer"]').click(function(){
+        $('img').animate({'border-width':'100'}, {queue: false, duration: 1500})
+                .animate({'width':'-=100'},1500);
+      });
+      $('[name="executerEnMemeTemps"]').click(function(){
+        $('img').animate({'border-width':'100', 'width': '-=100'},1500);
+      });
+      $('[name="etatIntial"]').click(function(){
+        $('img').css({'border-width':'2px', 'width':'800px'});
+      });
+
+    });
+  </script>
+</html>

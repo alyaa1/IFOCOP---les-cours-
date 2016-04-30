@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transition douce au survol d'une image</title>
+    <style media="screen">
+      img{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+
+      #montagneGrand{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/montagne_small.jpg" id="montagnePetit" alt="montagne" />
+    <img src="img/montagne.jpg" id="montagneGrand" alt="montagne" />
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('#montagnePetit').mouseover(function(){
+          $(this).fadeOut(1000);
+          $('#montagneGrand').fadeIn(1000);
+        });
+
+        $('#montagneGrand').mouseout(function(){
+          $(this).fadeOut(1000);
+          $('#montagnePetit').fadeIn(1000); 
+        });
+      })
+    </script>
+  </body>
+</html>

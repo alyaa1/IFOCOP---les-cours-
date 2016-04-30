@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Délégation d'événements</title>
+    <style>
+    div {
+      background: yellow;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px;
+
+    }</style>
+
+
+  </head>
+  <body>
+
+    <div class="" id="master">
+      Cliquez ici pour insérer un autre.
+    </div>
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+
+    </script>
+
+    <script type="text/javascript">
+  $(document).ready(function(){
+    $('#master').on('click', 'div', function(){
+      $(this).after('ce <div> a les mêmes caractériques que son parent');
+    });
+  })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button id="ajouter">Ajouter animation</button>
+    <button id="annuler">Annuler la file d'attente</button>
+    <button id="remplacer">Remplacer la file d'attente</button>
+    <button id="retour">Ajouter une fonction retour</button>
+
+    <hr>
+    <img src="img/1_apparition.png" id="bon" style="position: relative;"/>
+    <img src="img/mauvais.png" id="mauvais" style="position: relative"/>
+
+    <hr>
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+
+    </script>
+    <script type="text/javascript">
+      $(function(){
+        $('#ajouter').click(function(){
+          $('#bon').toggle(5000)
+                    .queue(function(){
+                      $('#mauvais').animate({left: '+=200'},'slow')
+                                    .animate({top: '+=200'},'slow')
+                                    .animate({left: '+=200'},'slow')
+                                    .animate({top: '+=200'},'slow');
+                    });
+        });
+
+        $('#annuler').click(function(){
+          $('img').clearQueue();
+        });
+
+        $('#remplacer').click(function(){
+          $('#mauvais').css({'left':200, 'top':200});
+          $('#mauvais').queue(function(){
+            $(this).animate({top: '-=200'}, 'slow')
+                    .animate({top: '+=200', left: '-=200'}, 'slow')
+                    .animate({top: '-=200'}, 'slow')
+                    $(this).dequeue();
+          });
+        });
+        
+        $('#retour').click(function(){
+          $('img').queue(function(){
+            alert('Animation terminée');
+            $(this).dequeue();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

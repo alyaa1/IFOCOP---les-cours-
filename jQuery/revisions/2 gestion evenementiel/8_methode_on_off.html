@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="grumpy.jpg" id="grumpy"/>
+    <br  />
+
+    <button id="activer">Activer le clic</button>
+    <button id="desactiver">Desactiver le clic</button>
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        function traitement(){
+          alert('image cliquée');
+        }
+        $('#activer').on('click', function(){
+          $('#grumpy').click(traitement);
+        })
+
+        $('#desactiver').on('click', function(){
+          $('#grumpy').off('click', traitement);
+        })
+
+
+      });
+    </script>
+
+  </body>
+</html>

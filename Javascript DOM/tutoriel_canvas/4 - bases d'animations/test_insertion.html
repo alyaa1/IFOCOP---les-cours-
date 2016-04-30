@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.document.addEventListener('DOMContentLoaded', function(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        console.log(ctx);
+
+        var img = new Image();
+        img.src = 'hexagon_pattern.png'
+        console.log(img);
+        img.onload = function(){
+          ctx.drawImage(img,0,0);
+        };
+      })
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300" style="border: 1px solid black"></canvas>
+  </body>
+</html>

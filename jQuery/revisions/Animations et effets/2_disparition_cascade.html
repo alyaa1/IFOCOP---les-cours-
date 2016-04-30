@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disparition en cascade</title>
+  </head>
+  <body>
+    <hr>
+    <button type="button" name="button" id="affiche">Faire apparaitre les images</button>
+    <button type="button" name="button" id="cache">Faire disparaitre les images</button>
+    <hr>
+
+    <img src="img/1_apparition.png" />
+    <img src="img/mauvais.png" />
+    <img src="img/question.png" />
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+    </script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('#affiche').click(function(){
+          $('img').first().show('slow', function showNextOne(){
+            $(this).next('img').show('slow', showNextOne);
+          })
+        });
+
+        $('#cache').click(function(){
+          $('img').first().hide('slow', function hideNextOne(){
+            $(this).next('img').hide('slow', hideNextOne);
+          })
+        });
+
+    });
+    </script>
+  </body>
+
+
+</html>

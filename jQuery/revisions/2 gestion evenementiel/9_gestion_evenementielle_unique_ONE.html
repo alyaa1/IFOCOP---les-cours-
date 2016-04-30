@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="grumpy.jpg" alt="Grumpy Cat" />
+    <span id="message"></span>
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+
+    </script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('img').one('click', function(){
+          $('#message').text('vous avez cliqué sur l\'image, je n\'apparaitrai plus').fadeIn(1000).fadeOut(1000);
+        });
+      });
+    </script>
+  </body>
+</html>

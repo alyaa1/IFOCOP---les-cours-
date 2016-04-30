@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <span id="info_souris"></span>
+  <body>
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(document).mousedown(function(e){
+          $('#info_souris').html("Evénement " +  e.type + "Bouton pressé " + e.which)
+        });
+      });
+    </script>
+
+  </body>
+</html>

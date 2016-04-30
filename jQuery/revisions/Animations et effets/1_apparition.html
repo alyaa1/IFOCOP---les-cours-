@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Apparition et disparition
+    </title>
+  </head>
+  <body>
+    <hr>
+
+    <button id="affiche" type="button" name="button">Faire apparaître les lignes paires</button>
+    <button id="cache" type="button" name="button">Faire disparaitre les lignes paires</button>
+    <hr>
+
+    <table border>
+      <tr><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>2</td><td>2</td><td>2</td></tr>
+      <tr><td>3</td><td>3</td><td>3</td></tr>
+      <tr><td>4</td><td>4</td><td>4</td></tr>
+      <tr><td>5</td><td>5</td><td>5</td></tr>
+      <tr><td>6</td><td>6</td><td>6</td></tr>
+      <tr><td>7</td><td>7</td><td>7</td></tr>
+    </table>
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+
+    </script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('tr:even').css('background','yellow');
+        $('td').css({
+          "width" : "200px",
+          "text-align": "center"
+        });
+
+        $('#affiche').click(function(){
+          $('tr:even').show(1000,'linear');
+        })
+
+        $('#cache').click(function(){
+          $('tr:even').hide(1000,'swing');
+        })
+
+      })
+    </script>
+  </body>
+</html>

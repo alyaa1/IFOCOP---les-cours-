@@ -24,11 +24,17 @@
     <span id="kevin" >Kévin</span>
 
 
-    <script src="jquery.js"></script>
+    <script src="../sources/jquery-1.12.3.js"></script>
     <script>
       $(function() {
         // Ajouter le code jQuery ici
-        $('#jean').toggleClass('vert petit');
+        $('#pierre').toggleClass('vert');
+        if($('#pierre').is('.vert')){
+          $('#paul').toggleClass('rouge');
+        }else{
+          console.log('je ne suis pas vert');
+        };
+
       });
     </script>
   </body>

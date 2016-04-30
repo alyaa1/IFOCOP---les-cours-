@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="grumpy.jpg" alt="petit chat" id="target"/>
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        var largeur = ($(window).width()) - 50;
+        var hauteur = ($(window).height()) - 50;
+
+        var p = $('#target').offset() //on stocke la position de l'image dans une variable
+        p.top = 100;
+        p.left = 100;
+        $('#target').offset(p); //on positionne l'image à 100 x 100
+
+        //gestion du clic et du déplacement de l'image
+        $('#target').click(function(){
+          var x = Math.floor(Math.random()*largeur);
+          var y = Math.floor(Math.random()*hauteur);
+
+          p.top = y;
+          p.left = x;
+          $('#target').offset(p);
+        });
+      })();
+    </script>
+  </body>
+</html>

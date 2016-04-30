@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animation en boucle</title>
+    <style media="screen">
+      .centre{
+        width: 50%;
+        margin:auto;
+        padding: 20px;
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="centre">
+    <button type="button" name="stopFin">Stop & fin</button>
+    <button type="button" name="stopAnnuleFin">Stop annule et fin</button>
+    <button type="button" name="stop">Stop</button>
+    <button type="button" name="reprise">Reprise</button>
+
+  </div>
+
+  <div class="centre">
+    <div id="maBalle"></div>
+  </div>
+
+
+  <script type="text/javascript" src="../../sources/jquery-1.12.3.js"></script>
+  <script type="text/javascript">
+  $(function(){
+
+  $('[name="stopFin"]').click(function(){
+    $('#maBalle').stop(false,true);
+  });
+
+  $('[name="stopAnnuleFin"]').click(function(){
+    $('#maBalle').stop(true,true);
+  })
+
+  $('[name="stop"]').click(function(){
+    $('#maBalle').stop(true, false)
+  })
+
+  $('[name="reprise"]').click(bis)
+
+
+
+
+    $('#maBalle').css({
+                "width":"10px",
+                "height":"10px",
+                "background-color":"red",
+                "border":"black 2px solid",
+                "border-radius":"10px",
+                "position":"relative"
+    });
+
+  function bis(){
+
+    $('#maBalle').animate({left: '+=200'},'slow')
+                  .animate({top: '+=200'},'slow')
+                  .animate({left: '-=200'},'slow')
+                  .animate({top: '-=200'},'slow', bis);
+  };
+
+
+  });
+
+  </script>
+  </body>
+</html>

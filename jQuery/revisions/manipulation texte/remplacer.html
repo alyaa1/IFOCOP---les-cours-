@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="../Animations et effets/img/landscape1.jpg" id="img1" />
+
+    <script type="text/javascript" src="../../sources/jquery-1.12.3.js">
+    </script>
+
+    <script>
+      var landscape = new Image();
+      landscape.src = '../Animations et effets/img/landscape2.jpg';
+      $(function(){
+        $('img').click(function(){
+          $(this).replaceWith(landscape);
+        });
+      })
+    </script>
+
+  </body>
+</html>
