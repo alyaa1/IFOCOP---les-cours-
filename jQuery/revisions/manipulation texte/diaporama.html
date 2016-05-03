@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      body{
+        background: black;
+      }
+      div{
+        width: 800px;
+        margin: auto;
+      }
+      img{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="img/landscape1.jpg" id="img4" />
+      <img src="img/landscape2.jpg" id="img3" />
+      <img src="img/landscape3.jpg" id="img2" />
+      <img src="img/landscape4.jpg" id="img1" />
+    </div>
+
+    <script type="text/javascript" src='../../sources/jquery-1.12.3.js'>
+
+    </script>
+
+    <script type="text/javascript">
+      $(function(){
+        var i = 0;
+
+        function affiche(){
+          i++;
+          if (i==1){
+            var precedent = '#img4'
+          }else{
+            precedent = '#img' + (i-1);
+          }
+
+          var actuel = '#img'+i;
+
+          $(precedent).fadeOut(2000);
+          $(actuel).fadeIn(2000)
+
+          if (i==4) {
+            i=0;
+          }
+        }
+
+        setInterval(affiche, 2000);
+      })
+    </script>
+
+
+  </body>
+</html>

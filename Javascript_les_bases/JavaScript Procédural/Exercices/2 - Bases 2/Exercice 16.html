@@ -16,10 +16,13 @@
 			*********************************
 				Réalisez le programme (algorithme) suivant :
 				Quand je CLIQUE sur le premier paragraphe, j'affiche une B.d.D contenant le message « Veuillez saisir un message ». PUIS, j'affiche la saisie de l'utilisateur dans une B.d.D.
-				
+
 				Utilisez l'attribut d'évènement onclick, la fonction prompt() et la fonction alert()
 			*/
-
+			var maFonction = function() {
+				var Bdd = prompt('veuillez saisir un message');
+				alert(Bdd)
+			};
 			/*
 				Quelle information nous retourne la fonction prompt si :
 				_ l'utilisateur clique sur Annuler ?
@@ -30,7 +33,7 @@
 	</head>
 	<body>
 		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
+		<p onclick="maFonction()">Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>

@@ -24,7 +24,7 @@
 					//code à exécuter.
 					compteur++;
 				}
-				
+
 			/*
 				Ainsi :
 			*/
@@ -40,22 +40,38 @@
 			** 1 **
 				Réalisez le programme (algorithme) suivant :
 				Au chargement, exécutez une fonction. Celle-ci affichez successivement dans une boite de dialogue (B.d.D) les trois valeurs du compteur de la boucle.
-				
+
 				Utilisez la boucle while avec un compteur ainsi que la fonction alert().
 			*/
-			
+				var maFonction = function() {
+					var compteur = 0;
+					while(compteur < 3) {
+						alert(compteur);
+						compteur++;
+					}
+
+				};
 			/*
 			** 2 **
 				Réalisez le programme (algorithme) suivant :
 				Au chargement, exécutez une fonction. Celle-ci stocke dans un tableau trois textes. Ensuite, affichez successivement dans une boite de dialogue (B.d.D) les trois textes.
-				
+
 				Utilisez la boucle while avec un compteur ainsi que la fonction alert().
 			*/
+			var maFonction = function() {
+			var monTab = ['bonjour ','comment ','allez vous ?'];
+			// console.log(['bonjour ', 'comment ', 'allez vous ?'];);
+			var i = 0;
+				while(i < 3) {
+					alert(monTab[i]);
+					i++;
+				}
+		};
 		</script>
 	</head>
 	<body>
 		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
+		<p onclick="maFonction()">Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>

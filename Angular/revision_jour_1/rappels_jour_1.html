@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div class="">
+      <div ng-controller="maFonction">
+        <p>
+          Ceci est un texte
+        </p>
+        {{leScopeDeMaDiv.test}}
+        {{leScopeDeMaDiv.hello()}}
+        {{Tracteur()}}
+      </div>
+    </div>
+
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript">
+    angular.module('monModule',[]);
+
+    var refModule = angular.module('monModule');
+
+    refModule.controller('maFonction',['$scope', function(monScope){
+      //notation JSON
+      monScope.leScopeDeMaDiv = {
+        test: 10,
+        hello: function(){return 'Bonjour à tous'}
+      };
+
+      //notation constructeur
+      var Tracteur = function(){
+        this.test2 = 20;
+      }
+
+    }]);
+
+    angular.bootstrap(window.document,['monModule'], {strictDi: true});
+    </script>
+  </body>
+</html>

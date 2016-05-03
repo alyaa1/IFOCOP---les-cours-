@@ -19,35 +19,55 @@
 
 				Utilisez la fonction confirm()
 			*/
-			
-			
-			/*			
+			var maFonction = function() {
+				confirm('ceci est un choix');
+				console.log(maFonction);
+			};
+
+			 var maFonction2 = function() {
+				 var Bdd = confirm('Ceci est un choix');
+				//  console.log(confirm);
+				 if(Bdd == true){
+					 alert('ok');
+				 }else{
+					 alert('annuler');
+				 }
+			 };
+
+			/*
 			** 2 **
-				Au clique sur le second paragraphe s'exécute une autre fonction que vous avez, également, déclarée dans l'entête du document. Celle-ci doit elle même déclencher une fonction qui affichera une Boite de Dialogue (B.d.D) contenant le texte « Ceci est un choix » ainsi que les boutons OK et Annuler. 
+				Au clique sur le second paragraphe s'exécute une autre fonction que vous avez, également, déclarée dans l'entête du document. Celle-ci doit elle même déclencher une fonction qui affichera une Boite de Dialogue (B.d.D) contenant le texte « Ceci est un choix » ainsi que les boutons OK et Annuler.
 				Sauvegardez ce qui est retourné par la fonction affichant la B.d.D. Affichez ce que vous avez sauvegardé dans une nouvelle B.d.D.
-				
+
 				Utilisez la fonction confirm() puis  la fonction alert().
 			*/
-			
-			
+
+
 			/*
 				Quelle information nous retourne la fonction confirm() si l'utilisateur clique sur le choix OK ? Sur Annuler ?
 			*/
-			
-			/*	
+
+			/*
 			** 3 **
 				Réalisez le programme (algorithme) suivant :
 				Au chargement du document, j'affiche une B.d.D contenant le message « Voulez vous continuer ? ». Si l'utilisateur clique sur OK, j'affiche un message « Vous avez cliqué sur OK »; sinon rien ne s'affiche.
 
 				Utilisez l'attribut d'évènement onload, la fonction confirm(), la fonction alert() et un bloc conditionnel if.
 			*/
+			var maFonction3 = function() {
+				var Bdd = confirm('Voulez vous continuer ?');
+			if(Bdd !== false) {
+				alert('Vous avez cliquez sur ok');
+			}else{
+			}
+		};
 
 		</script>
-	</head>
-	<body>
+	</head>s
+	<body onload="maFonction3()">
 		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
-		<p>Deuxième paragraphe</p>
+		<p onclick="maFonction()">Premier paragraphe</p>
+		<p onclick="maFonction2()">Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>

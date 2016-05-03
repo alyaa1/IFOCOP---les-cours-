@@ -15,7 +15,7 @@
 					compteur++;
 				}
 			/*
-				Il existe en JavaScript un autre type de boucle qui permet d'utiliser un compteur. La voici : 
+				Il existe en JavaScript un autre type de boucle qui permet d'utiliser un compteur. La voici :
 			*/
 				for(i=0;i<5;i++){
 					//code à exécuter
@@ -30,16 +30,26 @@
 			** 1 **
 				Reprenez le code de l'exercice précédent au point 1 en utilisant une boucle for au lieu d'un while.
 			*/
-			
+			var maFonction = function() {
+				for(compteur=0;compteur<3;compteur++){
+					alert(compteur);
+				}
+
+			};
 			/*
 			** 2 **
 				Reprenez le code de l'exercice précédent au point 2 en utilisant une boucle for au lieu d'un while.
 			*/
-			
+			var maFonction = function() {
+			var monTab = ['bonjour ','comment ','allez vous ?'];
+				for(i=0;i<3;i++){
+					alert(monTab[i]);
+				}
+		};
 
 		</script>
 	</head>
-	<body>
+	<body onload="maFonction()">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

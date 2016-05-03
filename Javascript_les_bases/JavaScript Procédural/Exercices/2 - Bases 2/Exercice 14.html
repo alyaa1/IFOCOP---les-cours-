@@ -13,7 +13,15 @@
 
 				Utilisez l'attribut d'évènement onload, la fonction confirm(), la fonction alert() et un bloc conditionnel if/else.
 			*/
-				
+			var maFonction = function() {
+				var Bdd = confirm('Voulez vous continuer ?');
+					if(Bdd !== false) {
+						alert('Vous avez cliqué sur ok');
+					}else{
+						alert('Vous avez choisi d\'annuler');
+					}
+			};
+
 			/*
 			** 2 **
 				Réalisez le programme (algorithme) suivant :
@@ -22,20 +30,20 @@
 
 				Utilisez l'attribut d'évènement onclick, la fonction confirm(),la fonction alert() et un bloc conditionnel if/else
 			*/
-				
+
 			/*
 			** 3 **
 				Réalisez le programme (algorithme) suivant :
 				Quand l'utilisateur survole le premier titre, j'affiche une B.d.D contenant le message « Voulez vous continuer ? ». Si l'utilisateur clique sur OK, j'affiche une B.d.D avec le message « Vous avez  cliqué sur OK ! » sinon j'affiche une B.d.D avec le message « Vous avez choisi d'annuler ».
 
-				
+
 				Utilisez l'attribut d'évènement onmouseover, la fonction confirm(), la fonction alert() et un bloc conditionnel if/else.
 			*/
 		</script>
 	</head>
 	<body>
 		<h1>Mon nouveau document</h1>
-		<p>Premier paragraphe</p>
+		<p onclick="maFonction();">Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>

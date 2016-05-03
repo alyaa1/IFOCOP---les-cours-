@@ -8,13 +8,13 @@
 			***********PRESENTATION***********
 			**********************************
 				Parmi tous les éléments constitutifs de JavaScriptse trouvent les boucles. Celles-ci permettent de répéter à plusieurs reprise les mêmes lignes du code.
-				
+
 				Le premier type de boucle est la boucle while. Elle s'écrit ainsi:
-				
+
 				while(condition){
 					code à exécuter.
 				}
-				
+
 				Tant que la condition est vraie, le code s'exécutera. Il faut donc, dans le code à exécuter, un élément modificateur de telle façon à interrompre le fonctionnement de la boucle. Dans le cas contraire, celle-ci s'exécutera sans fin.
 			*/
 
@@ -26,9 +26,15 @@
 
 				Utilisez l'attribut d'évenement onload, la fonction confirm() , la fonction alert() et une boucle while.
 			*/
+			var maFonction = function() {
+				var Bdd = confirm('Voulez vous continuer ?');
+				while(Bdd === true) {s
+					alert('Voulez vous continuer ?');
+				}
+			};
 		</script>
 	</head>
-	<body>
+	<body onload="maFonction()">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>

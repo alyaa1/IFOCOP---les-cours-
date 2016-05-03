@@ -14,9 +14,20 @@
 				_ Sinon (si l'utilisateur n'a pas cliqué sur Annulé ET n'a pas rien saisi), j'affiche la saisie de l'utilisateur dans une B.d.D.
 
 			*/
+			var maFonction = function() {
+				var Bdd = prompt('Veuillez saisir un message');
+				if( Bdd === null){
+					alert('Vous avez annulé la saisie');
+				}
+				if(Bdd === ''){
+					alert('Vous n\'avez rien saisi');
+				}else{
+					alert(Bdd)
+				}
+			};
 		</script>
 	</head>
-	<body>
+	<body onload="maFonction()">
 		<h1>Mon nouveau document</h1>
 		<p>Premier paragraphe</p>
 		<p>Deuxième paragraphe</p>
