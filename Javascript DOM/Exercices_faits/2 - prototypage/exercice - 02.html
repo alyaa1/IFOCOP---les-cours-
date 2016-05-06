@@ -18,7 +18,8 @@
         - Leur genre (mâle ou femelle) qui est une chaîne de caractères;
         - L'action de barrir qui est une méthode.
       */
-          var ConstructeurDeMammouth = function (){
+          var ConstructeurDeMammouth = function (nom){
+            this.nom = nom;
             this.age= 100;
             this.poids= 100;
             this.espece= 'pachiderme';
@@ -28,6 +29,7 @@
               alert('BrrrroooAAAArrrrr ! ');
             };
           };
+          var many = new ConstructeurDeMammouth('many');
       /*
         2. Les éléphants contemporains héritent probablement des caractéristiques d'un mammouth qui est leur prototype. Écrivez une fonction constructeur qui permet de construire des objets représentant des éléphants. Les éléphants ont deux caractéristiques qui différent des mammouths :
         - Leur poids qui est un nombre;
@@ -35,21 +37,23 @@
         - Le fait qu'ils n'aient pas de fourrure, qui est un booléen;
         - L'action de manger des cacahuètes qui est une méthode.
       */
-            var ConstructeurDElephant = function(){
+            var ConstructeurDElephant = function(options){
+              this.prototype = new ConstructeurDeMammouth;
+              this.nom = options;
               this.fourrure= false;
               this.mangerCacahuetes = function(){
                 alert('scrounch');
               };
             };
 
-          ConstructeurDElephant.prototype = new ConstructeurDeMammouth();
+          ConstructeurDElephant.prototype = new ConstructeurDeMammouth;
 
       /*
         3. Créez 2 éléphants. Vous devez pouvoir exécuter la méthode qui leur permet de barrir et qui provient de leur prototype et, exécuter la méthode qui leur permet de manger des cacahuètes et qui leur est propre.
       */
 
-            var elmer = new ConstructeurDElephant();
-            var barbare = new ConstructeurDElephant();
+            var elmer = new ConstructeurDElephant('elmer');
+            // var barbare = new ConstructeurDElephant();
 
     </script>
   </head>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div>
+      <div ng-controller="maFonction as ftyhrt">
+        <p ng-controller="autreFonction">Ceci est {{ ftyhrt.test }} un texte {{ leScopeDeMonP.test }}</p>
+      </div>
+      {{ helloLeMonde() }}
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monNouveauModule', []);
+
+      var refModule = angular.module('monNouveauModule');
+      
+      refModule.controller('maFonction', [function(){
+        this.test = 10;
+      }]);
+
+      refModule.controller('autreFonction', ['$scope',function(scope){
+
+       scope.leScopeDeMonP = {
+        test:9999999
+       };
+
+      }]);
+
+      angular.bootstrap(window.document, ['monNouveauModule'], {strictDi: true});
+    </script>
+  </body>
+</html>

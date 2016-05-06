@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+
+  </head>
+  <body ng-init="test = 'Message'">
+    <h1>Angular JS</h1>
+    <div>
+      <p>{{ calcul = 2 + 2 }}</p>
+    </div>
+    <p>{{ calcul }}</p>
+    <div ng-show="false">Salut les DIW JS !</div>
+    
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      //Créé un module angular (conteneur pour mon projet)
+      angular.module('monExempleAngular0', []); //setter
+
+      //var monModule =  angular.module('monModuledule'); //getter
+
+      angular.bootstrap(window.document, ['monExempleAngular0'], {strictDi: true});
+    </script>
+  </body>
+</html>

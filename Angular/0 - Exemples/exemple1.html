@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div ng-controller="monControleur as monCtrl">
+      <h1>{{ monCtrl.titre }}</h1>
+      <p>{{ monCtrl.texte }}</p>
+      <p>{{ monCtrl.helloWorld() }}</p>
+      <div ng-controller="monAutreControleur">
+        <h2>{{ monAutreCtrl.titre }}</h2>
+        <p>{{ monAutreCtrl.texte }}</p>
+        <form name="formulaire">
+          <input type="text" name="saisie" ng-model="monAutreCtrl.saisie"/>
+        </form>
+        <div ng-bind="monAutreCtrl.affiche()"></div>
+      </div>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('angularExemple1', []);
+      
+      var monModule = angular.module('angularExemple1');
+
+      monModule.controller('monControleur',[function(){
+          this.titre = 'titre H1';
+          this.texte = 'Ad libitum nucat est mergitur';
+          this.helloWorld = function(){
+            return 'Bonjour de puis une fonction';
+          };
+      }]);
+      
+      monModule.controller('monAutreControleur',['$scope', function(contexte){
+        contexte.monAutreCtrl = {
+          titre:'titre H2',
+          texte: 'Lorem ipsum et compagnie',
+          saisie: '',
+          affiche:function(){
+            if(this.saisie == 'shazam'){
+              return 'Houdini';
+            }
+          }
+        };
+      }]);
+
+
+      angular.bootstrap(window.document, ['angularExemple1'], {strictDi:true});
+    </script>
+  </body>
+</html>
