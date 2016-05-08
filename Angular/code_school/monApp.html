@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app = "store">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="assets/angular.min.js"></script>
+    <script type="text/javascript" src="app.js">
+
+    </script>
+  </head>
+  <body ng-controller="StoreController as store">
+    <!-- on appel le controller "StoreController" de notre module dans cette page il aura un alias nommé store -->
+
+  <div ng-repeat = "product in store.products" ng-hide = "product.soldOut"
+      >
+    <!-- si la propriété soldOut de l'objet est true alors la div est cachée -->
+    <h1>{{product.name}}</h1>
+    <h2>{{product.price}} €</h2>
+    <p>{{product.description}}</p>
+
+    <button ng-show = "product.canPurchase">Add to Cart</button>
+    <!-- si la propriété canPurchase de l'objet est true alors le bouton est affiché -->
+
+  </div>
+
+
+  </body>
+</html>
