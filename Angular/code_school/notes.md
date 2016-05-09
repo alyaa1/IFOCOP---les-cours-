@@ -6,7 +6,7 @@
 
 ##Directive
 
-une directive est un marqueur HTM qui dit à Angular d'activer un code _javascript_.
+une directive est un marqueur HTML qui dit à Angular d'activer un code _javascript_.
 
 
 **ex**
@@ -15,13 +15,15 @@ une directive est un marqueur HTM qui dit à Angular d'activer un code _javascri
 <body ng-controller="StoreController">
 ```
 
-Indique à Angular de lancer la fonction `StoreController`
+Ce code indique à Angular de lancer la fonction (le *controller*) `StoreController`.
 
 
 
 ##Commencer à utiliser Angular
 
 1. Télécharger la librairie `angular.min.js` depuis le site [http://angularjs.org](http://angularjs.org)
+2. Appeler `angular.min.js` dans le code la page html
+3. Demander à Angular de controller la page avec le controller `ng-app`
 
 
 
@@ -31,7 +33,7 @@ C'est dans les **modules** que nous allons écrire notre application Angular.
 
 Le code est contenu dans des modules qui sont alors plus simples à maintenir et à tester.
 
-C'est dans les modules que nous définissons les **dépendances**.
+C'est dans les modules que nous définirons les **dépendances**.
 
 ```
 var app = angular.module('store', []);
@@ -58,6 +60,7 @@ ex :
 Je vaux {{4+6}}
 
 ```
+Ce code affichera = *Je vaux 10* dans la page HTML.
 
 
 ***************************************
@@ -158,6 +161,130 @@ Dans le code HTML, on l'intègre de la façon suivante :
 **CONTROLLER** : comportement que nous ajoutons (un fonction par exemple).
 
 **EXPRESSIONS** : valeur que nous affichons dans la page. 
+
+****************************************************
+
+![image](illustration_formation/resume_part1.png) 
+
+
+***************************************************
+
+
+
+***************************************
+#CHAPITRE 4 - FILTERS
+***************************************
+
+Angular propose de filtres.
+
+La notation avec un **pipe** indique à Angular = 
+*Prend cette information et envoie-la à ce qui suit.*
+
+C'est comme ça, qu'on va filtrer nos données. 
+
+##Le format des filtres 
+
+```
+{{data | filter:options}}
+```
+
+
+
+##Filter Currency
+
+```
+{{product.price | currency }}
+```
+
+##Filter limitTo
+
+Permet de limiter le nombre de résultats. 
+On peut l'utiliser avec des `string` mais aussi avec la directive `ng-repeat`.
+
+```
+<li ng-repeat = "product in store.products | limitTo:3">
+```
+
+Renverra uniquement les 3 premiers résulats du tableau `store.products`.
+
+
+##Filter orderBy
+
+```
+<li ng-repeat = "product in store.products | limitTo:3 | orderBy: '-product.price' ">
+```
+
+
+*********************************
+#CHAPITRE 5 - Gestion des onglets
+************************************
+
+
+Imaginons que nous disposons d'une liste 
+
+--------------
+<section>
+	<ul class="nav nav-pills">
+		<li> <a href>Description</a></li>
+		<li> <a href>Specifications</a></li>
+		<li> <a href>Reviews</a></li>
+	</ul>
+</section>
+
+**Rappels Bootstrap**
+La classe `nav` définit un style correspondant à des onglets. 
+
+
+On peut affecter des valeurs au moment où on clique sur un onglet sans même l'avoir défini avant.
+
+###Affecter une valeur lors du click
+
+Pour ça on va utiliser la directive `ng-click`
+
+```
+<a href ng-click="tab = 1">
+```
+
+
+###Afficher la div correspondante
+On utilise ensuite la directive `ng-show` pour cacher ou montrer le contenu de la div visée. 
+
+C'est simple 
+
+```
+<div class="panel" ng-show="tab === 1"> // ce code montrera cette div et cachera les autres. 
+```
+
+
+###Définir une div par défaut
+On peut même définir une div à afficher **par défaut**
+
+Dans <section>, on va utiliser `ng-init`
+
+
+```
+<section ng-init="tab = 1"> ... </section>
+```
+
+###Affecter une class dynamiquement. 
+On va utiliser `ng-class` pour affect la classe `active`de bootstrap pour modifier dynamiquement le style de nos onglets.
+
+L'astuce est que l'on peut donner un objet comme argument à `ng-class`.
+On va donc lui dire d'affecter une classe après avoir évaluer la valeur d'un critère. 
+
+
+```
+<li ng-class="{active : tab = 1">... </li>
+```
+
+
+###ATTENTION 
+
+Ok ça fonctionne mais il y'a un problème... on met trop de logique dans la page web. 
+Cette logique devrait être déportée sur un controller !!!!! 
+
+**********************************************
+
 
 
 

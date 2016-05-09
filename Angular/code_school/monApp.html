@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html ng-app = "store">
+<html ng-app="gemStore">
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="assets/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
     <script type="text/javascript" src="assets/angular.min.js"></script>
-    <script type="text/javascript" src="app.js">
-
-    </script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
-  <body ng-controller="StoreController as store">
-    <!-- on appel le controller "StoreController" de notre module dans cette page il aura un alias nommé store -->
+  <body class="list-group" ng-controller="StoreController as store">
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">an Angular store</h2>
+    </header>
+    <div class="list-group-item" ng-repeat="product in store.products">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
+      <section ng-show="product.images.length" ng-controller="GalleryController as gallery">
+        <img ng-src="{{product.images[gallery.current]}}" />
+        <ul class="list-inline thumbs">
+          <li class="thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </section>
 
-  <div ng-repeat = "product in store.products" ng-hide = "product.soldOut"
-      >
-    <!-- si la propriété soldOut de l'objet est true alors la div est cachée -->
-    <h1>{{product.name}}</h1>
-    <h2>{{product.price}} €</h2>
-    <p>{{product.description}}</p>
-
-    <button ng-show = "product.canPurchase">Add to Cart</button>
-    <!-- si la propriété canPurchase de l'objet est true alors le bouton est affiché -->
-
-  </div>
-
-
+      <section ng-class="{active : tab.isSet(1)}" class="tab" ng-controller="TabController as tab">
+        <ul class="nav nav-pills">
+          <li ng-class="{active : tab.isSet(1)}">
+            <a href ng-click="tab.setTab(1)">Description</a></li>
+          <li ng-class="{active : tab.isSet(2)}">
+            <a href ng-click="tab.setTab(2)">Specs</a></li>
+          <li ng-class="{active : tab.isSet(3)}">
+            <a href ng-click="tab.setTab(3)">Reviews</a></li>
+        </ul>
+        <div ng-show="tab.isSet(1)">
+          <h4>Description</h4>
+          <blockquote>{{product.description}}</blockquote>
+        </div>
+        <div ng-show="tab.isSet(2)">
+          <h4>Specs</h4>
+          <blockquote>Shine: {{product.shine}} </blockquote>
+        </div>
+        <div ng-show="tab.isSet(3)">
+          <h4>Reviews</h4>
+          <blockquote></blockquote>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
