@@ -6,9 +6,8 @@
     <script>
       //Énoncé :
       /*
-        Dans cet exercice, vous ne devez utiliser que des fonctions constructeur. 
+        Dans cet exercice, vous ne devez utiliser que des fonctions constructeur.
       */
-
       /*
         1. Écrivez une fonction constructeur qui permet de construire des objets représentant des mammouths. Les mammouths avaient plusieurs caractéristiques :
         - Leur âge qui est un nombre;
@@ -18,6 +17,16 @@
         - Leur genre (mâle ou femelle) qui est une chaîne de caractères;
         - L'action de barrir qui est une méthode.
       */
+      var ConstructeurDeMammouth = function() {
+        this.age = 120,
+        this.poids = 600,
+        this.espece = 'pachyderme',
+        this.fourrure = true,
+        this.genre = 'male || femelle',
+        this.barrir = function() {
+          alert('brouuuhhh!!!');
+        };
+      };
 
       /*
         2. Les éléphants contemporains héritent probablement des caractéristiques d'un mammouth qui est leur prototype. Écrivez une fonction constructeur qui permet de construire des objets représentant des éléphants. Les éléphants ont deux caractéristiques qui différent des mammouths :
@@ -26,10 +35,19 @@
         - Le fait qu'ils n'aient pas de fourrure, qui est un booléen;
         - L'action de manger des cacahuètes qui est une méthode.
       */
-      
+      var ConstructeurDElephant = function() {
+        this.fourrure = false,
+        this.manger = function() {
+          alert('cacahuetes');
+        }
+      }
+      ConstructeurDElephant.prototype = new ConstructeurDeMammouth ();
       /*
         3. Créez 2 éléphants. Vous devez pouvoir exécuter la méthode qui leur permet de barrir et qui provient de leur prototype et, exécuter la méthode qui leur permet de manger des cacahuètes et qui leur est propre.
       */
+      var Dumbo = new ConstructeurDElephant;
+      var Elmer = new ConstructeurDElephant;
+      console.log(ConstructeurDElephant);
     </script>
   </head>
   <body>

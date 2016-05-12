@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div>Première</div>
+    <div ng-controller="monControleur as monCtrl">
+      Deuxième
+      {{ monCtrl.valeur }}
+    
+    </div>
+    <div >Troisième</div>
+    <div>Quatrième</div>
+    <div>Cinquième</div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModule', []);
+
+      var zeModule = angular.module('monModule');
+
+      zeModule.factory('elephant', function(){
+        return {
+          couleur:'rose'
+        };
+      })
+      
+      zeModule.controller('monControleur', ['$log','elephant',function(log, ici){
+        this.valeur = '1000€ ' + ici.couleur;
+        log.log('Loggé !');
+      }]);
+
+      angular.bootstrap(window.document,['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

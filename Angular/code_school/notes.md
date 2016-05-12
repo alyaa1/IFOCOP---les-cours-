@@ -285,6 +285,17 @@ Cette logique devrait être déportée sur un controller !!!!!
 
 **********************************************
 
+/!\ ECRIRE LE CODE
+
+*********************************
+#CHAPITRE 6 - les formulaires
+************************************
+
+
+##ng-model 
+
+**ng-model** permet de lier (*2 way binding*) un champ de formulaire avec une valeur. 
+
 
 
 

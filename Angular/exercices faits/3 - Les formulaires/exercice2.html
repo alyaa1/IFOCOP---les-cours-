@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <style media="screen">
+
+      body{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      div{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      input{
+        border-radius: 5px;
+      }
+      input.ng-invalid.ng-touched{
+        background-color: rgba(172, 44, 44, 0.3);
+      }
+
+      input.ng-valid.ng-touched{
+        background-color: rgba(0, 255, 0, 0.4);
+      }
+    </style>
+    <title>AngularJS : Les Formulaires : Exercice 2</title>
+    <script>
+      //Enoncé
+      /* Les directives ng-controller et ng-model*/
+      /**************************************************************************************************
+        Désormais, vous devez utiliser au maximum les contrôleurs et de préférence en utilisant la notation "controler as" c'est à dire en utilisant une instance nommée du contrôleur et en utilisant les propriétés ou méthodes de cette instance.
+
+        Comme on l'a vu lors des exercices sur les expressions, si on dote le formulaire d'un attribut name, celui-ci devient accessible sous forme d'une propriété de contexte portant le nom spécifié. Cette propriété proposée par AngularJS est un objet qui possède des propriétés contenant des informations relatives au formulaire.
+
+        Dans cet exercice nous allons créer un formulaire d'enregistrement utilisateur. Ce formulaire devra être valide (champs requis fournis, dates correctes, adresses e-mail, etc...) pour qu'il puisse être ajouté à la liste des utilisateurs. La liste des utilisateurs sera matérialisée par un tableau d'objets correspondant chacun à un utilisateur.
+      **************************************************************************************************/
+
+      /*
+        1. Chargez Angular JS dans ce document. Le contexte applicatif d'Angular JS doit englober tout le document. Votre application s'appellera angularjsExercice2. Un tutoriel officiel sur le chargement d'Angular JS est disponible ici : https://docs.angularjs.org/tutorial/step_00
+      */
+
+      /*
+        2. Vous devez ajouter l'attribut novalidate sur la balise form pour désactiver la validation native des formulaires proposée par certain navigateur Internet et lui attribuer un nom à l'aide de l'attribut name.
+      */
+
+      /*
+        3. Créez les champs suivant :
+        - Nom qui est un texte de au moins 2 caractères et au maximum 128 caractères et qui est requis;
+        - Prenom qui est un texte de au moins 2 caractères et au maximum 128 caractères et qui est requis;
+        - Date de naissance qui est une date valide;
+        - Adresse e-mail qui est une adresse valide.
+
+        N'oubliez pas de spécifier un attribut name pour chacune des champs.
+
+        Les attributs proposés par AngularJS pour la gestion de la validation des champs est documentée ici : https://docs.angularjs.org/api/ng/directive/input
+      */
+
+      /*
+        4. Créez un contrôleur pour gérer la div qui contient le formulaire et la liste des utilisateurs. Ce contrôleur possède 2 propriétés et une méthode :
+        - Une propriété qui contiendra un utilisateur : un objet vide.
+        - Une propriété qui contiendra des utilisateurs : un tableau vide.
+        - Un méthode qui prend en argument un booléen qui indique si le formulaire est valide ou non et qui en fonction de ce booléen ajoute l'utilisateur au tableau des utilisateurs.
+      */
+
+      /*
+        5. Utilisez la directive ng-model pour associer chaque champ du formulaire à une propriété de l'objet dans la propriété du contrôleur correspondant à un utilisateur.
+      */
+
+      /*
+        6. Utilisez la directive ng-bind affichez en temps réel sous le formulaire la liste des informations saisies par l'utilisateur sous la forme d'une liste.
+      */
+
+      /*
+        7. Lorsqu'on utilise la directive form, on a accès à une propriété de contexte nommée selon la valeur de l'attribut name du formulaire. Cette propriété de contexte est un objet qui contient des informations relatives au comportement et au contenu du formulaire.
+        - Utilisez une expression <p></p>our afficher cette propriété de contexte sous le formulaire. Vous pouvez constater qu'elle contient une propriété concernant l'état de validation de formulaire.
+        - Utilisez la directive ng-submit pour exécuter la méthode du contrôleur en lui fournissant en argument l'état de validation du formulaire.
+      */
+
+      /*
+        8. Un peu de mise en forme : utilisez firebug pour observer les modification de l'attribut class des balise input lorsque vous saisissez un texte. Vous remarquez qu'AngularJS en fonction de l'état de la balise (pas encore modifiée, valide, non valide) attribue différentes classes CSS aux éléments. Utilisez ces classes CSS pour afficher à l'aide d'un code couleur (rouge = champ pas valide / vert = champ valide) l'état de validation des champs.
+      */
+
+      /*
+        9. Utilisez la directive ng-repeat pour afficher en temps réel la liste des utilisateurs sauvegardés à l'aide du contrôleur.
+      */
+    </script>
+  </head>
+  <body style="background-color: lightgray">
+    <div ng-controller="formValidator as validator">
+      <form class="list-item list-group-item" name="form" novalidate="true" ng-submit="validator.submitButton(form.$valid)">
+        <h2>Formulaire</h1>
+          <hr>
+        <p>
+          <label for="nom">Nom : </label>
+          <input class="form-control" type="text" name="nom" value="" ng-model="validator.nom" ng-minlength="2" ng-maxlength="128" required/>
+        </p>
+
+        <p>
+          <label for="prenom">Prénom : </label>
+          <input class="form-control" type="text" name="prenom" value="" ng-model="validator.prenom" ng-minlength="2" ng-maxlength="128" required/>
+        </p>
+        <p>
+          <label for="bdate">Date de naissance : </label>
+          <input class="form-control" type="text" name="bdate" value="" ng-model="validator.bdate" ng-pattern="/^(\d{2})\/(\d{2})\/(\d{4})$/" required />
+        </p>
+        <p>
+          <label for="mail">Adresse email : </label>
+          <input  class="form-control" type="mail" name="mail" value="" ng-model="validator.mail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
+        </p>
+
+        <hr>
+        <input class="btn btn-primary" type="submit" value="Enregistrer"/>
+      </form>
+
+    <div classe="panel panel-default">
+      Vous avez indiqué
+      <p>Nom : <span ng-bind="validator.nom"></span></p>
+      <p>Prénom : <span ng-bind="validator.prenom"></span></p>
+      <p>Date de naissance : <span ng-bind="validator.bdate"></span></p>
+      <p>Mail : <span ng-bind="validator.mail"></span></p>
+    </blockquote>
+
+    <hr>
+    <h2>Utilisateurs enregistrés</h2>
+    <div class="panel panel-default">
+
+    </div>
+    <div class="well" ng-repeat="user in validator.users track by $index">
+      <h4 >Utilisateur {{$index+1}}</h4>
+
+      <p>
+        <strong>Nom : </strong>{{user.nom}}
+      </p>
+      <p>
+        <strong>prenom : </strong>{{user.prenom}}
+      </p>
+      <p>
+        <strong>Date de votre anniversaire : </strong>{{user.bdate}}
+      </p>
+      <p>
+        <strong>mail : </strong>{{user.mail}}
+      </p>
+      <hr>
+    </div>
+
+  </div>
+
+
+
+    <hr>
+    <p>
+      <h3>Propriété de contexte du formulaire</h3>
+      <br>
+        {{form}}
+
+    </p>
+    <p>
+      Le formulaire est-il valide ?  <span ng-bind="form.$valid"></span>
+    </p>
+    <p>
+      Le formulaire a-t-il été soumis ?  <span ng-bind="form.$submitted"></span>
+    </p>
+
+    <p>
+      Le nom est-il valide ? <span ng-bind="form.nom.$valid"></span>
+    </p>
+
+    </div>
+
+
+    <script type="text/javascript" src="angular.min.js"></script>
+
+    <script type="text/javascript">
+
+    angular.module('monModule', []);
+
+    angular.module('monModule').controller('formValidator', ['$scope',function(){
+      this.nom = '';
+      this.prenom = '';
+      this.bdate = '';
+      this.mail = '';
+      this.user = {};
+      this.users = [];
+      this.submitButton = function(valide){
+          if(valide){
+            this.user = {nom: this.nom, prenom: this.prenom, mail: this.mail, bdate: this.bdate};
+            this.users.push(this.user);
+            this.nom = '';
+            this.prenom = '';
+            this.bdate = '';
+            this.mail = '';
+          }
+      };
+
+    }]);
+
+
+    angular.bootstrap(window.document, ['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

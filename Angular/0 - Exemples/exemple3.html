@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div>
+      <div batman-v-superman></div>
+      <div batman-v-superman></div>
+      <div batman-v-superman></div>
+      <div batman-v-superman></div>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModule', []);
+
+      var zeModule = angular.module('monModule');
+
+      zeModule.directive('batmanVSuperman', function(){
+        return {
+          restrict:'EA',
+          template:'<h1 ng-click="monObjet.clique();">Lex luthor gagne à la fin {{ monObjet.theEnd }}</h1>',
+          controller:[function(){
+            this.theEnd = ' mais en fait Wondoman est la plus forte !';
+            this.clique = function(){
+              console.log('Cliqué !!!!');
+            }
+          }],
+          controllerAs:'monObjet',
+          link:function(scope, iElement, iAttrs, controller, transcludeFn) {
+            console.log(iElement);
+            iElement.on('click', function(event){
+              iElement.css({'color': 'red'});
+            });
+          }
+        };
+      });
+
+      angular.bootstrap(window.document,['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

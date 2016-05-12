@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+      
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModuleDule', []);
+
+      angular.module('monModuleDule').factory('usineRono', function(){
+        return 'Twingo';
+      });
+
+      angular.module('monModuleDule').service('KaufmannBroad', function(){
+        this.prix = 'exhorbitant';
+        this.qualite = 'basse';
+        this.toit = 'en plastique';
+      });
+
+      angular.module('monModuleDule').provider('TraiteurLeNotre', function(){
+        this.tarifs = 'exhorbitants';
+        this.$get = function(){
+          return 'des macarons ' + this.tarifs;
+        }
+      });
+    </script>
+    <script>
+      angular.module('monModule', ['monModuleDule']);
+
+      angular.module('monModule').config(['TraiteurLeNotreProvider', function(unNouveauTraiteur){
+        unNouveauTraiteur.tarifs = 'en fait pas cher';
+      }]);
+      
+      angular.module('monModule').controller('monController',['usineRono','KaufmannBroad','TraiteurLeNotre',function(laVoiture, uneMaison, desBiscuitsTropCher){
+        laVoiture; //ici : 'Twingo'
+        uneMaison; //ici : {prix, qualite et toit}
+        desBiscuitsTropCher; //ici : 'des macarons en fait pas cher
+      }]);
+
+      angular.bootstrap(window.document, ['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

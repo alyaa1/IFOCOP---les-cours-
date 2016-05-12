@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <h2>Palindromes</h2>
+    <div ng-controller="monControleur as monCtrl">
+      <form ng-submit="monCtrl.testerMot()">
+        <input type="text" name="mot" ng-model="monCtrl.mot" />
+        <input type="submit" value="Tester"/>
+      </form>
+      <p ng-if="monCtrl.estUnPalindrome">Ce mot est un palindrome</p>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModule', []);
+      angular.module('monModule').controller('monControleur', [function(){
+        this.mot;
+        this.estUnPalindrome = false;
+        this.testerMot = function(){
+          if(this.mot){
+            if(this.mot == this.mot.split('').reverse().join('')){
+              this.estUnPalindrome = true;
+            }else{
+              this.estUnPalindrome = false;
+            };
+          };
+        };
+      }]);
+      angular.bootstrap(window.document, ['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

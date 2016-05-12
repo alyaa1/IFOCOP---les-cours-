@@ -8,25 +8,27 @@
       /*
         1. Créez 1 objet JSON qui représente une maison. Cet objet contient une propriété adresse qui contient l'adresse de la maison et une propriété chambre qui ne contient rien (null)
       */
-      var maison = {
-        adresse : 26 rue des rosier,
-        chambre : null,
-      }
+    var maison ={
+      adresse: '21rue singer',
+      chambre:uneChambre,
+    }
 
       /*
         2. Créez 1 objet JSON qui représente une chambre. Cet objet contient une propriété lit qui contient la chaîne de caractère matelas et une méthode quelEstMonAdresse qui ne contient pas d'instructions pour l'instant.
       */
-      var chambre = {
-        lit : 'matelas',
-        quelEstMonAdresse : function () {
+    var uneChambre = {
+      lit: 'matelas',
+        quelEstMonAdresse:function() {
+          alert(this.dansQuelleMaison.adresse);
+        };
+        dansQuelleMaison : null,
+    }
 
-        }
-      }
 
       /*
         3. Mettez la référence à l'objet JSON qui représente la chambre dans la propriété chambre de l'objet JSON qui représente la maison.
-      */maison.chambre = chambre;
-
+      */
+      maison.chambre=uneChambre
       /*
         4. Affichez dans une boite de dialogue le contenu de la propriété lit de l'objet représentant la chambre en partant de l'objet représentant la maison.
       */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div ng-controller="autreControleur as boite">
+      {{boite.message}}
+      <div ng-click="boite.changeMessage()">Cliquez ici</div>
+    </div>
+    <div>
+      <p><a ng-controller="nomDuControleur" href="">{{propriete}}</a></p>
+    </div>
+    <div class="ma-directive-a-moi"></div>
+    
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      'use strict';
+
+      angular.module('monModule', []);
+
+      angular.module('monModule').controller('nomDuControleur', ['$scope', function(objetCorrespondantAuContexte){
+        objetCorrespondantAuContexte.propriete = 'Hello';
+      }]);
+
+      angular.module('monModule').directive('maDirectiveAMoi', function(){
+
+        var unObjetDeDefinitionDeMaDirective = {
+          restrict:'AC',
+          template:'<h3 ng-click="autreBoite.augmenteValeur()">La valeur est : {{autreBoite.valeur}}</h3>',
+          controller:function(){
+            this.valeur = 0;
+            this.augmenteValeur= function(){
+              this.valeur ++;
+            };
+          },
+          controllerAs: 'autreBoite',
+          link:function link(objetDeContexte, unJQueryLiteDeLElementHTML) {
+            console.log(unJQueryLiteDeLElementHTML);
+            unJQueryLiteDeLElementHTML.on('click', function(){
+              unJQueryLiteDeLElementHTML.css({'color':'red'});
+            });
+          }
+        };
+
+        return unObjetDeDefinitionDeMaDirective;
+
+      });
+
+     /*
+     angular.module('monModule').controller('autreControleur', ['$scope', function(objetCorrespondantAuContexte){
+        var FabricantDeBoite = function(){
+          this.message = 'Ceci est un message !';
+        };
+        
+        objetCorrespondantAuContexte.boite = new FabricantDeBoite();
+ 
+        // Equivalent à :
+        // objetCorrespondantAuContexte.boite = {
+        //  message:'Ceci est un message !'
+        // };
+        
+      }]);
+      */
+
+      angular.module('monModule').controller('autreControleur', function(){
+        this.message = 'Ceci est un message !';
+        this.changeMessage = function(){
+          this.message = 'Nouveau message !';
+        };
+      });
+
+      angular.bootstrap(window.document, ['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

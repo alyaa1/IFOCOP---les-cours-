@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <h2>Service $http</h2>
+    <div ng-controller="monControleur as monCtrl">
+      <div ng-click="monCtrl.quelleEstLaMeteoSurMars()">Quelle est la météo sur Mars ?</div>
+      <div ng-if="monCtrl.jsonObtenu">
+        <p>La température max aujourd'hui sur mars est : {{ monCtrl.max_temp }}</p>
+        <p>La température min aujourd'hui sur mars est : {{ monCtrl.min_temp }}</p>
+      </div>
+      </div>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModule', []);
+
+      angular.module('monModule').controller('monControleur', ['$http', function($http){
+        this.jsonObtenu = false;
+        this.max_temp = false;
+        this.min_temp = false;
+        this.quelleEstLaMeteoSurMars = function(){
+          var monCtrl = this;
+          $http.jsonp('http://marsweather.ingenology.com/v1/latest/?format=jsonp&callback=JSON_CALLBACK').then(function(response){
+            monCtrl.max_temp = response.data.report.max_temp;
+            monCtrl.min_temp = response.data.report.min_temp;
+            monCtrl.jsonObtenu = true;
+          }, function(response){
+            monCtrl.jsonObtenu = false;
+          });
+        };
+      }]);
+
+      angular.bootstrap(window.document, ['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

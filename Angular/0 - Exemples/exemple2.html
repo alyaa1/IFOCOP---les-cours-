@@ -14,23 +14,29 @@
     </div>
     <script src="./lib/angular.min.js"></script>
     <script>
-      angular.module('monNouveauModule', []);
+      'use strict';
+      (function(){
 
-      var refModule = angular.module('monNouveauModule');
-      
-      refModule.controller('maFonction', [function(){
-        this.test = 10;
-      }]);
+        angular.module('monNouveauModule', []);
 
-      refModule.controller('autreFonction', ['$scope',function(scope){
+        var refModule = angular.module('monNouveauModule');
+        
+        refModule.controller('maFonction', [function(){
+          this.test = 10;
+        }]);
 
-       scope.leScopeDeMonP = {
-        test:9999999
-       };
+        refModule.controller('autreFonction', ['$scope',function(scope){
 
-      }]);
+         scope.leScopeDeMonP = {
+          test:9999999
+         };
 
-      angular.bootstrap(window.document, ['monNouveauModule'], {strictDi: true});
+        }]);
+
+        angular.bootstrap(window.document, ['monNouveauModule'], {strictDi: true});
+
+      })();
+
     </script>
   </body>
 </html>

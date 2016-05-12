@@ -8,14 +8,15 @@
     position: absolute;
     overflow: hidden;
     height: 80px;
-    width: 9%;
+    width: 70px;
     top: 100px;
     left: 50px;
     border: 1px solid red;
     }
     #contenu{
       position: absolute;
-
+      top:-240px;
+      left:0px;
     }
 
     </style>
@@ -34,41 +35,96 @@
       window.onload = function(){
         window.onkeydown = function(event){
           var code = event.keyCode;
+          var container = window.document.getElementById('container');
+          var contenu = window.document.getElementById('contenu');
+          // var temps = window.document.getElementById('leTemps');
+          // setTimeout(function(),20000, );
+          // console.log('leTemps');
 
           switch(code){
             case 37:
               //*instructions
-              window.document.getElementById('container');
-              var monLeft = container.style.left;
-              console.log(monLeft);
-              var valueMonLeft = parseFloat(monLeft);
-              container.style.left += -2 + 'px';
-              console.log('monContainer');
-            }
-
               // alert('gauche');
+              var monLeft = container.style.left;
+                if(monLeft == '') {
+                  monLeft =50;
+                  container.style.left = monLeft;
+                }
+              var valueMonLeft = parseFloat(monLeft);
+              container.style.left = (valueMonLeft - 2) + 'px';
+              // console.log('monContainer');
+
+              var monLeft = contenu.style.left;
+                if(monLeft == '') {
+                  monLeft = 0;
+                  contenu.style.left = monLeft;
+                }
+              var valueMonLeft = parseFloat(monLeft);
+                if(contenu.style.left == '-280px') {
+                  contenu.style.left = 0;
+                }
+                else{
+                  contenu.style.left = (valueMonLeft - 70) + 'px';
+                }
 
             break;
             case 38:
               //instructions
+                var monTop = container.style.top;
+                if(monTop == '') {
+                  monTop=100;
+                  container.style.top = monTop;
+                }
+                var valueMonTop = parseFloat(monTop);
+                container.style.top = (valueMonTop - 2) + 'px';
               // alert('haut');
 
             break;
             case 39:
+            //DEPLACEMENT DE KEN VERS LA DROITE (CONTENU)
               //instructions
-            window.document.getElementById('container');
             var monLeft = container.style.left;
+            if(monLeft == '') {
+              monLeft = 50;
+              container.style.left = monLeft;
+            }
             var valueMonLeft = parseFloat(monLeft);
-            container.style.left += 2 + 'px';
+            // console.log('valueMonLeft : ' + valueMonLeft);
+            container.style.left = (valueMonLeft + 2) + 'px';
               // alert('droite');
+
+              var monLeft = contenu.style.left;
+              if(monLeft == '') {
+                monLeft = 0;
+                contenu.style.left = monLeft;
+              }
+              var valueMonLeft = parseFloat(monLeft);
+
+              if(contenu.style.left == '-280px') {
+                contenu.style.left = 0;
+              }
+              else {
+                contenu.style.left = (valueMonLeft - 70) + 'px';
+              }
+
+
+
 
             break;
             case 40:
               //instructions
+                var monTop = container.style.top;
+                if(monTop == '') {
+                  monTop=100;
+                  container.style.top = monTop;
+                }
+                var valueMonTop = parseFloat(monTop);
+                container.style.top = (valueMonTop + 2) + 'px';
               // alert('bas');
 
             break;
-          };
+          }; // switch
+
 
         };
 
@@ -101,7 +157,7 @@
   </head>
   <body>
     <h1>Play !</h1>
-    <div>
+    <div id="leTemps">
       <div id="container" >
         <img id="contenu"src="ken.png"/>
       </div>

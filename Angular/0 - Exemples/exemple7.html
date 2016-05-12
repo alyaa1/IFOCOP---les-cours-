@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div ng-controller="monControleur1 as monCtrl1">
+      <h1>Contexte du {{monCtrl1.nom}}</h1>
+      <p>{{ monCtrl1.poussin.nom }}</p>
+      <p>{{ monCtrl1.poussin.couleur }}</p>
+    </div>
+    <div ng-controller="monControleur2 as monCtrl2">
+      <h1>Contexte du {{monCtrl2.nom}}</h1>
+      <p>{{ monCtrl2.poussin.nom }}</p>
+      <p>{{ monCtrl2.poussin.couleur }}</p>
+      <p ng-click="monCtrl2.changer()">Changer le nom du poussin</p>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      var module = angular.module('monModule', []);
+
+      /*module.factory('monUsine', function(){
+        var poussin = {
+          nom: 'Calimero'
+        };
+        return poussin;
+      });*/
+
+      /*
+      module.service('MonConstructeur', function(){
+        this.nom = 'Calimero';
+      });
+      */
+
+      module.provider('MonProvider', function(){
+        this.couleur = 'noir';
+
+        this.$get = function(){
+          var poussin = {
+            nom: 'Calimero',
+            couleur: this.couleur
+          };
+          return poussin;
+        }
+      });
+
+      module.config(['MonProviderProvider',function(objet){
+        objet.couleur = 'rouge';
+      }]);
+
+      module.controller('monControleur1', ['MonProvider', function(lePoussin){
+        this.nom = 'Controleur 1';
+        this.poussin = lePoussin;
+      }]);
+
+      module.controller('monControleur2', ['MonProvider', function(lePoussin){
+        this.nom = 'Controleur 2';
+        this.poussin = lePoussin;
+        this.changer = function(){
+          this.poussin.nom = 'titi';
+        }
+      }]);
+
+      angular.bootstrap(window.document,['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

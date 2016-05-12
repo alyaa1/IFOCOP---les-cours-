@@ -43,7 +43,36 @@
         </div>
         <div ng-show="tab.isSet(3)">
           <h4>Reviews</h4>
-          <blockquote></blockquote>
+          <blockquote ng-repeat="review in product.reviews">
+            <b>Stars : </b>{{review.stars}}
+            <cite>by : {{review.author}}</cite>
+
+          </blockquote>
+
+          <form name="reviewForm">
+            <select ng-model = "review.stars">
+              <option value="1">
+                1 star
+              </option>
+              <option value="2">
+                2 star
+              </option>
+              <option value="3">
+                3 star
+              </option>
+              <option value="4">
+                4 star
+              </option>
+              <option value="5">
+                5 star
+              </option>
+            </select>
+
+            <label>by : </label>
+
+            <input type="email" name="mail" />
+            <input type="submit" name="submit" value="submit">
+          </form>{{review.stars}}
         </div>
       </section>
     </div>

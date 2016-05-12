@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+  </head>
+  <body>
+    <h1>Angular JS</h1>
+    <div>Première</div>
+    <div boule-a-facette>Deuxième</div>
+    <div >Troisième</div>
+    <div>Quatrième</div>
+    <div boule-a-facette>Cinquième</div>
+    <script src="./lib/jquery-1.12.3.min.js"></script>
+    <script src="./lib/angular.min.js"></script>
+    <script>
+      angular.module('monModule', []);
+
+      var zeModule = angular.module('monModule');
+
+      zeModule.directive('bouleAFacette', function(){
+        return {
+          restrict:'A',
+          link:function(scope, iElement){
+            var disparition = function(){
+              iElement.animate({
+                opacity:0
+              }, function(){
+                iElement.animate({
+                  opacity:1
+                }, function(){
+                  disparition();
+                });
+              });
+            };
+            
+            disparition();
+          }
+        };
+      })
+
+      angular.bootstrap(window.document,['monModule'], {strictDi:true});
+    </script>
+  </body>
+</html>

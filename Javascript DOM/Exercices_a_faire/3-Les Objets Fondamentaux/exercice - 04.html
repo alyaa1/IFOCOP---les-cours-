@@ -12,10 +12,21 @@
       /*
         1. Crééz un nouvel objet de type Date dans la mémoire.
       */
+      var today = new Date();
+      console.log(today);
 
       /*
         2. Ci-après consultez la liste des méthodes de l'objet construit avec Date à cette adresse http://www.commentcamarche.net/contents/571-javascript-l-objet-date (en bas de page).
       */
+      tempsAMesurer();
+      var fin = new Date();
+      var tempsEcoule = fin.getTime() - today.getTime();
+        function afficherTempsEcoule(fTest) {
+          var tempsDebut = Date.now(),
+            vretour = fTest(),
+            tempsFin = Date.now();
+          console.log("temps écoulé :" + String(tempsFin - tempsDebut) + "millisecondes");
+        }
 
       /*
         3. Utilisez l'objet créé pour afficher dans une boite de dialogue le nombre d'heures, de minutes et de secondes avant la fin du cours à (17:00:00)

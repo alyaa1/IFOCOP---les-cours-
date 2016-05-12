@@ -16,23 +16,24 @@
         - Le nombre de bonjour est un nombre (de base on le fixera à 0)
         - Dire bonjour est une fonction.
       */
-      var monRobot ={
-        NdeSerie : 123,
-        NdeModel : 5,
-        nom : 'Astro',
-        couleur : 'rouge',
-        matiere : 'adamantium'
-        DdeGarantie : '12 mois',
-        nbBonjour : 10;
-        concatenation: function() {
-          return this.NdeSerie + this.NdeModel;
-      };
-
+    var robot = {
+      nDeSerie:123456,
+      nDeModel:654123,
+      nomUsage:'Astroboy',
+      couleur:'red',
+      matiere:'acier',
+      garantie:'15 ans',
+      nbBonjour:5,
+      concatenation:function() {
+        return this.nDeSerie + this.nomUsage;
+      },
       direBonjour:function() {
-        alert('Bonjour humain!' + this.concatenation());
+        alert('Bonjour humains, je m\'appelle' + this.concatenation());
         this.nbBonjour++;
       }
-      }
+    }
+    robot.direBonjour();
+    
 
       /*
         2. Exécutez la méthode qui permet au robot de dire bonjour. Elle doit entraîner l'affichage d'une boite de dialogue avec le texte 'Bonjour humain !' écrit dedans.
@@ -56,7 +57,7 @@
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1>
+    <h1 onclick="direBonjour()">Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
